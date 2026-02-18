@@ -1,0 +1,395 @@
+*, *::before, *::after, html, body
+{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body
+{
+    width: 100%;
+    background-color: white;
+}
+
+/* GLOBAL ELEMENTS */
+
+h1, h2, .pg
+{
+    width: 90%;
+    margin: auto;
+}
+
+h1, h2
+{
+    padding-top: 60px;
+}
+
+h3
+{
+    padding-bottom: 10px;
+}
+
+p
+{
+    padding-top: 10px;
+    line-height: 1.5rem;
+}
+
+img
+{
+    width: 26vh;
+    height: 17vh;
+}
+
+/* NAV */
+
+nav
+{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.show-menu
+{
+    font-weight: normal;
+    font-size: 2.5rem;
+    color: white;
+    display: none;
+}
+
+input[type="checkbox"]
+{
+    display: none;
+}
+
+nav ul
+{
+    width: 100%;
+    margin: auto;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul#menu li a
+{
+    font-family: 'Montserrat', sans-serif;
+    display: block;
+    text-decoration: none;
+    color: white;
+    border-bottom: 2px solid transparent;
+    padding: 14px 20px;
+    cursor: default;
+}
+
+nav ul#menu li a:hover
+{
+    color: gray;
+    border-bottom: 2px solid gray;
+    transition: all 0.2s ease;
+}
+
+nav ul#menu li a.selected
+{
+    color: white;
+    border-bottom: 2px solid white;
+    pointer-events: none;
+}
+
+/* HEADER - La imagen de fondo */
+
+header
+{
+    height: 400px;
+    background-image: url("../img/destinos_exoticos.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+}
+
+/* MAIN - Toda la pagina */
+
+main
+{
+    width: 80%;
+    margin: -400px auto 0;
+    position: relative;
+    top: 180px;
+}
+
+/* SECTION - Donde va el contenido de cada pagina */
+
+section
+{
+    position: relative;
+    z-index: 2;
+    background-color: white;
+}
+
+/* Grid de presentacion */
+#grid
+{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.container
+{
+    width: 26vh;
+    margin: 100px 60px;
+}
+
+.container p
+{
+    width: 100%;
+}
+
+/* Video de servicios */
+#video
+{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 40px;
+}
+
+#video iframe
+{
+    width: 700px;
+    height: 300px;
+}
+
+/* Donde estan las imagenes guardadas de productos */
+.p-img
+{
+    width: 70%;
+    margin: auto;
+    padding: 40px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* El section de productos para alejarlo de iconos */
+#productos
+{
+    padding-bottom: 50px;
+}
+
+/* En oficinas el section */
+.ofi-dir
+{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.ofi-dir img
+{
+    padding-top: 20px;
+}
+
+.map-cont
+{
+    width: 90%;
+    margin: auto;
+}
+
+.map
+{
+    width: 100%;
+    height: 200px;
+    padding-top: 20px;
+    padding-bottom: 70px;
+    border: 0;
+    pointer-events: none;
+}
+
+/* ARTICLE - Donde van los iconos y el formulario */
+
+/* ARTICLE - ICONOS */
+
+#iconos
+{
+    width: 90%;
+    margin: 0 auto 25px;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+}
+
+#iconos a img
+{
+    padding-bottom: 5px;
+    border-bottom: 1px solid transparent;
+    cursor: default;
+}
+
+
+#iconos a img:hover
+{
+    opacity: 0.6;
+    border-bottom: 1px solid gray;
+}
+
+#iconos img
+{
+    width: 50px;
+    height: 50px;
+}
+
+/* ARTICLE - FORM */
+
+form
+{
+    height: 430px;
+    position: relative;
+    z-index: 4;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+}
+
+label
+{
+    width: 86%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+input
+{
+    width: 83.5%;
+    margin: 0 auto;
+    height: 40px;
+    margin-top: 5px;
+    padding: 0 10px;
+}
+
+textarea
+{
+    width: 83.5%;
+    margin: 0 auto;
+    height: 140px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+}
+
+form p
+{
+    width: 86%;
+    margin: 0 auto;
+}
+
+/* Donde estan los botones */
+form div
+{
+    width: 86%;
+    margin: 5px auto 20px auto;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+form button
+{
+    width: 70px;
+    height: 32px;
+    margin-left: 30px;
+    color: white;
+    background-color: black;
+}
+
+/* FOOTER */
+
+footer
+{
+    height: 400px;
+    background-image: url("../img/escocia.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
+
+}
+
+#foot-cont
+{
+    width: 100%;
+    padding: 20px;
+    color: white;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    text-align: center;
+}
+
+/* Boton de la flechita azul del footer */
+#foot-cont a
+{
+    width: 50px;
+    height: 45px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 45px;
+    text-decoration: none;
+    font-size: 24px;
+    color: black;
+    background-color: #00e5ff;
+    cursor: default;
+}
+
+@media screen and (max-width: 768px)
+{
+    .show-menu
+    {
+        width: 20px;
+        margin-top: 0;
+        padding-left: 10px;
+        display: inline;
+        cursor: default;
+    }
+
+    ul
+    {
+        display: none;
+        opacity: 0;
+        margin-top: -10rem;
+        margin-left: 2rem;
+    }
+
+    nav
+    {
+        opacity: 0.8;
+        justify-content: flex-start;
+    }
+
+    input[type="checkbox"]:checked ~ ul
+    {
+        margin-top: .5rem;
+        margin-left: 2rem;
+        display: inline-block;
+        opacity: 1;
+    }
+
+    nav ul li
+    {
+        padding-bottom: 10px;
+    }
+}

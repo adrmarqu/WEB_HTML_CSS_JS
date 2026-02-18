@@ -1,0 +1,789 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="En esta pagina estamos aprendiendo html">
+    <!-- Metaetiquetas para Redes Sociales -->
+     <!-- facebook y instagram
+        meta property="og:locale"
+        meta property="og:type"
+        meta property="og:title"
+        meta property="og:description"
+        meta property="og:image"
+        meta property="og:url"
+
+        <meta property="og:title" content="Aprendiendo HTML">
+        <meta property="og:description" content="En esta página estamos aprendiendo los fundamentos de HTML">
+        <meta property="og:image" content="http://tudominio.com/img/periodic-table-of-html-elements.png">
+        <meta property="og:url" content="https://tudominio.com/index.html">
+
+        meta name="twitter:card"
+        meta name="twitter:title"
+        meta name="twitter:description"
+        meta name="twitter:site"
+        meta name="twitter:image"
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@">
+
+    -->
+    <!-- favicon = icono de la pagina -->
+    <link rel="icon" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/favicon.png">
+    <title>Aprendiendo HTML</title>
+    <style>
+        /*selector{propiedad:valor}*/
+        html
+        {
+            scroll-behavior: smooth;
+        }
+    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        function abreAlerta()
+        {
+            window.alert("Has apretado un botón");
+        }
+    </script>
+    <!-- 'defer' para que lo lea todo (solo en el header) -->
+    <script defer src="js/scripts.js"></script>
+</head>
+<body id="top">
+
+    <!-- 
+
+        Páginas donde encontrar información
+        
+        - https://html.spec.whatwg.org
+        - https://www.w3.org/blog/news/archives/7753
+        - https://developer.mozilla.org/es/docs/HTML
+        - https://htmlreference.io
+        - https://desarrolloweb.com/articulos/11.php
+        - https://w3schools.com
+        - https://fontello.com
+
+    -->    
+
+    <h3>Indice de contenidos de html</h3>
+
+    <!-- "ul>(li>a)*24" + tab -->
+    <ul>
+        <li><a href="#encabezados">Encabezados html</a></li>
+        <li><a href="#basicos">Etiquetas de texto básicas</a></li>
+        <li><a href="#semanticos">Etiquetas de texto semánticas</a></li>
+        <li><a href="#saltos">Etiquietas de salto</a></li>
+        <li><a href="#formateo">Etiquetas de formateo</a></li>
+        <li><a href="#estructurales">Etiquetas semánticas estructurales</a></li>
+        <li><a href="#bloque">Etiquietas de bloque vs Etiquetas de línea</a></li>
+        <li><a href="#estilos">Estilos Css en Html</a></li>
+        <li><a href="#scripts">Scripts en Html</a></li>
+        <li><a href="#imagenes">Imágenes con Html</a></li>
+        <li><a href="#figure">Figure y Picture</a></li>
+        <li><a href="#ordenado">Listas ordenadas</a></li>
+        <li><a href="#nordenado">Listas no ordenadas</a></li>
+        <li><a href="#definicion">Listas de definición</a></li>
+        <li><a href="#tablas">Tablas con Html</a></li>
+        <li><a href="#enlaces">Enlaces o hipervínculos con Html</a></li>
+        <li><a href="#interactivo">Elementos interactivos</a></li>
+        <li><a href="#audio">Audio y Vídeo</a></li>
+        <li><a href="#iframes">Iframes o marcos flotantes</a></li>
+        <li><a href="#formularios">Formularios</a></li>
+        <li><a href="#atributos">Atributos Data</a></li>
+        <li><a href="#seo">Metaetiquetas para SEO y móviles</a></li>
+        <li><a href="#redes">Metaetiquetas para redes sociales</a></li>
+        <li><a href="#web">Accesibilidad web</a></li>
+    </ul>
+
+    <hr />
+
+    <h2 id="encabezados">Encabezados Html</h2>
+    <h1>Encabezado de nivel 1 - Cada html sólo puede contener un H1 en la raíz del body</h1>
+    <h2>Encabezado de nivel 2 - H2</h2>
+    <h3>Encabezado de nivel 3 - H3</h3>
+    <h4>Encabezado de nivel 4 - H4</h4>
+    <h5>Encabezado de nivel 5 - H5</h5>
+    <h6>Encabezado de nivel 6 - H6</h6>
+
+    <br />
+    <a href="#top">Ir arriba</a>
+    <hr />
+
+    <h2 id="basicos">Etiquetas de Texto básicas</h2>
+    <!-- p>lorem -->
+    <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed sapiente 
+        perferendis repudiandae aut incidunt assumenda obcaecati debitis quo 
+        quaerat, explicabo tenetur, voluptatum repellat. Ab dolores quas distinctio, 
+        dicta veniam adipisci?
+    </p>
+
+    <p>
+        Super índice y sub índice: E=mc<sup>2</sup>, H <sub>2</sub>0, 
+        <mark>marcado de texto</mark>, y <small>texto pequeño</small>
+    </p>
+
+    <br />
+    <a href="#top">Ir arriba</a>
+    <hr />
+
+    <h2 id="semanticos">Etiquetas de texto semánticas</h2>
+    <!-- p>strong{Este texto es importante.}+em{Este texto hace émfasis y es cursivo.} -->
+    <p>
+        <strong>Este texto es importante.</strong><em>Este texto hace émfasis y es cursivo.</em>
+    </p>
+
+    <blockquote>Yo solo sé, que no se nada</blockquote>
+    <cite>Sócrates</cite>
+
+    <br />
+    <a href="#top">Ir arriba</a>
+    <hr />
+
+    <h2 id="saltos">Etiquetas de salto</h2>
+
+    <p>
+        Lorem ipsum dolor, sit amet <br />consectetur adipisicing elit. <br />Maxime 
+        tempore amet provident <br />cumque asperiores beatae excepturi, <br />magnam 
+        exercitationem alias <br />officia eos molestias quidem <br />obcaecati quod 
+        minima <br />soluta laborum explicabo aliquid!
+    </p>
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur <br />adipisicing elit. At eius <br />
+        deleniti<br /> numquam ipsum iusto, quam <br />esse? Qui atque eaque <br />dolorem 
+        at, ad explicabo<br /> cum corrupti ipsam ipsa <br />iusto rerum. Repellat!
+    </p>
+
+    <br />
+    <a href="#top">Ir arriba</a>
+    <hr />
+
+    <h2 id="formateo">Etiquetas de formateo</h2>
+
+    <!-- (p>pre)+(p>code)+p>pre>code -->
+    <p>
+        <pre>Tareas por hacer:
+            - HTML
+            - Terminar las secciones de este curso
+            - Editar en un sólo Video
+            - CSS
+            - Comenzar CSS
+        </pre>
+    </p>
+    <p>
+        <code>Este texto está en formato de código</code>
+    </p>
+    <p>
+        <pre>
+            <code>
+                &lt;p>
+                    `import React from "react";
+                    import Title from "./Title";
+                    function App
+                    {
+                        return &lt;Title>
+                    }`
+                &lt;/p>
+            </code>
+        </pre>
+    </p>
+
+    <br />
+    <a href="#top">Ir arriba</a>
+    <hr />
+
+    <!-- h2#estructrales{Etiquetas semánticas estructurales} -->
+    <h2 id="estructurales">Etiquetas semánticas estructurales</h2>
+
+    <!-- 
+    div{div: Etiqueta estructural pero no semántica}+header{Cabecera de un sitio web o una sección}+main{main: Define la sección principal del documento, sólo puede existir una etiqueta main por documento}+footer{footer: Pié de página de un sitio web o de una sección}+nav{nav: Representa una navegación}+section{section: Representa una sección de contenido genérico}+article{article: Representa contenido dependiente de una sección}+aside{aside: Representa contenido complementario o secundario}+address{address: Muestra información de contacto} 
+    -->
+
+    <div>div: Etiqueta estructural pero no semántica</div>
+    <header>header: Cabecera de un sitio web o una sección</header>
+    <main>main: Define la sección principal del documento, sólo puede existir una etiqueta main por documento</main>
+    <footer>footer: Pié de página de un sitio web o de una sección</footer>
+    <nav>nav: Representa una navegación</nav>
+    <section>section: Representa una sección de contenido genérico</section>
+    <article>article: Representa contenido dependiente de una sección</article>
+    <aside>aside: Representa contenido complementario o secundario</aside>
+    <address>address: Muestra información de contacto</address>
+
+    <br />
+    <a href="#top">Ir arriba</a>
+    <hr />
+
+    <h2 id="bloque">Etiquetas de bloque vs Etiquetas de línea</h2>
+
+    <p>
+        La etiqueta de bloque por excelencia es la div, una etiqueta de bloque es aquella que genera saltos de línea con sus etiquetas hermanas.
+    </p>
+
+    <p>
+        La etiqueta de línea por excelencia es la <span style="background-color: aqua;">span</span>, una etiqueta de línea sólo ocupa el espacio necesario que tiene si contenido. <span style="font-family:'Verdana', sans-serif;">Hola soy otra span.</span>
+    </p>
+
+    <br />
+    <a href="#top">Ir arriba</a>
+    <hr />
+
+    <h2 id="estilos">Estilos en Css</h2>
+
+    <p>
+        Cascading Style Sheets: Lenguaje de formateo de HTML, no se considera un lenguaje de programación, sólo de maquetación.
+    </p>
+    <p>
+        Normalmente se implementa en hojas de estilo externas vinculadas al documento Html. En ocasiones podemos construirlo dentro de la etiqueta <strong>&lt;style></strong> en el head del documento, o en línea dentro de la propia etiqueta html.
+    </p>
+
+    <br />
+    <a href="#top">Ir arriba</a>
+    <hr />
+
+    <h2 id="scripts">Scripts en Html</h2>
+
+    <p onclick="abreAlerta();">
+        Para incluir javascript y dar funcionalidades al documento html. Usaremos la etiqueta &lt;script>. El script puede ir en el head del documento, o dentro del body. Si la incluimos en el body es preferible que esté al final mismo.
+    </p>
+    <p>
+        La etiqueta &lt;script> puede contener javascript, o vincular un archivo externo de javascript.
+    </p>
+
+    <button onclick="abreAlerta();">Abrir alerta</button><br />
+
+    <h4><span onmouseover="otraAlerta();">Abre otra ventana al pasar por este texto</span></h4>
+
+    <a href="javascript:window.alert('Otra mas!!!!');">Abrir otra ventana de javascript</a><br />
+
+    <br />
+    <a href="#top">Ir arriba</a>
+    <hr />
+
+    <h2 id="imagenes">Imágenes con Html</h2>
+
+    <p>
+        En html podemos utilizar diferentes tipos de imágen dependiendo de su compresión; sin perdida de calidad: GIF, APNGm WEBP y PNG, y con su perdida de calidad cómo JPG.
+    </p>
+    <p>
+        <strong>GIF: </strong>Es un formato sin perdida con capacidad para comprimir hasta 256 colores, válido para tintas planas, logotipos, etc... Acepta animaciones y acepta transparencia en alguno de sus colores.
+    </p>
+    <p>
+        <strong>PNG-8: </strong>Igual a GIF y su ratio de compresión es mejor que el archivo GIF. No acepta aniimaciones.
+    </p>
+    <p>
+        <strong>APNG: </strong>Igual a GIF pero que acepta diferentes ratios de compresión de 16 y 24 bits. Acepta animaciones.
+    </p>
+    <p>
+        <strong>WEBP: </strong>Puede comprimir imágnes con pérdida y sin pérdida y con mejores ratios que GIF, PNG o JPG.
+    </p>
+    <p>
+        <strong>JPG: </strong>Formato perfecto para cuatricomías e imágen forográfica, pero tiene pérdida de calidad.
+    </p>
+    <p>
+        <strong>PNG-24: </strong>Formato perfecto para fotografías y transparencias a color real, tiene muy poca pérdida de calidad.
+    </p>
+    <p>
+        <strong>SVG: </strong>Formato de imágen vectorial, sin pérdida, y la más recomendable para logotipos y pictogramas.
+    </p>
+
+    <img src="img/periodic-table-of-html-elements.png" alt="Tabla periódica de contenido html" title="Tabla periódica de etiquetas html" />
+    <img src="img/background.jpg" alt="Surfeando en la nieve" title="Fondo de esuí en la nieve" />
+    <img src="img/gif1.gif" alt="Meme" title="Hipnosis a lo Fumanchú" />
+    <img src="img/mozilla-firefox.svg" alt="Logo mozilla firefox" />
+    <img src="" alt="" />
+
+    <!-- Codigo de una imágen copiado de inspección -->
+
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://web.resource.org/cc/" width="500pt" height="600pt">
+     
+<defs>
+      
+<linearGradient id="linearGradient172">
+         
+<stop style="stop-color:#3f2600;stop-opacity:0.6;" offset="0" id="stop173"/>
+         
+<stop style="stop-color:#3f2600;stop-opacity:0;" offset="1" id="stop174"/>
+</linearGradient>
+      <linearGradient id="linearGradient167">
+         
+<stop style="stop-color:#ffffff;stop-opacity:0.65;" offset="0" id="stop168"/>
+         
+<stop style="stop-color:#ffffff;stop-opacity:0;" offset="1" id="stop169"/>
+</linearGradient>
+      <linearGradient id="linearGradient162">
+         
+<stop style="stop-color:#ffa63f;stop-opacity:1;" offset="0" id="stop163"/>
+         
+<stop style="stop-color:#ffff00;stop-opacity:1;" offset="1" id="stop164"/>
+</linearGradient>
+      <linearGradient id="linearGradient153">
+         
+<stop style="stop-color:#ffeed7;stop-opacity:1;" offset="0" id="stop154"/>
+         
+<stop style="stop-color:#bdbfc2;stop-opacity:1;" offset="1" id="stop155"/></linearGradient>
+      
+<linearGradient id="linearGradient138">
+         
+<stop style="stop-color:#ffffff;stop-opacity:0.8;" offset="0" id="stop139"/>
+         
+<stop style="stop-color:#ffffff;stop-opacity:0;" offset="1" id="stop140"/>
+</linearGradient>
+      <linearGradient xlink:href="#linearGradient138" id="linearGradient141" x1="0.47424799" y1="0.020191999" x2="0.417539" y2="0.90125799" gradientUnits="objectBoundingBox"/>
+      
+<linearGradient xlink:href="#linearGradient167" id="linearGradient142" x1="0.55880702" y1="0.031192999" x2="0.553922" y2="0.94531101" gradientUnits="objectBoundingBox"/>
+      
+<linearGradient xlink:href="#linearGradient167" id="linearGradient143" x1="0.46557701" y1="0.028819799" x2="0.41365999" y2="0.93366498" gradientUnits="objectBoundingBox"/>
+      
+<linearGradient xlink:href="#linearGradient167" id="linearGradient144" x1="0.70346397" y1="0.059404202" x2="0.64553201" y2="0.94063401" gradientUnits="objectBoundingBox"/>
+      
+<linearGradient xlink:href="#linearGradient167" id="linearGradient145" x1="0.46741399" y1="-0.036155298" x2="0.86741799" y2="0.75857902" gradientUnits="objectBoundingBox"/>
+      
+<linearGradient xlink:href="#linearGradient167" id="linearGradient146" x1="0.57152498" y1="0.023441499" x2="0.57143003" y2="0.71875" gradientUnits="objectBoundingBox"/>
+      
+<linearGradient xlink:href="#linearGradient167" id="linearGradient147" x1="0.5" y1="0.0234362" x2="0.5" y2="0.8125" gradientUnits="objectBoundingBox"/>
+      
+<linearGradient xlink:href="#linearGradient167" id="linearGradient148" x1="0.50799799" y1="0.37435901" x2="0.51599997" y2="0.92820501" gradientUnits="objectBoundingBox"/>
+      
+<linearGradient xlink:href="#linearGradient138" id="linearGradient149" x1="0.5" y1="0.131707" x2="0.50400001" y2="0.94634098" gradientUnits="objectBoundingBox"/>
+      
+<linearGradient xlink:href="#linearGradient167" id="linearGradient150" x1="-0.30509499" y1="0.099496603" x2="0.156323" y2="0.94191301" gradientUnits="objectBoundingBox" gradientTransform="matrix(-0.928523,0.283938,0.435332,0.943857,-1.91327e-7,5.49908e-8)"/>
+      
+<linearGradient xlink:href="#linearGradient167" id="linearGradient151" x1="0.433979" y1="0.022184599" x2="0.487055" y2="1.02569" gradientUnits="objectBoundingBox"/>
+      
+<linearGradient xlink:href="#linearGradient153" id="linearGradient152" x1="0.5" y1="0.89842999" x2="0.5" y2="0.40625" gradientUnits="objectBoundingBox" spreadMethod="reflect"/>
+      
+<linearGradient xlink:href="#linearGradient153" id="linearGradient156" x1="0.43568701" y1="0.98882002" x2="0.453989" y2="0.23093501" gradientUnits="objectBoundingBox"/>
+      
+<linearGradient xlink:href="#linearGradient153" id="linearGradient157" x1="0.49180499" y1="1.15284" x2="0.49482101" y2="0.41252401" gradientUnits="objectBoundingBox"/>
+      
+<linearGradient xlink:href="#linearGradient153" id="linearGradient158" x1="0.51730198" y1="0.85418499" x2="0.49843901" y2="0.136172" gradientUnits="objectBoundingBox"/>
+      
+<linearGradient xlink:href="#linearGradient153" id="linearGradient159" x1="0.46201" y1="0.87917101" x2="0.49215299" y2="0.096282303" gradientUnits="objectBoundingBox"/>
+      
+<linearGradient xlink:href="#linearGradient162" id="linearGradient161" x1="0.50086302" y1="0.34872901" x2="0.41209599" y2="0.98558098" gradientUnits="objectBoundingBox"/>
+      
+<linearGradient xlink:href="#linearGradient162" id="linearGradient165" x1="0.60399801" y1="0.51020199" x2="0.46399999" y2="0.98367399" gradientUnits="objectBoundingBox"/>
+      
+<linearGradient xlink:href="#linearGradient162" id="linearGradient166" x1="0.50000501" y1="0.191616" x2="0.50800002" y2="0.97005898" gradientUnits="objectBoundingBox"/>
+      
+<radialGradient xlink:href="#linearGradient172" id="radialGradient171" cx="0.5" cy="0.5" fx="0.5" fy="0.5" r="0.5" gradientUnits="objectBoundingBox"/>
+      
+<radialGradient xlink:href="#linearGradient172" id="radialGradient176"/>
+      
+<linearGradient xlink:href="#linearGradient153" id="linearGradient178" x1="0.94027299" y1="1.2934099" x2="0.19452" y2="-0.675295" gradientUnits="objectBoundingBox"/>
+      
+<radialGradient xlink:href="#linearGradient172" id="radialGradient1399" gradientTransform="scale(1.045233,0.956725)" cx="446.77762" cy="1219.4125" fx="446.77762" fy="1219.4125" r="195.07191" gradientUnits="userSpaceOnUse"/>
+      
+<linearGradient xlink:href="#linearGradient153" id="linearGradient1401" gradientUnits="userSpaceOnUse" x1="400.57785" y1="369.53015" x2="400.84448" y2="304.07886" gradientTransform="scale(0.575262,1.738339)"/>
+      
+<linearGradient xlink:href="#linearGradient138" id="linearGradient1403" gradientUnits="userSpaceOnUse" x1="303.01761" y1="237.93179" x2="297.0856" y2="330.09561" gradientTransform="scale(1.116071,0.896001)"/>
+      
+<linearGradient xlink:href="#linearGradient153" id="linearGradient1405" gradientUnits="userSpaceOnUse" gradientTransform="scale(0.816497,1.224744)" x1="378.93771" y1="278.60202" x2="380.27319" y2="243.91606"/>
+      
+<linearGradient xlink:href="#linearGradient153" id="linearGradient1407" gradientUnits="userSpaceOnUse" x1="381.38742" y1="277.495" x2="380.5517" y2="245.68338" gradientTransform="scale(0.816497,1.224744)"/>
+      
+<linearGradient xlink:href="#linearGradient167" id="linearGradient1409" gradientUnits="userSpaceOnUse" gradientTransform="scale(0.816497,1.224744)" x1="379.09573" y1="240.92712" x2="376.79556" y2="281.01636"/>
+      
+<linearGradient xlink:href="#linearGradient167" id="linearGradient1411" gradientUnits="userSpaceOnUse" x1="389.63535" y1="242.28218" x2="387.06866" y2="281.32513" gradientTransform="scale(0.816497,1.224744)"/>
+      
+<linearGradient xlink:href="#linearGradient153" id="linearGradient1413" gradientUnits="userSpaceOnUse" spreadMethod="reflect" x1="437.57941" y1="528.87177" x2="437.57941" y2="394.10361" gradientTransform="scale(0.812855,1.230232)"/>
+      
+<linearGradient xlink:href="#linearGradient153" id="linearGradient1415" gradientUnits="userSpaceOnUse" x1="375.17325" y1="419.78485" x2="377.48541" y2="324.03815" gradientTransform="scale(0.649784,1.538974)"/>
+      
+<linearGradient xlink:href="#linearGradient138" id="linearGradient1417" gradientUnits="userSpaceOnUse" x1="320.75104" y1="498.17776" x2="321.32224" y2="614.50439" gradientTransform="scale(1.074798,0.930408)"/>
+      
+<linearGradient xlink:href="#linearGradient167" id="linearGradient1419" gradientUnits="userSpaceOnUse" x1="322.48257" y1="435.26761" x2="323.2514" y2="488.48251" gradientTransform="scale(1.077001,0.928504)"/>
+      
+<linearGradient xlink:href="#linearGradient167" id="linearGradient1421" gradientUnits="userSpaceOnUse" x1="411.2215" y1="242.94365" x2="411.2215" y2="331.44858" gradientTransform="scale(0.571707,1.749147)"/>
+      
+<linearGradient xlink:href="#linearGradient167" id="linearGradient1423" gradientUnits="userSpaceOnUse" x1="867.34546" y1="234.73897" x2="867.33453" y2="314.83911" gradientTransform="scale(0.572667,1.746214)"/>
+      
+<linearGradient xlink:href="#linearGradient162" id="linearGradient1425" gradientUnits="userSpaceOnUse" x1="236.25362" y1="657.11133" x2="212.5099" y2="737.41229" gradientTransform="scale(1.011514,0.988617)"/>
+      
+<linearGradient xlink:href="#linearGradient153" id="linearGradient1427" gradientUnits="userSpaceOnUse" x1="381.56607" y1="655.73102" x2="279.64313" y2="386.66583" gradientTransform="scale(1.065499,0.938527)"/>
+      
+<linearGradient xlink:href="#linearGradient162" id="linearGradient1429" gradientUnits="userSpaceOnUse" x1="218.11714" y1="630.30475" x2="203.12654" y2="737.8537" gradientTransform="scale(1.009851,0.990245)"/>
+      
+<linearGradient xlink:href="#linearGradient167" id="linearGradient1431" gradientUnits="userSpaceOnUse" gradientTransform="scale(1.007724,0.992335)" x1="117.88966" y1="587.23602" x2="182.24524" y2="704.73077"/>
+      
+<linearGradient xlink:href="#linearGradient167" id="linearGradient1433" gradientUnits="userSpaceOnUse" x1="223.10072" y1="570.41809" x2="230.53499" y2="710.97723" gradientTransform="scale(0.999504,1.000496)"/>
+      
+<linearGradient xlink:href="#linearGradient167" id="linearGradient1435" gradientUnits="userSpaceOnUse" x1="316.93988" y1="474.01779" x2="371.60889" y2="582.63507" gradientTransform="scale(1.065499,0.938527)"/>
+      
+<linearGradient xlink:href="#linearGradient162" id="linearGradient1437" gradientUnits="userSpaceOnUse" x1="284.68652" y1="410.46326" x2="285.45923" y2="485.69934" gradientTransform="scale(1.218684,0.820557)"/>
+      
+<linearGradient xlink:href="#linearGradient167" id="linearGradient1439" gradientUnits="userSpaceOnUse" x1="288.82358" y1="398.85422" x2="288.37628" y2="482.55939" gradientTransform="scale(1.221941,0.81837)"/>
+</defs>
+   
+<g id="g1369" transform="translate(-310.7524,-64.25268)">
+      
+<path transform="matrix(1.4177,0,0,0.414745,-38.7944,222.194)" d="M 670.88202 1166.6423 A 203.89551 186.63016 0 1 1 263.091,1166.6423 A 203.89551 186.63016 0 1 1 670.88202 1166.6423 z" id="path175" style="fill:url(#radialGradient1399);stroke:none;stroke-width:1pt;stroke-linecap:butt;stroke-linejoin:miter"/>
+      
+<path transform="matrix(1.25,0,0,1.25,185.454,-167.505)" id="path106" d="M 223.627,632.24 C 201.239,600.017 196.873,495.256 249.114,430.81 C 275,399.892 281.604,378.345 283.645,349.417 C 285.034,316.438 260.32,217.975 353.528,210.473 C 447.934,202.941 442.864,296.133 442.321,345.448 C 441.87,387.088 472.895,410.689 494.117,443.143 C 533.396,502.773 530.074,605.443 486.718,661.015 C 431.801,730.583 384.765,700.413 353.528,702.945 C 295.035,706.147 293.101,737.336 223.627,632.24 z " style="fill:#000000;stroke:none;stroke-width:1.25;"/>
+      
+<path transform="matrix(-1.67739,-2.24516e-2,-2.11236e-2,1.4709,1173.58,-293.017)" id="path113" d="M 246.571,470.864 C 234.332,483.36 202.175,539.956 251.44,576.224 C 268.809,588.857 235.063,635.719 219.435,612.532 C 191.865,570.914 210.604,505.591 227.75,482.344 C 239.402,465.857 256.98,459.668 246.571,470.864 z " style="fill:url(#linearGradient1401);stroke:none;stroke-width:0.99464899;"/>
+      
+<path transform="matrix(-1.67755,0,0,1.52374,1174.62,-318.082)" id="path111" d="M 256.513,459.837 C 236.598,477.554 200.337,539.928 253.225,580.443 C 270.595,593.075 237.832,632.906 219.435,612.532 C 155.472,541.712 221.104,460.278 243.697,432.282 C 263.889,407.935 281.775,438.034 256.513,459.837 z " style="fill:#000000;stroke:#000000;stroke-width:0.97729802;"/>
+      
+<path transform="matrix(1.26626,-7.13667e-2,-4.59795e-2,1.19574,202.143,-125.761)" d="M 399.56879 258.15753 A 58.37323 46.863022 0 1 1 282.82233,258.15753 A 58.37323 46.863022 0 1 1 399.56879 258.15753 z" id="path114" style="fill:url(#linearGradient1403);stroke:none;stroke-width:1.26498997;"/>
+      
+<path transform="matrix(1.30445,-7.55326e-2,7.71251e-2,1.34257,144.757,-177.617)" d="M 328.86324 320.64151 A 18.087479 27.131195 0 1 1 292.68828,320.64151 A 18.087479 27.131195 0 1 1 328.86324 320.64151 z" id="path115" style="fill:url(#linearGradient1405);stroke:none;stroke-width:1.17873001;"/>
+      
+<path transform="matrix(-1.81082,4.95107e-2,3.17324e-2,1.55333,1207.46,-284.777)" d="M 328.86324 320.64151 A 18.087479 27.131195 0 1 1 292.68828,320.64151 A 18.087479 27.131195 0 1 1 328.86324 320.64151 z" id="path116" style="fill:url(#linearGradient1407);stroke:none;stroke-width:0.93138498;"/>
+      
+<path transform="matrix(-0.823196,-1.76123e-3,-1.82321e-2,0.852662,913.674,-37.9902)" d="M 328.86324 320.64151 A 18.087479 27.131195 0 1 1 292.68828,320.64151 A 18.087479 27.131195 0 1 1 328.86324 320.64151 z" id="path117" style="fill:#000000;stroke:none;stroke-width:1.86495996;"/>
+      
+<path transform="matrix(0.59438,-7.22959e-2,6.88176e-2,0.705838,367.448,32.4186)" d="M 328.86324 320.64151 A 18.087479 27.131195 0 1 1 292.68828,320.64151 A 18.087479 27.131195 0 1 1 328.86324 320.64151 z" id="path118" style="fill:#000000;stroke:none;stroke-width:2.39814997;"/>
+      
+<path transform="matrix(-0.480323,-3.6454e-2,-4.67935e-2,0.475606,813.496,87.0124)" d="M 328.86324 320.64151 A 18.087479 27.131195 0 1 1 292.68828,320.64151 A 18.087479 27.131195 0 1 1 328.86324 320.64151 z" id="path121" style="fill:url(#linearGradient1409);stroke:none;stroke-width:3.1916101;"/>
+      
+<path transform="matrix(0.35691,-4.08211e-2,4.13232e-2,0.398544,449.334,114.991)" d="M 328.86324 320.64151 A 18.087479 27.131195 0 1 1 292.68828,320.64151 A 18.087479 27.131195 0 1 1 328.86324 320.64151 z" id="path122" style="fill:url(#linearGradient1411);stroke:none;stroke-width:4.12025976;"/>
+      
+<path transform="matrix(1.25,0,0,1.25,185.454,-168.23)" id="path128" d="M 258.702,495.425 C 271.538,466.322 298.816,415.199 299.397,375.667 C 299.397,344.225 393.576,336.716 401.134,368.109 C 408.692,399.502 427.875,446.592 440.084,469.265 C 452.292,491.937 487.893,563.96 449.968,626.811 C 415.811,682.455 312.243,726.477 256.958,619.254 C 238.355,582.047 241.673,535.939 258.702,495.425 z " style="fill:url(#linearGradient1413);stroke:none;stroke-width:1.25;"/>
+      
+<path transform="matrix(1.38936,-0.111074,0.102211,1.30214,108.413,-165.938)" id="path112" d="M 242.905,473.815 C 231.642,492.782 207.405,543.124 255.042,575.862 C 306.353,610.682 301.515,672.924 239.435,637.817 C 182.658,606.028 216.59,500.039 234.925,475.551 C 247.032,458.337 264.822,437.52 242.905,473.815 z " style="fill:url(#linearGradient1415);stroke:none;stroke-width:1.15804005;"/>
+      
+<path transform="matrix(1.25,0,0,1.25,185.454,-167.505)" id="path109" d="M 256.513,449.72 C 239.048,478.228 197.136,545.533 253.225,580.443 C 328.794,626.798 307.398,673.154 238.426,631.417 C 141.317,573.153 226.601,455.801 265.557,411.079 C 310.001,360.879 274.111,420.166 256.513,449.72 z " style="fill:#000000;stroke:#000000;stroke-width:1.25;"/>
+      
+<path id="path125" d="M 421.481,504.727 C 421.481,537.139 392.209,579.243 341.953,578.865 C 290.125,579.32 268.004,537.139 268.004,504.727 C 268.004,472.315 302.383,446.01 344.743,446.01 C 387.102,446.01 421.481,472.315 421.481,504.727 z " style="font-size:12px;fill:url(#linearGradient1417);stroke:none;stroke-width:1.23705006;stroke-dasharray:none" transform="matrix(1.30209,0,0,1.22525,170.042,-153.557)"/>
+      
+<path id="path127" d="M 398.227,412.292 C 397.615,450.864 375.047,459.963 346.487,459.963 C 317.926,459.963 297.195,454.269 294.746,412.292 C 294.746,385.978 317.926,370.75 346.487,370.75 C 375.047,370.75 398.227,385.978 398.227,412.292 z " style="font-size:12px;fill:url(#linearGradient1419);stroke:none;stroke-width:1.38846004;stroke-dasharray:none" transform="matrix(1.1868,0,0,1.06708,210.623,-100.078)"/>
+      
+<path transform="matrix(1.25,0,0,1.25,185.454,-167.505)" id="path129" d="M 234.285,456.475 C 252.001,429.479 289.3,388.111 241.262,462.288 C 202.311,523.331 226.859,562.561 239.518,573.327 C 276.045,605.889 274.484,627.676 245.913,610.533 C 184.288,573.907 197.078,512.285 234.285,456.475 z " style="fill:url(#linearGradient1421);stroke:none;stroke-width:1.25;"/>
+      
+<path transform="matrix(1.25,0,0,1.25,185.454,-167.505)" id="path131" d="M 490.662,467.52 C 475.343,435.819 426.528,355.618 492.988,448.917 C 553.449,533.214 511.01,591.93 503.452,597.744 C 495.895,603.557 470.315,615.184 477.873,594.837 C 485.43,574.49 523.107,535.864 490.662,467.52 z " style="fill:url(#linearGradient1423);stroke:none;stroke-width:1.25;"/>
+      
+<path transform="matrix(1.25,0,0,1.25,185.454,-167.505)" id="path132" d="M 220.915,716.921 C 180.473,695.505 121.663,721.045 143.013,662.855 C 147.289,649.617 136.638,629.847 143.594,616.929 C 151.733,601.231 169.174,604.72 179.639,594.255 C 189.957,583.364 196.498,564.606 215.683,567.513 C 234.867,570.42 247.628,593.974 261.027,622.742 C 270.91,643.38 305.968,672.406 303.677,695.5 C 300.981,731 260.65,737.69 220.915,716.921 z " style="fill:url(#linearGradient1425);stroke:#e68c3f;stroke-width:6.25;"/>
+      
+<path id="path177" d="M 415.072,495.764 C 412.065,520.67 379.259,572.391 345.554,577.298 C 311.294,582.634 279.122,543.238 271.407,506.184 C 261.518,464.978 293.994,448.584 343.345,449.557 C 396.646,451.211 417.466,463.448 415.072,495.764 z " style="font-size:12px;fill:url(#linearGradient1427);stroke:none;stroke-width:2.85509992;stroke-dasharray:none" transform="matrix(0.598206,0.268584,-0.239623,0.617213,700.568,140.464)"/>
+      
+<path transform="matrix(-1.1685,0.423145,0.475283,1.16478,728.343,-213.821)" id="path133" d="M 220.274,718.402 C 178.947,694.812 120.38,724.007 143.013,662.855 C 147.749,649.787 136.417,629.303 143.373,616.385 C 151.512,600.687 169.174,604.72 179.639,594.255 C 189.957,583.364 198.466,566.387 217.651,569.294 C 236.835,572.201 247.628,593.974 261.027,622.742 C 270.91,643.38 304.442,671.713 302.151,694.807 C 299.455,730.307 259.427,740.278 220.274,718.402 z " style="fill:url(#linearGradient1429);stroke:#e68c3f;stroke-width:6.25067997;"/>
+      
+<path transform="matrix(-0.945096,0.343745,0.424076,0.956058,714.328,-64.342)" id="path134" d="M 216.482,675.68 C 129.951,618.177 169.174,604.72 179.639,594.255 C 189.957,583.364 198.466,566.387 217.651,569.294 C 236.835,572.201 247.628,593.974 261.027,622.742 C 270.91,643.38 304.087,671.66 302.151,694.807 C 299.535,721.917 253.961,700.294 216.482,675.68 z " style="fill:url(#linearGradient1431);stroke:none;stroke-width:1.52532005;"/>
+      
+<path transform="matrix(1.00431,-5.2286e-2,-1.74e-2,1.04575,244.191,-28.4653)" id="path135" d="M 216.506,677.071 C 129.975,619.568 169.709,603.501 182.56,595.791 C 197.959,585.849 197.718,564.96 216.903,567.867 C 236.087,570.774 247.628,593.974 261.027,622.742 C 270.91,643.38 304.087,671.66 302.151,694.807 C 299.535,721.917 253.985,701.685 216.506,677.071 z " style="fill:url(#linearGradient1433);stroke:none;stroke-width:1.52532005;"/>
+      
+<path id="path136" d="M 415.072,495.764 C 412.065,520.67 379.259,572.391 345.554,577.298 C 311.294,582.634 279.122,543.238 271.407,506.184 C 261.518,464.978 293.994,448.584 343.345,449.557 C 396.646,451.211 417.466,463.448 415.072,495.764 z " style="font-size:12px;fill:#000000;stroke:none;stroke-width:2.85509992;" transform="matrix(0.515584,0.215259,-0.206526,0.49467,713.3,222.559)"/>
+      
+<path id="path137" d="M 415.072,495.764 C 412.065,520.67 379.259,572.391 345.554,577.298 C 311.294,582.634 279.122,543.238 271.407,506.184 C 261.518,464.978 293.994,448.584 343.345,449.557 C 396.646,451.211 417.466,463.448 415.072,495.764 z " style="font-size:12px;fill:url(#linearGradient1435);stroke:none;stroke-width:2.85509992;" transform="matrix(0.351231,0.149463,-0.128856,0.343469,724.522,318.291)"/>
+      
+<path transform="matrix(1.25,0,0,1.25,185.454,-167.505)" id="path119" d="M 309.954,338.729 C 317.101,331.959 334.765,311.663 367.915,332.974 C 374.077,336.984 379.077,337.351 390.936,342.429 C 414.662,352.178 403.318,375.688 378.192,383.537 C 367.434,387.026 357.656,400.093 338.063,398.976 C 321.329,397.999 316.944,387.102 306.665,381.07 C 288.396,370.759 285.7,356.816 295.565,349.417 C 305.431,342.018 309.29,339.358 309.954,338.729 z " style="fill:url(#linearGradient1437);stroke:#e68c3f;stroke-width:3.75;"/>
+      
+<path transform="matrix(1.25,0,0,1.25,185.454,-167.505)" id="path120" d="M 391.251,357.645 C 381.368,358.226 359.858,379.736 337.185,379.736 C 314.512,379.736 301.141,358.807 297.653,358.807" style="fill:none;stroke:#e68c3f;stroke-width:2.5;"/>
+      
+<path transform="matrix(0.627885,0,0,0.595666,392.366,51.8173)" id="path123" d="M 309.954,338.729 C 317.101,331.959 339.645,313.381 369.542,332.401 C 375.841,336.167 382.346,340.266 392.02,345.865 C 411.182,357.613 401.691,374.543 378.734,385.255 C 368.316,389.75 351.141,399.67 338.063,398.976 C 323.53,397.568 314.128,387.577 304.496,381.07 C 286.826,368.767 287.899,358.833 296.107,350.562 C 302.312,344.883 309.29,339.358 309.954,338.729 z " style="fill:url(#linearGradient1439);stroke:none;"/>
+</g>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+    </svg>
+
+    <br />
+    <a href="#top">Ir arriba</a>
+    <hr />
+
+    <h2 id="figure">Figure y Picture</h2>
+
+    <p>Figure</p>
+    <figure>
+        <img src="img/periodic-table-of-html-elements.png" style="width: 300px;" alt="Tabla periódica de html" title="Tabla periódica de html">
+        <figcaption>Tabla de elementos HTML</figcaption>
+        <img src="img/periodic-table-of-html-elements.png" style="width: 250px;" alt="Tabla periódica de html" title="Tabla periódica de html 2">
+        <figcaption>Tabla de elementos HTML 2</figcaption>
+    </figure>
+    <p>Picture</p>
+    <!-- Cuanto mas grande más arriba, el img source abajo del todo -->
+    <picture>
+        <source media="(min-width: 768px)" srcset="img/img_pink_flowers.jpg">
+        <source media="(min-width: 420px)" srcset="img/img_white_flower.jpg">
+        <img src="img/img_orange_flowers.jpg" alt="imágen para dispositivos móvil">
+    </picture>
+
+    <br />
+    <a href="#top">Ir arriba</a>
+    <hr />
+
+    <!-- h2#ordenado{Listas ordenadas}+ol>li{Opción $}*5 -->
+    
+    <h2 id="ordenado">Listas ordenadas</h2>
+
+    <ol>
+        <li>Opción 1</li>
+        <li>Opción 2</li>
+        <li>Opción 3</li>
+        <li>Opción 4</li>
+        <li>Opción 5</li>
+    </ol>
+
+    <!-- ol[reversed][start="3"]>li{Opción $}*6 -->
+    
+    <ol reversed="reversed" start="3" type="I">
+        <li>Opción 1</li>
+        <li>Opción 2</li>
+        <li>Opción 3</li>
+        <li>Opción 4</li>
+        <li>Opción 5</li>
+        <li>Opción 6</li>
+    </ol>
+
+    <br />
+    <a href="#top">Ir arriba</a>
+    <hr />
+
+    <h2 id="nordenado">Listas no ordenadas</h2>
+
+    <ul>
+        <li>Opción 1</li>
+        <li>Opción 2</li>
+        <li>Opción 3</li>
+        <li>Opción 4</li>
+        <li>Opción 5</li>
+    </ul>
+    <ul type="square">
+        <li>Opción 1</li>
+        <li>Opción 2</li>
+        <li>Opción 3</li>
+        <li type="circle">Opción 4</li>
+        <li>Opción 5</li>
+        <li>Opción 6</li>
+    </ul>
+
+    <br />
+    <a href="#top">Ir arriba</a>
+    <hr />
+
+    <h2 id="definicion">Listas de definición</h2>
+
+    <dl>
+        <dt>HTML</dt>
+        <dd>Es un lenguaje de marcado que define el contenido de la web</dd>
+        <dt>CSS</dt>
+        <dd>Es un lenguaje de definición que da estilos al código HTML</dd>
+        <dt>JavaScript</dt>
+        <dd>Es el lenguaje de la web</dd>
+    </dl>
+
+    <br />
+    <a href="#top">Ir arriba</a>
+    <hr />
+
+    <h2 id="tablas">Tablas con Html</h2>
+
+    <table>
+        <summary></summary>
+        <thead>
+            <tr>
+                <th colspan="4">Cabecera de columna</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th>Cabecera de columna1</th>
+                <th>Cabecera de columna2</th>
+                <th>Cabecera de columna3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Cabecera de fila 1</th>
+                <td contenteditable>Contenido de celda</td>
+                <td contenteditable>Contenido de celda</td>
+                <td contenteditable>Contenido de celda</td>
+            </tr>
+            <tr>
+                <th>Cabecera de fila 2</th>
+                <td contenteditable>Contenido de celda</td>
+                <td contenteditable>Contenido de celda</td>
+                <td contenteditable>Contenido de celda</td>
+            </tr>
+            <tr>
+                <th>Cabecera de fila 3</th>
+                <td contenteditable>Contenido de celda</td>
+                <td contenteditable>Contenido de celda</td>
+                <td contenteditable>Contenido de celda</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="4">Resumen de datos</th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <br />
+    <a href="#top">Ir arriba</a>
+    <hr />
+
+    <h2 id="enlaces">Enlaces o hipervínculos con Html</h2>
+
+    <p><a href="hola.html">Abrir página hola</a></p>
+    <!-- target="id" para abrir una nueva pestaña -->
+    <p><a href="https://emmet.io" target="new">Abrir contenido en Emmet</a></p>
+    <p><a href="https://www.w3schools.com/html/html_links.asp" target="new">Ver enlaces con Html en w3schools</a></p>
+    <p><a href="mailto:nombre@dominio.ext">Enlace a correo electrónico</a></p>
+    <p><a href="tel:34999999999">Enlace a télefono</a></p>
+    <p><a href="https://api.whatsapp.com/send?phone=34999999999&text=Hola">Envía un mensaje con WhatsApp</a></p>
+    <p><a href="media/emmet-cheat-sheet.pdf" download>Descargar Cheat Sheet de Emmet</a></p>
+
+    <br />
+    <a href="#top">Ir arriba</a>
+    <hr />
+
+    <h2 id="interactivo">Elementos interactivos</h2>
+
+    <button type="button" onclick="window.alert('Date por saludado');">Si haces click aqui te saludo</button>
+
+    <details>
+        <summary>Titular del contenido del elemento de acordeón 1</summary>
+        <!-- article>(h4{Título del artículo})+img[src="img/html5.png"]+(p>Lorem) -->
+        <article>
+            <h4>Título del artículo</h4>
+            <img src="img/html5.png" alt="logo Html 5">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente eveniet quisquam iusto tempore pariatur facere, ipsa placeat quia obcaecati consectetur dolor optio iste nam laboriosam, soluta modi, nostrum quaerat hic.</p>
+        </article>
+    </details>
+    <details>
+        <summary>Titular del contenido del elemento de acordeón 2</summary>
+        <article>
+            <h4>Título del artículo</h4>
+            <img src="img/android_robot.png" alt="logo de android">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut quas magnam praesentium porro iure eveniet labore nobis accusamus voluptatum numquam quaerat, expedita vel iusto non minima reiciendis impedit, aliquid a.</p>
+        </article>
+    </details>
+
+    <dialog open>
+        Contenido tipo PopUp. Podemos abrirlo o cerrarlo con javascript
+    </dialog>
+
+    <br />
+    <a href="#top">Ir arriba</a>
+    <hr />
+
+    <h2 id="audio">Audio y Video</h2>
+
+    <p>
+        Las etiquetas &lt;audio> y &lt;video> nacen con HTML 5, y el API especifico de javascript desarrollado por Mozilla. <a href="audioVideo/audio_video.html">Ver más sobre Audio y Video</a>
+    </p>
+
+    <br />
+    <a href="#top">Ir arriba</a>
+    <hr />
+
+    <h2 id="iframes">Iframes o marcos flotantes</h2>
+
+    <p>
+        El elemento HTML &lt;iframe> (elemento de linea) representa un contexto de navegacion anidado, el cual permite incrustar otra pagina HTML en la pagina actual, <a href="iframes/iframes.html">Ver mas sobre los Iframes</a>
+    </p>
+
+    <br />
+    <a href="#top">Ir arriba</a>
+    <hr />
+
+    <h2 id="formularios">Formularios</h2>
+    
+    <p>
+        El elemento HTML &lt;form> permite la recogida de datos para su posterior gestión por lenguajes dinámicos. Dispone de elementos especificos para cada tipo de dato que queramos gestionar. Html no tiene capacidad para enviar esos datos ni para recogerlos. 
+        <a href="forms/forms.html">Ver más sobre Formularios</a>
+    </p>
+
+    <br />
+    <a href="#top">Ir arriba</a>
+    <hr />
+
+    <h2 id="atributos">Atributos Data</h2>
+
+    <p>
+        El atributo <strong>data</strong> permite disponer de atributos especificos para programación en diferentes lenguajes de programación, especialmente javascript.
+    </p>
+
+    <ul>
+        <figcaption>Estaciones del Año, con data-name de identificación</figcaption>
+        <li data-id="uno" data-name="spring">Primavera</li>
+        <li data-id="dos" data-name="summer">Verano</li>
+        <li data-id="tres" data-name="autumn">Otoño</li>
+        <li data-id="cuatro" data-name="winter">Invierno</li>
+    </ul>
+
+    <br />
+    <a href="#top">Ir arriba</a>
+    <hr />
+
+    <h2 id="seo">Metaetiquetas para SEO y móviles</h2>
+
+    <small>
+        Metaetiquetas situadas en el &head> del documento para garantizar el posicionamiento y compatibilidades -Visibles en el código de la cabecera-.
+    </small>
+
+    <br />
+    <a href="#top">Ir arriba</a>
+    <hr />
+
+    <h2 id="redes">Metaetiquetas para redes sociales</h2>
+
+    <small>
+        Metaetiquetas situadas en el &head> del documento para mejorar posicionamiento y compatibilidad con las redes sociales própias como facebook y X -Visibles en el código de la cabecera-.
+    </small>
+
+    <br />
+    <a href="#top">Ir arriba</a>
+    <hr />
+
+    <h2 id="web">Accesibilidad web</h2>
+
+    <small>
+        Para garantizar el acceso a la web para personas con diferencias funcionales, html incorpora las etiquetas semánticas y atributos especificos para facilitar dicho acceso. En este ejemplo tratamos alguno de los atributos especificos de accesibilidad.
+    </small>
+    <h4 role="title">Las estaciones del año</h4>
+    <ul role="list">
+        <li tabindex="1" role="listitem">Primavera</li>
+        <li tabindex="2" role="listitem">Verano</li>
+        <li tabindex="3" role="listitem">Otoño</li>
+        <li tabindex="4" role="listitem">Invierno</li>
+    </ul>
+    <a role="link" aria-label="En este enlace encontrarás más información sobre accesibilidad" href="#" target="new">Más información...</a>
+    <p>
+        https://web.dev/accessible/  <br/>
+        https://html5accessibility.com/  <br/>
+        https://www.w3.org/TR/wcag-3.0/  <br/>
+    </p>
+    <br />
+    <a href="#top">Ir arriba</a>
+    <hr />
+
+</body>
+</html>

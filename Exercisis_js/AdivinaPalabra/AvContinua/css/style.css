@@ -1,0 +1,70 @@
+*, *::before, *::after, html, body
+{
+    margin: 0;
+    padding: 0;
+}
+
+main
+{
+    padding: 30px 15px;
+}
+
+/* Div donde esta el contenido */
+.content
+{
+    width: 95%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Input donde escribes las letras */
+.lletra
+{
+    margin-top: 30px;
+    width: 150px;
+}
+
+/* Div donde se meten los inputs con la palabra */
+.inputs
+{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+.inputs input
+{
+    pointer-events: none;
+    color: green;
+    text-align: center;
+}
+
+/* Div donde estan las pistas, los intentos y los fallos */
+.detalles
+{
+    margin-top: 20px;
+}
+
+.detalles p
+{
+    margin: 20px 0;
+}
+
+/* Boton de volver a jugar */
+.reset-btn
+{
+    width: 200px;
+    height: 50px;
+    margin-top: 30px;
+    color: white;
+    background-color: blueviolet;
+}
+
+.mostra
+{
+    font-size: 30px;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Generar botones</title>
+  <style>
+    .fila {
+      margin-bottom: 10px;
+    }
+
+    button {
+      margin: 4px;
+      padding: 8px 12px;
+    }
+  </style>
+</head>
+<body>
+
+<button id="crear">Crear 100 botones</button>
+<div id="contenedor"></div>
+
+<script>
+  const botonCrear = document.querySelector("#crear");
+  const contenedor = document.querySelector("#contenedor");
+
+  botonCrear.addEventListener("click", () => {
+    contenedor.innerHTML = "";
+
+    let fila;
+
+    for (let i = 1; i <= 100; i++) {
+      // Cada 10 botones, crear una nueva fila
+      if ((i - 1) % 10 === 0) {
+        fila = document.createElement("div");
+        fila.classList.add("fila");
+        contenedor.appendChild(fila);
+      }
+
+      const btn = document.createElement("button");
+      btn.textContent = "Botón " + i;
+
+      btn.addEventListener("click", () => {
+        alert("Has pulsado el botón " + i);
+      });
+
+      fila.appendChild(btn);
+    }
+  });
+</script>
+
+</body>
+</html>

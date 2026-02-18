@@ -1,0 +1,279 @@
+/* 
+
+{
+    display: flex;
+    flex-direction
+    justify-content
+    align-items
+}
+
+justify-content: alinea elementos horizontalmente
+    flex-start: a la izquierda
+    flex-end: a la derecha
+    center: al centro
+    space-between: elementos con la misma distancia entre ellos
+    space-around: misma distancia a su alrededor
+
+align-items: alinea elementos verticales
+    flex-start: a la parte superior
+    flex-end: a la parte inferior
+    center: al centro
+    baseline: en la linea base del contenedor
+    stretch: los elementos se estiran para ajustarse al contenedor
+
+flex-direction: define la dirección de los elementos
+    row: en fila
+    row-reverse: en fila al reves
+    column: en columna
+    column-reverse: en columna al reves
+
+order: para reordenar los elementos
+
+align-self: lo mismo que align-items pero solo para un tipo de elemento
+
+flex-wrap: como se ajusta el flex
+    nowrap: cada elemento se ajusta a una sola linea
+    wrap: los elementos se ponen en lineas adicionales
+    wrap-reverse: lo mismo que wrap pero invertido
+
+flex-flow: <flex-direction> <flex-wrap>
+
+align-content: alinea grupos
+    flex-start: se pone a la parte superior
+    flex-end: se pone a la parte inferior
+    center: se pone en el centro
+    space-between: misma distancia entre lineas
+    space-around: cada linea tiene la misma separacion
+    stretch: las lineas se estiran para ajustarse
+
+*/
+
+:root
+{
+    font-family: "Monntserrat", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.5rem;
+}
+
+*, *::before, *::after, html
+{
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    padding: 1.5rem;
+}
+
+header, main, footer
+{
+    margin-bottom: 2rem;
+}
+
+h1
+{
+    font-size: 2.98rem;
+    line-height: 5rem;
+    text-align: center;
+}
+
+img
+{
+    max-width: 100%;
+}
+
+h3
+{
+    font-size: 2rem;
+    line-height: 3rem;
+}
+
+p
+{
+    margin: 1.5rem;
+}
+
+.cambioCaja
+{
+    text-transform: lowercase;
+}
+
+.cambioCaja span
+{
+    text-transform: uppercase;
+}
+
+.contenedor
+{
+    background-color: aqua;
+    display: flex;
+   /*  flex-direction: row;
+    flex-wrap:  nowrap; */
+    flex-flow: column nowrap; /* flex-flow: row nowrap; = default */
+    height: 600px;
+}
+
+.elemento, .element, .elemen, .eleme
+{
+    text-align: center;
+    align-content: center;
+    font-size: 1.5rem;
+}
+
+.elemento
+{
+    width: 100px;
+    height: 100px;
+    margin: 0.5rem;
+    background-color: burlywood;
+}
+
+.contenedor2
+{
+    background-color: rgb(184, 248, 184);
+    display: flex;
+    flex-flow: row wrap;
+    /* justify-content: flex-end; */
+    /* justify-content: space-around; */
+    /* justify-content: space-between; */
+    justify-content: space-evenly;
+}
+
+.element
+{
+    width: 100px;
+    height: 100px;
+    margin: 0.5rem;
+    background-color: rgb(255, 217, 0);
+}
+
+.contenedor3
+{
+    background-color: rgb(53, 61, 53);
+    height: 200px;
+    display: flex;
+    flex-flow: row wrap;
+    /* align-items: stretch; -- es el default -- */
+    /* align-items: baseline; */
+    /* align-items: flex-end; */
+    align-items: last baseline;
+}
+
+.elemen
+{
+    width: 100px;
+    /* height: 100px; */
+    margin: 0.5rem;
+    background-color: rgb(224, 223, 213);
+    line-height: 4rem;
+}
+
+.uno
+{
+    line-height: 5rem;
+    font-size: 3rem;
+}
+
+.dos
+{
+    padding-top: 1.5rem;
+    line-height: 5rem;
+    font-size: 3rem;
+}
+
+.contenedor4
+{
+    background-color: rgb(255, 4, 4);
+    height: 600px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    /* align-items: flex-start; */
+    align-content: space-evenly;
+}
+
+.eleme
+{
+    width: 100px;
+    height: 100px;
+    margin: 0.5rem;
+    background-color: white;
+    font-size: 1.8rem;
+    line-height: 4rem;
+}
+
+.flex-container
+{
+    display: flex;
+    background-color: rgb(216, 216, 216);
+}
+
+.flex-container > div
+{
+    background-color: dodgerblue;
+    color: white;
+    width: 100px;
+    margin: 0.5rem;
+    text-align: center;
+    line-height: 5rem;
+    font-size: 2rem;
+}
+
+/* Para el orden de las cosas */
+div.orden
+{
+    background-color: red;
+    order: 3;
+}
+
+div.orden2
+{
+    background-color: black;
+    order: 2;
+}
+
+/* Las cosas crecen si hay espacio */
+div.grow
+{
+    flex-grow: 1;
+    background-color: red;
+}
+
+div.grow2
+{
+    flex-grow: 2;
+    background-color: black;
+}
+
+/* Basicamente las cosas se chafan cuando no hay espacio */
+div.shrink
+{
+    flex-shrink: 2;
+    background-color: greenyellow;
+}
+
+div.shrink2
+{
+    flex-shrink: 4;
+    background-color: purple;
+}
+
+/* Size maximo del objeto si hay espacio */
+div.basis
+{
+    flex-basis: 350px;
+}
+
+div.paraladiv2
+{
+    flex: 0 3 200px; /* grow shrink basis */
+}
+
+div.paraladiv3
+{
+    background-color: greenyellow;
+    flex: 2 2;
+}

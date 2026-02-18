@@ -1,0 +1,41 @@
+#colores
+{
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr 1fr;
+}
+
+.c-azul
+{
+    border: 3px solid blue;
+    background-color: #b0dcfc;
+}
+
+.c-verde
+{
+    border: 3px solid green;
+    background-color: #E8F5E9;
+}
+
+.c-ama
+{
+    border: 3px solid rgb(255, 234, 0);
+    background-color: #f8f5d0;
+}
+
+.c-gris
+{
+    border: 3px solid gray;
+    background-color: #dfdfdf;
+}
+
+.c-vio
+{
+    border: 3px solid #6A5ACD;
+    background-color: #f7c0f7;
+}
+
+.c-nar
+{
+    border: 3px solid #ff6f00;
+    background-color: #fbd388;
+}

@@ -1,0 +1,119 @@
+.raleway
+{
+    font-family: "Raleway", sans-serif;
+    font-size: 2rem;
+}
+
+.material-icons, .bi, .far, .fab, .fas
+{
+    font-size: 36px;
+}
+
+.bi-youtube, .fa-youtube
+{
+    color: red;
+}
+
+.bi-alarm-fill
+{
+    color: gray;
+    background-color: aqua;
+}
+
+.bi-twitter, .fa-thumbs-up, .material-icons
+{
+    color: blue;
+    background-color: gray;
+}
+
+.bi-instagram
+{
+    color: orange;
+    background-color: green;
+}
+
+.fa-angry
+{
+    background-color: yellow;
+}
+
+.font
+{
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 32px;
+    font-weight: bold;
+    font-style: italic;
+    font-variant: small-caps;
+    line-height: 2;
+    font: italic small-caps bold 24px / 1.5 monospace;
+}
+
+@font-face {
+    font-family: "Chalet";
+    src: url("../fonts/Chalet.woff") format("woff");
+    font-display: swap;
+}
+
+.chalet
+{
+    font-family: "Chalet", sans-serif;
+    font-size: 2rem;
+}
+
+@font-face {
+    font-family: "Pecita", sans-serif;
+    src: url("../fonts/Pecita.woff") format("woff");
+}
+
+.pecita
+{
+    font-family: "Pecita", cursive;
+    font-size: 2rem;
+}
+
+.text
+{
+    font-size: 2rem;
+    text-align: center;
+    text-align: left;
+    text-decoration: overline;
+    text-decoration: none;
+    text-indent: 3rem; /* Espacio en la primera linea */
+    text-transform: capitalize;
+    text-transform: lowercase;
+    text-transform: uppercase;
+    text-transform: none;
+    letter-spacing: 0.5rem;
+    word-break: break-all;
+    writing-mode: vertical-rl;
+    writing-mode: vertical-lr;
+    writing-mode: horizontal-tb;
+}
+
+.text a
+{
+    text-decoration: none;
+}
+
+.text-overflow
+{
+    background-color: blanchedalmond;
+    border: 1px solid black;
+    padding: 1rem;
+    width: 50%;
+    font-size: 2rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.white-space
+{
+    white-space: pre;
+}
+
+.white-spacing
+{
+    font-size: 2rem;
+    word-spacing: 1.5rem;
+}

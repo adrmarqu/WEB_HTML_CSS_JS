@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/storage.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1>DOM y LocalStorage</h1>
+        
+        <div id="quitar">
+            <h2>Ejercicio 1</h2>
+            <p>
+                Crea una agenda de contactos utilizando HTML, Bootstrap y Javascript, donde los datos se guarden de manera persistente mediante el localStorage del navegador. <br><br>
+                Cuando se recargue la página, los contactos han de continuar existiendo. <br>
+
+                <br><strong>
+                    <span>Requisitos</span>
+                </strong><br>
+                <br><strong>Formulario</strong><br><br>
+                Ha de haber un formulario con los siguientes puntos: <br>
+                - Un campo de texto para un nombre. <br>
+                - Un campo de texto para un telefono móvil. <br>
+                - El teléfono ha de tener 9 digitos. <br>
+
+                <br><strong>Guardar contacto</strong><br><br>
+                
+                Cuando se pulse el botón 'Guardar': <br>
+                - Se han de validar los datos: Que no este vacio, que el teléfono tenga 9 digitos y que los nombres no se puedan repetir. <br>
+                - El nombre sera la clave del localStorage. <br>
+                - El telefono será el valor del localStorage. <br>
+                - Se ha de mostrar un mensaje de exito o error. <br>
+
+                <br><strong>Recuperar contacto</strong><br><br>
+                
+                Cuando se pulse el botón 'Recuperar': <br>
+                - Se buscará el contacto por nombre. <br>
+                - Si existe: Se cargará el teléfono en el formulario y el contacto pasara a modo edición. <br>
+                - Si no existe: Se mostrará un mensaje de error. <br>
+
+                <br><strong>Editar contacto</strong><br><br>
+
+                Cuando estes en modo edición: <br>
+                - Se podrá modificar el nombre y/o el teléfono. <br>
+                - Al guardar: Si el nombre cambia, se ha de eliminar el contacto antiguo y guardar el nuevo. <br>
+
+                <br><strong>Eliminar contacto</strong><br><br>
+                
+                Cuando se pulse el botón 'Eliminar': <br>
+                - Se eliminará el contacto indicado por el nombre. <br>
+                - Si se estaba editando, el formulario se ha de limpiar. <br>
+                - Se ha de actualizar la lista. <br>
+
+                <br><strong>Borrar toda la agenda</strong><br><br>
+                
+                Cuando se pulse el botón 'Borrar todo': <br>
+                - Se han de elminar todos los contactos. <br>
+                - Se ha de limpiar el formulario. <br>
+                - Se ha de mostrar un mensaje de confirmación. <br>
+
+                <br><strong>Lista de contactos</strong><br><br>
+
+                - Mostrará todos los contactos en una lista. <br>
+                - Han de estar ordenados alfabeticamente por el nombre. <br>
+                - Si no hay contactos hay que mostrar el siguiente mensaje: "Sin contactos en la agenda". <br>
+            </p>
+            <button class="bg-black">Quitar enunciado</button>
+        </div>
+        
+        <h2>Agenda de contactos</h2>
+        <output id="out-msg"></output>
+
+        <form name="listaContactos" class="container my-4">
+
+            <div class="row g-2 mb-3">
+                <div class="col-md-6">
+                    <div class="input-group rounded border">
+                        <label for="nombre" class="input-group-text bg-light">@</label>
+                        <input name="nombre" type="text" placeholder="Nombre" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group rounded border">
+                        <label for="telefono" class="input-group-text bg-light">+34</label>
+                        <input name="telefono" type="tel" placeholder="999999999" class="form-control">
+
+                    </div>
+                </div>
+            </div>
+            
+            <div class="d-flex flex-wrap mb-3">
+                <button name="guardar" class="btn btn-info rounded" style="width: 100px;" type="button">
+                    Guardar
+                </button>
+
+                <button name="recuperar" class="btn btn-success rounded" style="width: 110px;" type="button">
+                    Recuperar
+                </button>
+
+                <button name="eliminar" class="btn btn-danger rounded" style="width: 100px;" type="button">
+                    Eliminar
+                </button>
+
+                <button name="borrarTodo" class="btn btn-outline-danger rounded" style="width: 120px;" type="button">
+                    Borrar todo
+                </button>
+            </div>
+        </form>
+
+        <output id="contactos" class="container"></output>
+
+        <hr/>
+
+    </main>
+
+    <footer>
+        <a href="#" class="desactivado">
+        </a>
+        <a href="./index.html" class="back">
+            Volver al menú
+        </a>
+        <a href="#" class="desactivado">
+        </a>
+    </footer>
+</body>
+</html>

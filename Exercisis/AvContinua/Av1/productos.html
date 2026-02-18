@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AvContinua | Productos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/favicons/favicon.ico" type="image/x-icon">
+</head>
+<body id="top">
+    <nav>
+        <label class="show-menu" for="show-menu">&equiv;</label>
+        <input id="show-menu" name="show-menu" type="checkbox">
+        <ul id="menu">
+            <li><a href="presentacion.html">PRESENTACIÓN</a></li>
+            <li><a href="servicios.html">SERVICIOS</a></li>
+            <li><a class="selected" href="#top">PRODUCTOS</a></li>
+            <li><a href="oficinas.html">OFICINAS</a></li>
+        </ul>
+    </nav>
+    
+    <header></header>
+
+    <main>
+        <section id="productos">
+            <h1>PRODUCTOS</h1>
+            
+            <div>
+                <h2>
+                    Viajes de aventura
+                </h2>
+                <p class="pg">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium consectetur repellendus dignissimos excepturi ab blanditiis delectus necessitatibus alias exercitationem explicabo, cumque velit laboriosam repudiandae placeat? Ex repudiandae quidem voluptas repellat? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione beatae, praesentium aperiam, repellendus possimus, dignissimos alias dolorum architecto aliquam fugit laborum maxime. Nisi perspiciatis, adipisci dignissimos cum veritatis consectetur dolor?
+                </p>
+                <div class="p-img">
+                    <img src="img/images-large.jpg" alt="large">
+                    <img src="img/aventura.jpg" alt="aventura">
+                </div>
+            </div>
+
+            <div>
+                <h2>
+                    Viajes personalizados
+                </h2>
+                <p class="pg">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium consectetur repellendus dignissimos excepturi ab blanditiis delectus necessitatibus alias exercitationem explicabo, cumque velit laboriosam repudiandae placeat? Ex repudiandae quidem voluptas repellat? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit officiis optio excepturi necessitatibus vel? Ipsum pariatur dolore officia laboriosam incidunt rerum ducimus harum consectetur iure, iusto voluptate sit eos enim.
+                </p>
+                <div class="p-img">
+                    <img src="img/background.jpg" alt="back">
+                    <img src="img/destinos_exoticos.jpg" alt="exotico">
+                </div>
+            </div>
+
+            <div>
+                <h2>
+                    Seguros de alto riesgo
+                </h2>
+                <p class="pg">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium consectetur repellendus dignissimos excepturi ab blanditiis delectus necessitatibus alias exercitationem explicabo, cumque velit laboriosam repudiandae placeat? Ex repudiandae quidem voluptas repellat? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio eos similique quam molestiae. Commodi nostrum necessitatibus debitis magni officia neque maiores quibusdam unde quia aliquid mollitia eius voluptas, veritatis laborum.
+                </p>
+                <div class="p-img">
+                    <img src="img/escocia.jpg" alt="escocia">
+                    <img src="img/error-420-vgrv9z8yLtY-unsplash.jpg" alt="error404">
+                </div>
+            </div>
+        </section>
+
+        <article>
+            <div id="iconos">
+                <a href="https://es-es.facebook.com/" target="new">
+                <img src="img/facebook-logo-button.png" alt="face" title="Síguenos en Facebook">
+                </a>
+                
+                <a href="https://api.whatsapp.com/send?phone=34555555555&text=Hola" target="new">
+                <img src="img/whatsapp.png" alt="what" title="Contactar por whatsapp">
+                </a>
+                
+                <a href="https://www.google.es/maps/@41.3907372,2.1743274,15z?hl=es" target="new">
+                <img src="img/location-point.png" alt="location" title="Localiza nuestros establecimientos">
+                </a>
+            </div>
+
+            <form action="https://formsubmit.co/adria.marquez.3b@gmail.com" method="POST">
+                <label for="email">Email</label>
+                <input
+                type="email"
+                required
+                pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,9}"
+                name="email"
+                id="email"
+                placeholder="ej. nombre@dominio"
+                >
+                
+                <label for="phone">Teléfono</label>
+                <input
+                type="text"
+                placeholder="000 000 000"
+                required
+                pattern="\d{9}"
+                name="phone"
+                id="phone"
+                >
+
+                <label for="comment">Envíanos tus comentarios</label>
+                <textarea
+                name="comment"
+                id="comment"
+                placeholder="Lo quiero asao, asao, asao, asao, asao con ensalada"
+                required
+                ></textarea>
+
+                <p>Todos los campos de este formulario son obligatorios</p>
+
+                <div>
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Borrar</button>
+                </div>
+            </form>
+        </article> 
+    </main>
+    
+    <footer>
+        <div id="foot-cont">
+            <p>
+                Calle desierta, 1 02020 Michigan Telf. 123123123 - &copy; yomismo.com - email:chorizos@moncloa.son
+            </p>
+            <a href="#top">&#11014;</a>
+        </div>
+    </footer>
+</body>
+</html>

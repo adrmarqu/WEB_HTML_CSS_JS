@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos predefinidos 2</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/colors.css">
+    <script src="../js/objPredef.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1>Objetos predefinidos</h1>
+        <div>
+            <button class="reset" onclick="restore()">Restaurar Css</button>
+        </div>
+        <div>
+            <h2>Ejercicio 9</h2>
+            <p>
+                 Cambia el titulo del head por algo que tu quieras. Luego cambia de color el fondo del documento de gris a negro, así como el color del texto utilizado.
+            </p>
+            <output id="out9"></output>
+            <button onclick="ej9Black()" class="red">Fondo oscuro</button>
+            <button onclick="ej9White()" class="red">Fondo claro</button>
+        </div>
+
+        <hr/>
+
+        <div>
+            <h2>Ejercicio 10</h2>
+            <p>
+                Crea un nuevo documento HTML con un script que nos muestre la altura y la anchura de la pantalla, la altura y la anchura útil y el diagonal de la pantalla en pixels.
+            </p>
+            <output id="out10"></output>
+            <button onclick="ej10()" class="red">Ejecutar</button>
+            <button onclick="erase('#out10')" class="gray">Borrar</button>
+        </div>
+
+        <hr/>
+
+        <div>
+            <h2>Ejercicio 11</h2>
+            <p>
+                Escribe un html que permita abrir desde un boton, una ventana controlada desde JavaScript, escribiendo el html necesario para mostrar un texto con las propiedades utilizadas y un boton que permita cerrar la nueva ventana.
+            </p>
+            <output id="out11"></output>
+            <button onclick="ej11()" class="red">Ejecutar</button>
+            <button onclick="erase('#out11')" class="gray">Borrar</button>
+        </div>
+
+        <hr/>
+
+        <div>
+            <h2>Ejercicio 12</h2>
+            <p>
+                Escribe un programa que pida por prompt un texto, y si es más largo de 10 carácteres, extrae los 5 últimos carácteres y muestralos por pantalla.
+            </p>
+            <output id="out12"></output>
+            <button onclick="ej12()" class="red">Ejecutar</button>
+            <button onclick="erase('#out12')" class="gray">Borrar</button>
+        </div>
+
+        <hr/>
+
+        <div>
+            <h2>Ejercicio 13</h2>
+            <p>
+                Escribe un html que pida por input un texto, guardalo como un objeto String y, que nos permita saber el número de los carácteres escritos, rescribirlo en cursiva, en negrita, en color rojo, a un tamaño muy grande, en un texto rayado y en un texto subrayado.
+            </p>
+            <output id="out13"></output>
+            <button onclick="ej13()" class="red">Ejecutar</button>
+            <button onclick="erase('#out13')" class="gray">Borrar</button>
+        </div>
+
+        <hr/>
+
+        <div>
+            <h2>Ejercicio 14</h2>
+            <p>
+                Escribe un programa que permita escribir una tabla con cuatro celdas (dos filas y dos columnas), con bordes colapsados y un texto a cada celda.
+            </p>
+            <output id="out14"></output>
+            <button onclick="ej14()" class="red">Ejecutar</button>
+            <button onclick="erase('#out14')" class="gray">Borrar</button>
+        </div>
+
+        <hr/>
+
+        <div>
+            <h2>Ejercicio 15</h2>
+            <p>
+                Haz un programa que te permita entrar por un prompt la base de un triangulo, la altura en otro prompt y muestre un d.write de su area. 
+            </p>
+            <output id="out15"></output>
+            <button onclick="ej15()" class="red">Ejecutar</button>
+            <button onclick="erase('#out15')" class="gray">Borrar</button>
+        </div>
+
+        <hr/>
+
+        <div>
+            <h2>Ejercicio 16</h2>
+            <p>
+                Haz un programa que te permita desde un boton, encender o apagar una imágen de una bombilla.
+            </p>
+            <img src="../imgs/apagada.gif" alt="bombilla" class="luz">
+            <img src="../imgs/encendida.gif" alt="bombilla" class="luz hidden">
+            <button onclick="ej16()" class="luz-enc" id="btn-luz">Encender</button>
+        </div>
+
+        <hr/>
+
+        <div>
+            <h2>Ejercicio 17</h2>
+            <p>
+                Crea un programa que te permita saber en milisegundos cuando se va a acabar el mundo segun el calendario Maya, además, recoge el dia, el mes, el año, la hora, los minutos, los segundos y el dia de la semana.
+            </p>
+            <output id="out17"></output>
+            <button onclick="ej17()" class="red">Ejecutar</button>
+            <button onclick="erase('#out17')" class="gray">Borrar</button>
+        </div>
+
+        <hr/>
+
+        <div>
+            <h2>Ejercicio 18</h2>
+            <p>
+                Escribe un html que al cargarse nos diga el número de milisegundos pasados desde el 1 de enero de 1970.
+            </p>
+            <output id="out18"></output>
+            <button onclick="ej18()" class="red">Ejecutar</button>
+            <button onclick="erase('#out18')" class="gray">Borrar</button>
+        </div>
+
+        <hr/>
+
+        <div>
+            <h2>Ejercicio 19</h2>
+            <p>
+                Construye un programa que calcule un número aleatorio del 1 al 10 y lo muestre en una div de html.
+            </p>
+            <output id="out19"></output>
+            <button onclick="ej19Int()" class="red">Ejecutar con Int</button>
+            <button onclick="ej19Float()" class="red">Ejecutar con Float</button>
+            <button onclick="erase('#out19')" class="gray">Borrar</button>
+        </div>
+
+        <hr/>
+
+        <div>
+            <h2>Ejercicio 20</h2>
+            <p>
+                Construye un html de nombre canvia_color.html que te avise que canviará el color del fondo a rojo y posteriormente otro aviso que lo cambiará a verde.
+            </p>
+            <output id="out20"></output>
+            <button onclick="ej20()" class="red">Ejecutar</button>
+            <button onclick="erase('#out20')" class="gray">Borrar</button>
+        </div>
+
+        <hr/>
+
+        <div>
+            <h2>Ejercicio 21</h2>
+            <p>
+                A partir del método bgColor o background color del documento canvia_color.html construye un html que permita en un select, seleccionar un color entre cuatro y con un botón que reasigne a la página web el color elegido.
+            </p>
+            <output id="out21"></output>
+            <div id="colores">
+                <button onclick="setColor(this)" class="c-azul"></button>
+                <button onclick="setColor(this)" class="c-verde"></button>
+                <button onclick="setColor(this)" class="c-ama"></button>
+                <button onclick="setColor(this)" class="c-gris"></button>
+                <button onclick="setColor(this)" class="c-vio"></button>
+                <button onclick="setColor(this)" class="c-nar"></button>
+            </div>
+            <button onclick="ej21()" class="red">Cambiar fondo</button>
+            <button class="reset" onclick="restore()">Restaurar Css</button>
+        </div>
+
+        <hr/>
+
+    </main>
+
+    <footer>
+        <a href="./objPredef.html" class="next">
+            Página anterior
+        </a>
+        <a href="./index.html" class="back">
+            Volver al menú
+        </a>
+        <a href="#" class="desactivado"></a>
+    </footer>
+</body>
+</html>

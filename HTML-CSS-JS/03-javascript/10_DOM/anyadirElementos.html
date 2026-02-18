@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir elementos con el DOM</title>
+</head>
+<body>
+    <main>
+        <div>
+            <h2>
+                Haz click sobre el botón para añadir más elementos a la lista.
+            </h2>
+            <ul id="lista">
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Consectuer adispacing elit</li>
+                <li>Sed mattis enim vitae orci</li>
+                <li>Phasellus libero</li>
+                <li>Maecenas nisl arcu</li>
+            </ul>
+            <input type="button" id="more" value="Añadir elemento">
+            <input type="button" id="less" value="Borrar elemento">
+        </div>
+    </main>
+
+    <script>
+        let cont = 0;
+
+        const crearElemento = () =>
+        {
+            let element = document.createElement("li");
+            let content = document.createTextNode("elemento de línea añadido");
+            let lista = document.querySelector("#lista");
+
+            element.appendChild(content);
+            lista.appendChild(element);
+            cont++;
+        };
+
+        const borrarHijo = () =>
+        {
+            let list = document.querySelector("#lista");
+
+            if (cont > 0)
+            {
+                list.removeChild(list.lastChild);
+                cont--;
+            }
+        };
+
+        const more = document.querySelector("#more");
+        const less = document.querySelector("#less");
+
+        less.addEventListener("click", borrarHijo);
+        more.addEventListener("click", crearElemento);
+    </script>
+</body>
+</html>

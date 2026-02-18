@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git i GitHub - Tutorial Complet</title>
+    <link rel="stylesheet" href="css/style_tutorial.css">
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><span class="emoji">🚀</span>Git i GitHub</h1>
+            <p>Tutorial complet per a Mac i Windows amb exemples pràctics</p>
+        </header>
+
+        <nav>
+            <h3>📑 Navegació ràpida</h3>
+            <ul>
+                <li><a href="#introduccio">Introducció</a></li>
+                <li><a href="#installacio">Instal·lació</a></li>
+                <li><a href="#configuracio">Configuració</a></li>
+                <li><a href="#estructura">Estructura</a></li>
+                <li><a href="#primeres-passes">Primeres passes</a></li>
+                <li><a href="#remots">Repositoris remots</a></li>
+                <li><a href="#terminal">Terminal</a></li>
+                <li><a href="#gui">Interfície gràfica</a></li>
+                <li><a href="#branques">Branques</a></li>
+                <li><a href="#casos">Casos pràctics</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="introduccio">
+                <h2><span class="emoji">🎯</span>Introducció</h2>
+                <p><strong>Git</strong> és un sistema de control de versions distribuït i descentralitzat que permet a desenvolupadors treballar sobre el mateix codi de forma simultània i organitzada.</p>
+                <p><strong>GitHub</strong> és una plataforma web que allotja repositoris Git remotos, permitint col·laboració en línia.</p>
+
+                <h3>Diferència entre Git i GitHub</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>GIT</th>
+                            <th>GITHUB</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Eina local</td>
+                            <td>Plataforma web</td>
+                        </tr>
+                        <tr>
+                            <td>Control de versions</td>
+                            <td>Allotjament de repos</td>
+                        </tr>
+                        <tr>
+                            <td>Funciona sense internet</td>
+                            <td>Requereix connexió</td>
+                        </tr>
+                        <tr>
+                            <td>Línia de comandes</td>
+                            <td>Interfície gràfica</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Avantatges de fer servir Git</h3>
+                <ul>
+                    <li>✅ Control complet de l'historial de canvis</li>
+                    <li>✅ Treball simultani sense conflictes</li>
+                    <li>✅ Recuperació de versions anteriors</li>
+                    <li>✅ Col·laboració en equip</li>
+                    <li>&#9989; Integració amb plataformes web</li>
+                    <li>✅ Estàndard de la indústria</li>
+                </ul>
+            </section>
+
+            <section id="installacio">
+                <h2><span class="emoji">💾</span>Instal·lació</h2>
+
+                <h3>Windows</h3>
+                <h4>Opció 1: Descarrega i instal·lació estàndard</h4>
+                <ol>
+                    <li>Accedeix a <code>https://git-scm.com/downloads</code></li>
+                    <li>Clica a "Windows" i descarrega l'instal·lador</li>
+                    <li>Executa l'instal·lador amb les opcions recomanades</li>
+                    <li>Verifica la instal·lació obrint PowerShell i executant:
+                        <pre><code>git --version</code></pre>
+                    </li>
+                </ol>
+
+                <h4>Opció 2: Instal·lació amb Chocolatey</h4>
+                <pre><code>choco install git</code></pre>
+
+                <h4>Opció 3: Windows Package Manager</h4>
+                <pre><code>winget install Git.Git</code></pre>
+
+                <h3>macOS</h3>
+                <h4>Opció 1: Homebrew (recomanat)</h4>
+                <pre><code>brew install git
+git --version</code></pre>
+
+                <h4>Opció 2: Xcode Command Line Tools</h4>
+                <pre><code>xcode-select --install
+git --version</code></pre>
+            </section>
+
+            <section id="configuracio">
+                <h2><span class="emoji">⚙️</span>Configuració inicial</h2>
+
+                <h3>Primera configuració de Git</h3>
+                <p>Executa aquests comandos en el terminal integrat de VSCode:</p>
+
+                <pre><code># Establir el nom de l'usuari
+git config --global user.name "El teu nom"
+
+# Establir el correu
+git config --global user.email "email@exemple.com"
+
+# Establir VSCode com a editor
+git config --global core.editor "code --wait"
+
+# Establir 'main' com a branca predeterminada
+git config --global init.defaultBranch main
+
+# Configurar salts de línia (Windows)
+git config --global core.autocrlf true
+
+# Configurar salts de línia (macOS/Linux)
+git config --global core.autocrlf input
+
+# Verificar la configuració
+git config --list</code></pre>
+
+                <div class="tip">
+                    <strong>💡 Consell:</strong> Si VSCode no reconeix Git, accedeix a Settings (Ctrl+,) i busca "git.path" per configurar la ruta manual.
+                </div>
+            </section>
+
+            <section id="estructura">
+                <h2><span class="emoji">📊</span>Estructura de Git</h2>
+
+                <h3>Els 4 estats de Git</h3>
+                <div class="flow-diagram">
+┌──────────────────────────────────────────────────────────┐
+│  1. WORKING DIR    2. STAGING    3. LOCAL REPO  4. REMOTE │
+│  (Carpeta)        (Index)        (HEAD)        (GitHub)  │
+│                                                           │
+│  Arxius editados  ──add──>  Llestos  ──commit──>  Registrats
+│                                        ──push──>  Servidor
+│
+└──────────────────────────────────────────────────────────┘
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Estat</th>
+                            <th>Ubicació</th>
+                            <th>Descripció</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Modified</strong></td>
+                            <td>Working Directory</td>
+                            <td>Arxius editats però no preparats</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Staged</strong></td>
+                            <td>Staging Area</td>
+                            <td>Arxius llestos per a commit</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Committed</strong></td>
+                            <td>Local Repository</td>
+                            <td>Canvis guardats en l'historial</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Remote</strong></td>
+                            <td>Remote Repository</td>
+                            <td>Canvis al servidor (GitHub)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="primeres-passes">
+                <h2><span class="emoji">🚀</span>Primeres passes: Repositori local</h2>
+
+                <h3>Crear un projecte nova des de zero</h3>
+
+                <h4>Amb terminal</h4>
+                <pre><code>mkdir meu_projecte
+cd meu_projecte
+touch README.md .gitignore index.html
+git init
+git add .
+git commit -m "Commit inicial"
+code .</code></pre>
+
+                <h4>Amb la interfície gràfica de VSCode</h4>
+                <ol>
+                    <li>Obri VSCode</li>
+                    <li>File → Open Folder → Crea una nova carpeta</li>
+                    <li>Obri el terminal: <code>Ctrl+`</code></li>
+                    <li>Executa: <code>git init</code></li>
+                    <li>Crea els fitxers (Explorer → Nova carpeta)</li>
+                    <li>Obri Source Control (<code>Ctrl+Shift+G</code>)</li>
+                    <li>Clica <code>+</code> per a stagear tots els arxius</li>
+                    <li>Escriu "Commit inicial" i prem <code>Ctrl+Enter</code></li>
+                </ol>
+
+                <div class="highlight">
+                    <strong>⚠️ Important:</strong> Sempre faça commits regularment amb missatges descriptius. Això facilita la comprensió de l'historial.
+                </div>
+            </section>
+
+            <section id="remots">
+                <h2><span class="emoji">🌐</span>Treball amb repositoris remots (GitHub)</h2>
+
+                <h3>Crear un repositori remote</h3>
+                <ol>
+                    <li>Accedeix a <code>https://github.com/new</code></li>
+                    <li>Completa el formulari (nom, descripció, públic/privat)</li>
+                    <li>Clica "Create repository"</li>
+                    <li>Copia l'URL HTTPS</li>
+                </ol>
+
+                <h3>Vincular repositori local amb remote</h3>
+                <pre><code>cd meu_projecte
+git remote add origin https://github.com/usuario/meu-projecte.git
+git branch -M main
+git push -u origin main</code></pre>
+
+                <h3>Clonar un repositori existent</h3>
+                <pre><code>git clone https://github.com/usuario/repositori.git
+cd repositori
+code .</code></pre>
+            </section>
+
+            <section id="terminal">
+                <h2><span class="emoji">💻</span>Git des de la terminal integrada</h2>
+
+                <div class="command-section">
+                    <h4>Ver l'estat</h4>
+                    <pre><code>git status          # Estat detallat
+git status -s       # Estat curt</code></pre>
+                </div>
+
+                <div class="command-section">
+                    <h4>Afegir canvis al staging</h4>
+                    <pre><code>git add arxiu.txt   # Un arxiu
+git add .           # Tots els canvis</code></pre>
+                </div>
+
+                <div class="command-section">
+                    <h4>Fer commits</h4>
+                    <pre><code>git commit -m "Missatge"
+git commit -m "Títol" -m "Descripció detallada"</code></pre>
+                </div>
+
+                <div class="command-section">
+                    <h4>Sincronitzar amb remote</h4>
+                    <pre><code>git push            # Enviar canvis
+git pull            # Descarregar canvis</code></pre>
+                </div>
+
+                <div class="command-section">
+                    <h4>Veure l'historial</h4>
+                    <pre><code>git log                           # Complet
+git log --oneline                 # En una línia
+git log --oneline --graph --all   # Amb gràfica</code></pre>
+                </div>
+            </section>
+
+            <section id="gui">
+                <h2><span class="emoji">🎨</span>Git des de la interfície gràfica</h2>
+
+                <h3>Obrir Source Control</h3>
+                <p>Clica l'icon de branques a la barra lateral esquerra o usa <code>Ctrl+Shift+G</code></p>
+
+                <h3>Operacions bàsiques</h3>
+                <ul>
+                    <li><strong>Stagear</strong>: Clica <code>+</code> al costat de cada arxiu</li>
+                    <li><strong>Unstage</strong>: Clica <code>-</code> per a treure del staging</li>
+                    <li><strong>Commit</strong>: Escriu el missatge i prem <code>Ctrl+Enter</code></li>
+                    <li><strong>Canviar branca</strong>: Clica el nom de la branca a la barra inferior</li>
+                    <li><strong>Sincronitzar</strong>: Clica el botó de sincronització a la barra inferior</li>
+                </ul>
+
+                <div class="tip">
+                    <strong>💡 Consell:</strong> Instal·la l'extensió "GitLens" per a veure informació addicional de commits i blame.
+                </div>
+            </section>
+
+            <section id="branques">
+                <h2><span class="emoji">🌳</span>Branques i fusió</h2>
+
+                <h3>Crear branques</h3>
+                <pre><code>git branch nom-branca           # Crear
+git checkout -b nom-branca     # Crear i canviar</code></pre>
+
+                <h3>Canviar de branca</h3>
+                <pre><code>git checkout nom-branca
+git switch nom-branca</code></pre>
+
+                <h3>Fusionar branques</h3>
+                <pre><code>git checkout main
+git merge feature/nova-funcionalitat
+git push</code></pre>
+
+                <h3>Resoldre conflictes</h3>
+                <div class="warning">
+                    <strong>⚠️ Conflicte!</strong> Si dos branques han editat el mateix arxiu, Git te mostrarà el conflicte. Hauràs d'editar l'arxiu i resoldre'l manualment.
+                </div>
+
+                <p>A VSCode, els conflictes es mostren amb botons per a resoldre:</p>
+                <ul>
+                    <li>Accept Current Change (mantenir els teus)</li>
+                    <li>Accept Incoming Change (acceptar els remots)</li>
+                    <li>Accept Both Changes (mantenir tots dos)</li>
+                </ul>
+            </section>
+
+            <section id="casos">
+                <h2><span class="emoji">📚</span>Casos pràctics</h2>
+
+                <h3>Cas 1: Projecte web personal</h3>
+                <pre><code>mkdir web-portfolio
+cd web-portfolio
+git init
+touch index.html style.css README.md
+git add .
+git commit -m "Estructura inicial"
+# Continuar afegint contingut i commitejant regularment</code></pre>
+
+                <h3>Cas 2: Projecte amb repositori remot</h3>
+                <pre><code># A GitHub: crear repositori "web-portfolio"
+# Localment:
+git remote add origin https://github.com/usuario/web-portfolio.git
+git branch -M main
+git push -u origin main</code></pre>
+
+                <h3>Cas 3: Projecte en equip</h3>
+                <pre><code># Col·laborador 1 i 2: clonar el repositori
+git clone https://github.com/admin/projecte.git
+cd projecte
+
+# Crear branques per a cada tasca
+git checkout -b feature/nova-funcionalitat
+
+# Fer canvis i commits
+git add .
+git commit -m "Afegida nova funcionalitat"
+git push -u origin feature/nova-funcionalitat
+
+# A GitHub: crear Pull Request
+# L'administrador fusiona els canvis</code></pre>
+            </section>
+
+            <section>
+                <h2><span class="emoji">🆘</span>Solució de problemes</h2>
+
+                <h3>Git no està instal·lat</h3>
+                <p><strong>Solució:</strong> Descarrega des de https://git-scm.com/downloads o usa el package manager del teu sistema.</p>
+
+                <h3>VSCode no detecta Git</h3>
+                <p><strong>Solució:</strong> Obri Settings (Ctrl+,), busca "git.path" i configura la ruta manual.</p>
+
+                <h3>Conflicte de merge</h3>
+                <p><strong>Solució:</strong> Edita els arxius afectats, resol els conflictes manualment, stagea i fes commit.</p>
+
+                <h3>Has commitejat quelcom incorrecte</h3>
+                <pre><code>git reset --soft HEAD~1    # Desfer sense perdre canvis
+git reset --hard HEAD~1    # Desfer i perdre canvis</code></pre>
+            </section>
+
+            <section>
+                <h2><span class="emoji">📖</span>Recursos addicionals</h2>
+                <ul>
+                    <li><a href="https://git-scm.com/doc" target="_blank">Documentació oficial de Git</a></li>
+                    <li><a href="https://docs.github.com/" target="_blank">Guia oficial de GitHub</a></li>
+                    <li><a href="https://learngitbranching.js.org/" target="_blank">Interactive Git Learning</a></li>
+                    <li><a href="https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf" target="_blank">Git Cheat Sheet</a></li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>Tutorial creat: Gener 2026 | Versió 1.0 | Idioma: Català</p>
+            <p><strong>Bona sort amb els teus projectes!</strong> 🚀</p>
+        </footer>
+    </div>
+</body>
+</html>

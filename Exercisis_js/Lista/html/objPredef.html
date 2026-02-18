@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos predefinidos</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/objPredef.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1>Objetos predefinidos</h1>
+        <div>
+            <h2>Ejercicio 1</h2>
+            <p>
+                Utiliza Javascript para crear a HTML una tabla con estos datos: [Valor màxim que pot tenir un número en JavaScript, Valor mínim que pot tenir un número en JavaScript, Alçada total de la pantalla, Amplada total de la pantalla, Alçada de la pàgina web, Amplada de la pàgina web, URL de la pàgina web, Nom de la pàgina web amb la seva extensió (index.html), Nom de la pàgina web sense la seva extensió (index), Un valor aleatori entre 0 i 200 (utilitza Math), Sistema operatiu de l’ordinador].
+            </p>
+            <div id="contenedor"></div>
+            <output id="out1"></output>
+            <button onclick="ej1CreateElement()" class="red">Crear tabla (CreateElement)</button>
+            <button onclick="ej1InnerHtml()" class="red">Crear tabla (InnerHtml)</button>
+            <button onclick="ej1JSON()" class="red">Crear tabla (JSON)</button>
+            <button onclick="erase('#contenedor'), erase('#out1')" class="gray">Borrar</button>
+        </div>
+
+        <hr/>
+
+        <div>
+            <h2>Ejercicio 2</h2>
+            <p>
+                Utiliza el javascript para detectar si el navegador tiene las cookies activadas. En caso de estar activadas informa al usuario con un confirm, si el usuario le da a cancel, redirigirlo a otra página.
+            </p>
+            <output id="out2"></output>
+            <button onclick="ej2()" class="red">Ejecutar</button>
+            <button onclick="erase('#out2')" class="gray">Borrar</button>
+        </div>
+
+        <hr/>
+
+        <div>
+            <h2>Ejercicio 3</h2>
+            <p>
+                Pide mediante un prompt un título para la página web. Si el usuario no introduce nada o pulsa a cancelar, vuelve a pedirlo hasta que introduzca un valor valido. Para acabar, utiliza un metodo de document para establecer el valor en mayuscula como el nuevo título de la página.
+            </p>
+            <output id="out3"></output>
+            <button onclick="ej3()" class="red">Ejecutar</button>
+            <button onclick="erase('#out3')" class="gray">Borrar</button>
+        </div>
+
+        <hr/>
+
+        <div>
+            <h2>Ejercicio 4</h2>
+            <p>
+                Pide mediante un prompt 2 valores separados por una coma. Si són incorrectos, indica al usuario como ha de escribirlo correctamente: títol ha de contener entre 3 y 20 carácteres, y barra ha de contener "yes" o "no",
+            </p>
+            <output id="out4"></output>
+            <button onclick="ej4()" class="red">Ejecutar</button>
+            <button onclick="erase('#out4')" class="gray">Borrar</button>
+        </div>
+        
+        <hr/>
+
+        <div>
+            <h2>Ejercicio 5</h2>
+            <p>
+                Utiliza los valores anteriores para abrir mediante el objeto window de JavaScript una ventana nueva a finestra.html. Si barra es "yes" meter barras de desplazamiento y unas medidas aleatorias entre 50 y 400 de altura y anchura.
+            </p>
+            <output id="out5"></output>
+            <button onclick="ej5()" class="red">Ejecutar</button>
+            <button onclick="erase('#out5')" class="gray">Borrar</button>
+        </div>
+
+        <hr/>
+
+        <div>
+            <h2>Ejercicio 6</h2>
+            <p>
+                Modifica el título de finestra.html para que su valor siga siendo el título guardado en la variable de titol del ejercicio 4.
+            </p>
+            <output id="out6"></output>
+            <button onclick="ej6()" class="red">Ejecutar</button>
+            <button onclick="erase('#out6')" class="gray">Borrar</button>
+        </div>
+        
+        <hr/>
+
+        <div>
+            <h2>Ejercicio 7</h2>
+            <p>
+                Muestra en finestra.html la hora, los minuto y los segundos, más un mensaje de buenos días si la hora es de 6 a 14, un mensaje de buenas tardes si la hora es mayor que 14 y menor que 20, y un mensaje de buenas noches en el caso contrario. 
+            </p>
+            <output id="out7"></output>
+            <button onclick="ej7()" class="red">Ejecutar</button>
+            <button onclick="erase('#out7')" class="gray">Borrar</button>
+        </div>
+
+        <hr/>
+        
+        <div>
+            <h2>Ejercicio 8</h2>
+            <p>
+                Pedir por prompt una nueva dirección HTML donde pida una nueva dirección HTML. Tendrás de cambiar la dirección de la ventana principal de objetos predefinidos por la URL introducida.
+            </p>
+            <output id="out8"></output>
+            <button onclick="ej8()" class="red">Ejecutar</button>
+            <button onclick="erase('#out8')" class="gray">Borrar</button>
+        </div>
+
+        <hr/>
+
+    </main>
+
+    <footer>
+        <a href="#" class="desactivado"></a>
+        <a href="./index.html" class="back">
+            Volver al menú
+        </a>
+        <a href="./objPredef2.html" class="next">
+            Página siguiente
+        </a>
+    </footer>
+</body>
+</html>

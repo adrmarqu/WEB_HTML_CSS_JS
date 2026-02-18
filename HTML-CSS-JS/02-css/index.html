@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendiendo CSS</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+    <!-- <link rel="stylesheet" href="css/reset.css"> -->
+</head>
+<body>
+    <!-- (header#indice>h1{Aprendiendo CSS}+p{Cascading Style Sheets. Hojas de Estilo en Cascada.})+nav>h3{Índice de contenidos}+ul#menu>(li>a)*13 -->
+    <header id="indice">
+        <h1>Aprendiendo CSS</h1>
+        <p>Cascading Style Sheets.<br/>Hojas de Estilo en Cascada.</p>
+    </header>
+    <nav>
+        <h3>Índice de contenidos</h3>
+        <ul id="menu">
+            <li><a href="#basicos">Selectores básicos</a></li>
+            <li><a href="#avanzados">Selectores avanzados</a></li>
+            <li><a href="#jerarquia">Jerarquía en Css -Restricciones-</a></li>
+            <li><a href="sources/box-model.html">Modelo de caja</a></li>
+            <li><a href="#reseteo">Resetear navegadores</a></li>
+            <li><a href="#position">Posicionamiento</a></li>
+            <li><a href="#colors">Colores con Css</a></li>
+            <li><a href="#fonts">Fuentes y texto con Css</a></li>
+            <li><a href="#visual">Efectos visuales</a></li>
+            <li><a href="#flexbox">FlexBox</a></li>
+            <li><a href="#imagenes">Imágenes</a></li>
+            <li><a href="#media-queries">MediaQueries</a></li>
+            <li><a href="#grid">Grid</a></li>
+        </ul>
+    </nav>
+    <!-- main>section*5 -->
+    <main>
+        <!-- Básicos -->
+        <section>
+            <h3 id="basicos">Selectores básicos</h3>
+            <!-- article>p*6>lorem -->
+            <article>
+                <p class="p1">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio nulla rem iste sunt error vel beatae suscipit vitae repellendus voluptate. Cumque omnis debitis nostrum expedita voluptas praesentium ducimus nobis repudiandae!
+                </p>
+                <p class="p2">
+                    Sequi rerum cum dolore laborum maiores. Obcaecati sequi quidem ducimus distinctio, cumque debitis sed necessitatibus quo repellat facere possimus natus laborum et consectetur fugit in consequatur fugiat ex iste voluptatem.
+                </p>
+                <p class="strong">
+                    Recusandae itaque, nulla debitis laborum aperiam eaque molestiae distinctio saepe expedita eius. Ea perferendis qui autem! Totam cumque labore at accusantium aspernatur voluptates deleniti dolorum expedita praesentium, assumenda quae nisi.
+                </p>
+                <p class="tipo strong p2">
+                    Asperiores totam iste adipisci consequuntur vel deserunt alias. Unde eveniet adipisci quisquam. A porro libero laboriosam atque! Molestias ad libero accusantium, dolor molestiae, minima, nostrum nisi debitis officia quaerat iusto.
+                </p>
+                <p>
+                    Vero nobis culpa libero sequi enim ipsum temporibus placeat eius quidem illum eum, quae, assumenda quibusdam fugiat facilis, ipsam asperiores eveniet nihil ducimus iste quaerat possimus. Totam officiis consectetur fuga!
+                </p>
+                <p>
+                    Explicabo obcaecati, enim voluptate est incidunt molestiae repellendus commodi fuga ratione asperiores officia vitae earum optio nihil? Nam nemo, ipsa a architecto impedit mollitia autem fugiat? Nemo incidunt quis nisi.
+                </p>
+                    <small class="tipo strong">Con el mismo aspecto que los ".p2"</small> 
+            </article>
+            <!-- p>a.desactivar[href="https://google.es"]{Ir a google... Desactivado} -->
+            <p>
+                <a href="https://google.es" class="desactivar">Ir a google... Desactivado</a>
+            </p>
+            <address class="tipo strong">Avenida Carlomagno, 12</address>
+
+            <br/>
+            <a href="#indice">Ir arriba</a>
+        </section>
+
+        <hr/>
+        <!-- Avanzados -->
+        <section>
+            <h3 id="avanzados">Selectores avanzados</h3>
+            <article>
+                <h4>Selectores de hijos</h4>
+                <p>Hijos directos y descendientes</p>
+                <ul class="directos">
+                    <li><strong>Primavera</strong></li>
+                    <ul>
+                        <li>opt1</li>
+                        <ul>
+                            <li>opt1.1</li>
+                            <li>opt2.1</li>
+                            <li><strong>opt3.1</strong></li>
+                        </ul>
+                        <li><strong>opt2</strong></li>
+                        <li>opt3</li>
+                    </ul>
+                    <li><strong>Verano</strong></li>
+                    <li><strong>Otoño</strong></li>
+                    <li><strong>Invierno</strong></li>
+                </ul>
+            </article>
+            <article>
+                <h4>Selectores de hermanos</h4>
+                <p>Hermanos directos</p>
+                <ul>
+                    <li class="hermano-adjacente"><strong>Primavera</strong></li>
+                    <li class="hermano-general"><strong>Verano</strong></li>
+                    <li><strong>Otoño</strong></li>
+                    <li><strong>Invierno</strong></li>
+                </ul>
+            </article>
+            <article>
+                <h4>Selectores de atributos</h4>
+                <nav class="atributos">
+                    <ul>
+                        <li>
+                            <a href="https://dominio.com" target="_blank">Productos</a>
+                        </li>
+                        <li>
+                            <a class="opcion" href="https://dominio.com">Nosostros</a>
+                        </li>
+                        <li>
+                            <a href="https://dominio.com" target="_blank">Servicio técnico</a>
+                        </li>
+                        <li>
+                            <a href="https://dominio.com" target="new">Contacto</a>
+                        </li>
+                        <li>
+                            <a class="opcion" href="http://dominio.com">Localización A</a>
+                        </li>
+                        <li>
+                            <a class="opcion" href="http://dominio.eu">Localización B</a>
+                        </li>
+                    </ul>
+                </nav>
+            </article>
+            
+            <br/>
+            <a href="#indice">Ir arriba</a>
+        </section>
+
+        <hr/>
+        <!-- Jerarquia -->
+        <section>
+            <h3 class="color" id="jerarquia">Jerarquia en Css. - Restricciones</h3>
+            <article>
+                <p style="padding-left: 100px">
+                    Los navegadores aplican estilos a los documentos Html por jerarquía basada en:
+                </p>
+                <ol>
+                    <li>La Cascada</li>
+                    <li>La especificidad</li>
+                    <li>La Herencia</li>
+                </ol>
+                <p>
+                    La Cascada es el procedimiento con el que un navegador aplica los estilos y el orden de importancia o restricción es el siguiente:
+                </p>
+                <ol>
+                    <li> Origen del código
+                        <ul>
+                            <li>Reglas del User Agent</li>
+                            <li>Reglas del usuario</li>
+                            <li>Reglas desarrollador</li>
+                        </ul>
+                    </li>
+                    <li>La especificidad del selector</li>
+                    <li>Orden de aparición</li>
+                </ol>
+                <p>
+                    La especificidad es la fuerza restrictiva o peso de un selector.
+                </p>
+                <ul>
+                    <li>Estilo en línea 1</li>
+                    <li>Identificadores 0,1</li>
+                    <li>Clases, atributos, pseudoclases 0,0,1</li>
+                    <li>Etiquetas html 0,0,0,1</li>
+                    <li>!important- Salta toda la jerarquía.</li>
+                </ul>
+                <p>
+                    La herencia es la capacidad que tienen los elementos padre de hacer heredar a sus hijos, sus propiedades. Valores inherit o heredados.
+                </p>
+            </article>
+
+            <br/>
+            <a href="#indice">Ir arriba</a>
+        </section>
+
+        <hr/>
+        <!-- Reseteo -->
+        <section>
+            <h3 id="reseteo">Resetear navegadores</h3>
+            <p>
+                Ante la diferente interpretación del aspecto de los elementos de html
+                que utiliza cada navegador, nace la necesidad de borrar o resetear
+                todas estas propiedades nativas de los navegadores para dejar el
+                control a los desarrolladores.<br />
+                Existen en el mercado diversos archivos css que funcionan como
+                reseteadores estandard, cómo normalize.css o reset.css.<br />Para más
+                información: Ver index.css.
+            </p>
+
+            <br/>
+            <a href="#indice">Ir arriba</a>
+        </section>       
+        
+        <hr/>
+        <!-- Position -->
+        <section>
+            <h3 id="position">Posicionamiento</h3>
+            <p>Tipos de posicionamiento de los elementos Html:</p>
+            <ul>
+                <li>
+                    <a href="" class="desactivar">Static (estático)</a>
+                    <small>
+                        Comportamiento nativo de posicionamiento de todos los elementos Html.
+                    </small>
+                </li>
+                <li>
+                    <a href="sources/positions/fixed.html">Fijo (Fixed)</a>
+                </li>
+                <li>
+                    <a href="sources/positions/relative.html">Relative (relativo)</a>
+                </li>
+                <li>
+                    <a href="sources/positions/absolute.html">Absolute (absoluto)</a>
+                </li>
+                <li>
+                    <a href="sources/positions/sticky.html">Sticky (adhesivo)</a>
+                </li>
+            </ul>
+
+            <br/>
+            <a href="#indice">Ir arriba</a>
+        </section>
+        
+        <hr/>
+        <!-- Color -->
+        <section>
+            <h3 id="colors">Colores con Css</h3>
+            <p>
+                <a href="sources/colors.html">Ver los Diferentes formatos de denominación de los colores en Css</a>
+            </p>
+
+            <br/>
+            <a href="#indice">Ir arriba</a>
+        </section>
+
+        <hr/>
+        <!-- Fonts -->
+        <section>
+            <h3 id="fonts">Fuentes y textos con Css</h3>
+            <p>
+                <a href="sources/fonts-texts.html">Ver los Diferentes modos de uso de las familias tipográficas en Css</a>
+            </p>
+
+            <br/>
+            <a href="#indice">Ir arriba</a>
+        </section>
+        
+        <hr/>
+        <!-- Visual -->
+        <section>
+            <h3 id="visual">Efectos Visuales con Css</h3>
+            <p>
+                <a href="sources/visual-effects.html">Recopilación de efectos visuales en Css</a>
+            </p>
+
+            <br/>
+            <a href="#indice">Ir arriba</a>
+        </section>
+        
+        <hr/>
+        <!-- Flexbox -->
+        <section>
+            <h3 id="flexbox">Flexbox</h3>
+            <p>
+                <a href="sources/flexbox24/index.html">Funcionamiento del Layout Flex con Css</a>
+            </p>
+
+            <br/>
+            <a href="#indice">Ir arriba</a>
+        </section>
+        
+        <hr/>
+        <!-- Imagenes -->
+        <section>
+            <h3 id="imagenes">Imágenes con Css</h3>
+            <p>
+                <a href="sources/imagenes.html">Tratamiento básico de imágenes con Css</a>
+            </p>
+
+            <br/>
+            <a href="#indice">Ir arriba</a>
+        </section>
+        
+        <hr/>
+        <!-- Media-queries -->
+        <section>
+            <h3 id="media-queries">
+                Media Queries con Css para diferentes dispositivos
+            </h3>
+            <p>
+                <a href="sources/media-querys/index.html">Ver comportamiento de Media-Queries</a>
+            </p>
+
+            <br/>
+            <a href="#indice">Ir arriba</a>
+        </section>
+        
+        <hr/>
+        <!-- Grid -->
+        <section>
+            <h3 id="grid">Funcionamiento del Layout Grid con Css</h3>
+            <p>
+                <a href="sources/grid24/index.html">Ver comportamiento de Grid Layout</a>
+            </p>
+
+            <br/>
+            <a href="#indice">Ir arriba</a>
+        </section>
+        
+        <hr/>
+    </main>
+</body>
+</html>

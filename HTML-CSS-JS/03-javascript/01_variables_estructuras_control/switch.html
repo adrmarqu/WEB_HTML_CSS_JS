@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWITCH CASE en Javascript</title>
+    <script src="js/scripts.js" defer></script>
+</head>
+<body>
+    <output id="mostrar"></output>
+    <script>
+        let num_1 = Number(prompt("Introduce un número 1ue sea 10, 20 o 30"));
+        let result;
+
+        switch(num_1)
+        {
+            case 10:
+                result = `${num_1} vale 10`;
+                break;
+            case 20:
+                result = `${num_1} vale 20`;
+                break;
+            case 30:
+                result = `${num_1} vale 30`;
+                break;
+            default:
+                result = `${num_1} no vale 10, 20 ni 30`;
+        }
+        document.querySelector("output").innerHTML = result;
+    </script>
+    <button onclick="salirono()">Recargar o no</button>
+</body>
+</html>

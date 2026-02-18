@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <label for="posicion">posicion: </label>
+    <input type="number" id="posicion">
+    <label for="valor">texto: </label>
+    <input type="text" id="valor">
+    <input id="crear" type="button" value="Crear">
+    <output></output>
+
+    <script>
+        const posicion = document.querySelector("#posicion");
+        const texto = document.querySelector("#valor");
+        const padre = document.querySelector("output");
+
+        const crearParrafo = () =>
+        {
+            let pos = posicion.value;
+            let text = texto.value;
+            let hijos = padre.children.length;
+
+            let elementoNodo = document.createElement("p");
+            let nodoTexto = document.createTextNode(text);
+            let id = hijos + 1;
+
+            elementoNodo.appendChild(nodoTexto);
+            elementoNodo.setAttribute("id", id);
+
+            if (hijos === 0 && text !== "")
+                padre.appendChild(elementoNodo);
+            else if (text === "")
+            {
+                alert("Introduce un texto");
+                document.querySelector("#valor").focus();
+            }
+            else if (pos <= hijos)
+            {
+                alert("Introduce la posición correcta.");
+                document.querySelector("#posicion").focus();
+            }
+            else
+            {
+                padre.appendChild(elementoNodo);
+            }
+        };
+        const crear = document.querySelector("#crear");
+        crear.addEventListener("click", crearParrafo);
+    </script>
+
+</body>
+
+</html>

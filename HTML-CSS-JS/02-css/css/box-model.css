@@ -1,0 +1,159 @@
+/* 
+Modelo de Caja: Es la forma en que CSS ve a los elementos de HTML y ¿como los ve? como si fueran cajas con las siguientes propiedaddes
+    1- El contenido (content):
+    2- El borde (border):
+    3- El relleno (padding):
+    4- El margen (margin):
+
+Dentro del modelo de caja hay que considerar que una caja
+    1- Arriba
+    2- Derecha
+    3- Abajo
+    4- Izquierda
+
+*/
+
+*,
+*::before,
+*::after
+{
+    padding: 0px;
+    margin: 0px;
+}
+
+h1
+{
+    border-color: blueviolet;
+    border-width: thick;
+    border-style: dashed;
+    /* border: thick dashed blueviolet; */
+    /* border: 20px solid red; */
+    background-color: bisque;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.caja-uno,
+.caja-dos
+{
+    background-color: aqua;
+    border: 1px solid black;
+    /* padding: 20px;
+    margin: 20px; */
+    /* margin: 40px 10px;
+    padding: 40px 10px; */
+    margin: 0px 10px 30px 40px;
+    padding: 0px 10px 30px 40px;
+    box-sizing: border-box;
+}
+
+/* 
+    Propiedad Display
+        inline: solamente ocupa lo que ocupa su contenido
+        block: Ocupa todo el espacio disponible
+        inline-block: Se comporta como un elemento en linea pero acepta modificar sus dimensiones (alto y ancho)
+        none:
+        table:
+        list-item:
+        flex:
+        grid:
+*/
+
+.caja-none,
+.caja-linea-bloque,
+.caja-hidden
+{
+    background-color: darkgreen;
+    color: white;
+    width: 600px;
+    height: 300px;
+    border: 1px solid black;
+}
+
+.caja-linea-bloque
+{
+    display: inline-block;
+}
+
+.caja-none
+{
+    display: none;
+}
+
+.caja-hidden
+{
+    visibility: hidden;
+}
+
+.overflow
+{
+    background-color: darkturquoise;
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+    overflow: scroll;
+    /*overflow: visible;
+    overflow: hidden;
+    overflow: auto;
+    overflow-y: scroll;
+    overflow-x: scroll; */
+}
+
+.container-col-3
+{
+    background-color: burlywood;
+    width: 800px;
+    height: 300px;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+/* Cualquier hijo directo de container-col-3 */
+.container-col-3 > *
+{
+    box-sizing: border-box;
+    width: 200px;
+    border: thin solid rgb(234, 228, 228);
+    padding: 5px;
+    margin: 5px;
+    float: left;
+}
+
+/* Floats */
+
+.container-floats
+{
+    background-color: cornflowerblue;
+}
+
+.float-left
+{
+    float: left;
+    background-color: aqua;
+}
+
+.float-right
+{
+    float: right;
+    background-color: aqua;
+}
+
+.clearfix
+{
+    clear: both;
+    height: 5px;
+    background-color: black;
+}
+
+/* Centrado de Cajas */
+.sitio-web
+{
+    border: thin solid black;
+    background-color: thistle;
+    width: 80%;
+    height: 500px;
+    padding: 20px;
+    margin: 20px auto;
+    box-sizing: border-box;
+}

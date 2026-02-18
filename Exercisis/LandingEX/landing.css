@@ -1,0 +1,166 @@
+*, *::before, *::after, html, body
+{
+    padding: 0;
+    margin: 0;
+    cursor: default;
+}
+
+/* Borders */
+
+/* body, main, .card, form, header
+{
+    border: 2px solid red;
+} */
+
+body
+{
+    width: 100%;
+    min-height: 100vh;
+    color: white;
+    background-color: gray;
+    background-image: url("https://images.pexels.com/photos/3183170/pexels-photo-3183170.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header, .card, form
+{
+    max-width: 500px;
+    width: 95%;
+    margin: 20px auto;
+}
+
+.card, form
+{
+    height: 300px;
+    border-radius: 20px;
+}
+
+.card
+{
+    background-image: url("https://images.pexels.com/photos/6483616/pexels-photo-6483616.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid black;
+}
+
+form
+{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.btn
+{
+    width: 90px;
+    padding: 7px 10px;
+    border: 0px;
+    border-radius: 50px;
+    color: white;
+    background-color: rgb(255, 132, 0);
+}
+
+.btn:hover
+{
+    transform: scale(105%);
+    background-color: orange;
+    transition: all 0.5s ease;
+}
+
+.btn-ingresar
+{
+    margin: 20px 0;
+}
+
+.btn-enviar
+{
+    cursor: pointer;
+    margin: 30px 10px 0 10px;
+}
+
+input, textarea
+{
+    padding: 5px;
+    border-radius: 10px;
+}
+
+input
+{
+    height: 25px;
+}
+
+textarea
+{
+    height: 75px;
+}
+
+input, textarea
+{
+    margin: 10px 10px 0 10px;
+}
+
+form p
+{
+    margin: 10px 10px 5px 15px;
+}
+
+.card-content
+{
+    padding: 10px;
+    color: black;
+    opacity: 0;
+    animation: opacidad2 1s ease;
+}
+
+.card-content:hover
+{
+    padding: 10px;
+    opacity: 1;
+    animation: opacidad 1s ease;
+}
+
+@keyframes opacidad
+{
+    0%
+    {
+        margin-top: 2rem;
+        opacity: 0;
+    }
+    
+    100%
+    {
+        margin-top: 0rem;
+        opacity: 1;
+    }
+}
+
+@keyframes opacidad2
+{
+    0%
+    {
+        margin-top: 0rem;
+        opacity: 1;
+    }
+    
+    100%
+    {
+        margin-top: 2rem;
+        opacity: 0;
+    }
+}
+
+@media  screen and (max-width: 480px)
+{
+    h1
+    {
+        font-size: 1.7rem;
+    }
+
+    p
+    {
+        font-size: 0.6rem;
+    }
+}

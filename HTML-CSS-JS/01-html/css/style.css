@@ -1,0 +1,24 @@
+/* Formato básico de una regla CSS 
+
+selector, selector, selector
+{
+    propiedad:valor;
+    propiedad:valor;
+}
+
+*/
+
+body
+{
+    font-family: sans-serif;
+}
+
+img
+{
+    max-width: 100%;
+}
+table, th, td
+{
+    border: 1px red solid;
+    border-collapse: collapse;
+}

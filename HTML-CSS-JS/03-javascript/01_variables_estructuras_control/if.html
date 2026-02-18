@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructura If... else if... else</title>
+    <script src="js/scripts.js"></script>
+</head>
+<body>
+    <script>
+        let num1 = 10;
+        let num2 = prompt("Introduce tu número");
+        console.log(typeof num2); console.log(num2);
+        num2 = Number(num2);
+        console.log(typeof num2); console.log(num2);
+        let result = num1 + num2;
+
+        if (result > 20)
+            alert(`${result} es el resultado de sumar ${num1} y ${num2} y es mayor que 20`);
+        else if (result == 20)
+            alert(`${result} es el resultado de sumar ${num1} y ${num2} y es igual que 20`);
+        else if (result < 20)
+            alert(`${result} es el resultado de sumar ${num1} y ${num2} y es menor que 20`);
+        else
+            alert("SE SIENTEEEEE. No puedo operar");
+
+            let salirono = confirm("Volver a cargar el juego");
+
+            if (salirono)
+                location.reload(true);
+            else
+                salir();
+    </script>
+</body>
+</html>

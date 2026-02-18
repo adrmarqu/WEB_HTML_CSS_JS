@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de DNI y Fecha en Formulario</title>
+    <script src="js/validaDniFechaForm.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1>Contacta con nosotros</h1>
+        <form
+            method="post"
+            name="firstContact" 
+            action="https://dominio.com/envio.php">
+            <div>
+                <label for="miedad">
+                    Fecha de nacimiento:
+                </label>
+                <input 
+                    type="date"
+                    id="miedad"
+                    name="miedad"
+                    value=""
+                    required
+                />
+                <small id="mostra1"></small>
+            </div>
+            <div>
+                <label for="dni">
+                    DNI:
+                </label>
+                <input 
+                    type="text"
+                    id="dni"
+                    name="dni"
+                    value=""
+                    required
+                />
+                <small id="mostra2"></small>
+            </div>
+            <div id="error"></div>
+            <button type="submit" name="enviar" id="enviar">Enviar</button>
+            <button type="reset" name="borrar" id="borrar">Borrar</button>
+        </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,371 @@
+*, *::before, *::after, html, body
+{
+    padding: 0;
+    margin: 0;
+}
+
+body
+{
+    background-color: white;
+}
+
+h1
+{
+    color: red;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+h2
+{
+    color: green;
+    padding: 20px 0;
+}
+
+p
+{
+    line-height: 1.5rem;
+    font-size: 1.2rem;
+}
+
+main, footer
+{
+    width: 90%;
+    margin: auto;
+}
+
+footer
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+button
+{
+    width: 200px;
+    height: 40px;
+    margin: 10px 30px 20px 0;
+    cursor: pointer;
+    color: white;
+    border: 5px solid black;
+}
+
+output
+{
+    font-size: 20px;
+    margin: 20px 0;
+    display: block;
+}
+
+.red
+{
+    color: white;
+    background-color: red;
+}
+
+.red:hover
+{
+    background-color: darkred;
+}
+
+.gray
+{
+    color: white;
+    background-color: gray;
+}
+
+.gray:hover
+{
+    background-color: black;
+}
+
+a
+{
+    width: 200px;
+    height: 40px;
+    margin: 10px 30px 20px 0;
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back
+{
+    border: 5px solid black;
+    color: white;
+    background-color: blueviolet;
+}
+
+.back:hover
+{
+    background-color: darkmagenta;
+}
+
+.next
+{
+    color: black;
+    background-color: yellow;
+}
+
+.next:hover
+{
+    background-color: yellowgreen;
+}
+
+.reset
+{
+    background-color: green;
+}
+
+.reset:hover
+{
+    background-color: darkgreen;
+}
+
+.tbl-1, .table-struct
+{
+    border-collapse: collapse;
+}
+
+.orange
+{
+    text-align: center;
+    font-weight: bold;
+    background-color: lightsalmon;
+}
+
+.green
+{
+    text-align: center;
+    font-weight: bold;
+    background-color: lightgreen;
+}
+
+.tbl-1 td, .tbl-1 th
+{
+    border: 1px solid black;
+    padding: 10px 5px;
+}
+
+.tbl-2 td, .tbl-2 th
+{
+    min-width: 100px;
+    min-height: 50px;
+    text-align: center;
+}
+
+#reloj
+{
+    width: 60%;
+    height: 150px;
+    margin: auto;
+    background-color: darkcyan;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#reloj output
+{
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    background-color: lightskyblue;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#reloj-title
+{
+    text-align: center;
+    color: blueviolet;
+}
+
+#msg-finestra
+{
+    font-size: 1.5rem;
+    color: darkblue;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.hidden
+{
+    display: none;
+}
+
+.luz-enc, .luz-apa
+{
+    color: black;
+    background-color: rgb(255, 255, 255);
+}
+
+.luz-enc:hover
+{
+    background-color: yellow;
+}
+
+.luz-apa:hover
+{
+    color: white;
+    background-color: black;
+}
+
+img
+{
+    display: block;
+    padding: 20px 50px;
+}
+
+.desactivado
+{
+    opacity: 0;
+    pointer-events: none;
+    cursor: default;
+}
+
+.div-centred
+{
+    width: 200px;
+    height: 50px;
+    margin: 10px auto;
+    color: lightseagreen;
+    background-color: lightgoldenrodyellow;
+    border: 5px solid red;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input
+{
+    width: 100%;
+}
+
+.input-texto
+{
+    padding: 10px;
+    margin-top: 10px;
+    color: black;
+    border: 3px solid black;
+    background-color: azure;
+}
+
+.input-borrar
+{
+    width: 200px;
+    height: 40px;
+    margin: 10px 30px 20px 0;
+    cursor: pointer;
+    border: 5px solid black;
+    color: black;
+    background-color: yellow;
+}
+
+.input-borrar:hover
+{
+    background-color: orangered;
+}
+
+.selector
+{
+    padding: 10px;
+    margin-top: 10px;
+    border: 3px solid black;
+    background-color: snow;
+}
+
+.answer-input
+{
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    border: 3px solid black;
+    background-color: lightblue;
+}
+
+#error
+{
+    background-color: lightcoral;
+}
+
+.table-struct tr th, .table-struct tr td
+{
+    padding: 10px;
+    border-collapse: collapse;
+    border: 2px solid black;
+}
+
+.table-struct tr th
+{
+    background-color: lightsalmon;
+}
+
+.table-struct tr td
+{
+    background-color: lightsteelblue;
+}
+
+#input8
+{
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.form-persona
+{
+    margin: 30px 0;
+    border: 2px solid black;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-persona label
+{
+    width: 95%;
+    margin: 15px auto 5px auto;
+}
+
+.form-persona select, .form-input
+{
+    width: 95%;
+    margin: auto;
+    height: 40px;
+}
+
+.form-persona div
+{
+    align-self: flex-end;
+    margin-top: 20px;
+}
+
+.form-persona small
+{
+    width: 95%;
+    margin: auto;
+    margin-top: 5px;
+    color: red;
+    font-size: 20px;
+}
+
+.form-persona select
+{
+    width: 96%;
+    background-color: white;
+}
+
+.form-input, .form-persona select
+{
+    padding-left: 10px;
+    font-size: 20px;
+}

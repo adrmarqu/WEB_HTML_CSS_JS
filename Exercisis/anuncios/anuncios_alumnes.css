@@ -1,0 +1,73 @@
+*, *::after, *::before
+{
+    padding: 0;
+    margin: 0;
+}
+
+html, body
+{
+    background-color: rgb(235, 246, 132);
+    box-sizing: border-box;
+}
+
+h1
+{
+    background-color: rgb(158, 158, 158);
+    text-align: center;
+}
+
+h2
+{
+    background-color: rgb(204, 204, 204);
+    text-align: right;
+    padding-right: 10px;
+    border-color: rgb(128, 128, 128);
+    border-width: 5px;
+    border-bottom-style: dashed;
+}
+
+h3
+{
+    background-color: rgb(204, 204, 204);
+    text-align: center;
+    margin: 5px;
+}
+
+h4
+{
+    background-color: rgb(158, 158, 158);
+    text-align: right;
+    padding-right: 10px;
+    color: rgb(237, 237, 237);
+}
+
+main
+{
+    padding-left: 30%;
+    padding-right: 30%;
+}
+
+article
+{
+    border: thin solid black;
+    margin: 5px;
+}
+
+section
+{
+    border-left: dashed;
+    border-right: dashed;
+    border-width: 5px;
+    border-color: rgb(128, 128, 128);
+    width: 150px;
+    margin: 5px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+p
+{
+    overflow-x: scroll;
+    line-height: 1.5;
+    padding: 5px;
+}

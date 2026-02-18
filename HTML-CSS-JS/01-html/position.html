@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+    <style>
+        .borde
+        {
+            border: 3px solid red;
+        }
+
+        .padre
+        {
+            position: relative;
+            width: 200px;
+            height: 150px;
+            top: 50px;
+            left: 50px;
+        }
+
+        .hijo
+        {
+            position: absolute;
+            top: 30px; /* Espacio de arriba */
+            left: 80px; /* Espacio izquierdo  */
+        }
+
+        .menu
+        {
+            position: fixed;
+            top: 0; /* Espacio de arriba */
+            right: 0; /* Espacio de la derecha */
+        }
+
+        .menu div
+        {
+            width: 200px;
+
+        }
+
+        .titulo
+        {
+            position: sticky;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <!-- Sticky -->
+        <div class="titulo borde">
+                <div class="borde">A</div>
+                <div class="borde">B</div>
+                <div class="borde">C</div>
+        </div>
+
+        <h1>Tipos de position</h1>
+
+        <p>
+            Position define como se posiciona un elemento a otros o al viewport.
+        </p>
+
+        <div>
+            <h2>Position static</h2>
+            <p>
+                Es la posicion por defecto <br>
+                No funciona el top, left...
+            </p>
+        </div>
+
+        <div>
+            <!-- Esta en una posicion X, pero se dibuja desplazado si lo mueves -->
+            <h2>Position relative</h2>
+            <p>
+                Se posiciona respecto a si mismo <br>
+                Mantiene su espacio original <br>
+                Muy usada como referencia para hijos.
+            </p>
+        </div>
+
+        <div>
+            <!-- Esta en otra capa y no afecta a otros objetos, su posicion depende de su padre mas cercano con una posicion que no sea static -->
+            <h2>Position absolute</h2>
+            <p>
+                Sal del flujo normal <br>
+                Se posiciona respecto a el padre con position distinta a static o al body si no hay padre.
+            </p>
+            <div class="padre borde">
+                Padre
+                <div class="hijo borde">Hijo</div>
+            </div>
+        </div>
+
+        <div>
+            <h2>Position fixed</h2>
+            <p>
+                Se posiciona respecto al viewport <br>
+                No se mueve al hacer scroll <br>
+                Ideal para headers y botones flotantes.
+            </p>
+            <div class="menu borde">
+                <div class="borde">1</div>
+                <div class="borde">2</div>
+                <div class="borde">3</div>
+            </div>
+        </div>
+
+        <div>
+            <h2>Position sticky</h2>
+            <p>
+                Mezcla de relative + fixed <br>
+                Se pega al llegar a cierto punto del scroll <br>
+                Necesita top, left... <br>
+                No funciona si el contenedor tiene overflow hidden.
+            </p>
+        </div>
+
+        <div>
+            <h2>Resumen</h2>
+            <p>
+                <strong>Static:</strong> normal <br>
+                <strong>Relative:</strong> mueve sin romper <br>
+                <strong>Absolute:</strong> flota <br>
+                <strong>Fixed:</strong> fijo en la pantalla <br>
+                <strong>Sticky:</strong> pegajoso con scroll
+            </p>
+        </div>
+    </main>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <p style="margin-top: 500px;">Final</p>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+    <style>
+        .borde
+        {
+            border: 3px solid red;
+        }
+
+        .block
+        {
+            display: block;
+            margin: 10px 0;
+        }
+
+        .inline
+        {
+            display: inline;
+        }
+
+        .ib
+        {
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            margin: 5px;
+            text-align: center;
+        }
+
+        .hidden
+        {
+            display: none;
+        }
+
+        .flex
+        {
+            display: flex;
+            gap: 10px;
+        }
+
+        .flex div
+        {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Tipos de display</h1>
+
+        <p>
+            Display define como se comporta un elemento en el layout: si ocupa línea completa, si se alinea con otros, si puede tener ancho/alto, etc.
+        </p>
+
+        <div>
+            <h2>Display block</h2>
+            <p>
+                Ocupa todo el ancho disponible <br>
+                Empieza en una nueva linea <br>
+                Acepta width, height, margin, padding.
+            </p>
+            
+            <div class="block borde">Caja 1</div>
+            <div class="block borde">Caja 2</div>
+            <div class="block borde">Caja 3</div>
+        </div>
+
+        <div>
+            <h2>Display inline</h2>
+            <p>
+                Se comporta como texto <br>
+                No salta de linea <br>
+                No acepta width ni height <br>
+                Solo acepta margin y padding horizontal.
+            </p>
+            <span class="inline borde">Uno</span>
+            <span class="inline borde">Dos</span>
+            <span class="inline borde">Tres</span>
+        </div>
+
+        <div>
+            <h2>Display inline-block</h2>
+            <p>
+                Se coloca en linea <br>
+                Acepta width y height <br>
+                Acepta margin y padding completos <br>
+                Muy usado para botones.
+            </p>
+            <div class="ib borde">A</div>
+            <div class="ib borde">B</div>
+            <div class="ib borde">C</div>
+        </div>
+
+        <div>
+            <h2>Display none</h2>
+            <p>
+                El elemento no existe visualmente <br>
+                No ocupa espacio <br>
+                No es accesible.
+            </p>
+            <div class="borde">Visible</div>
+            <div class="hidden borde">No me ves</div>
+            <div class="borde">Visible</div>
+        </div>
+
+        <div>
+            <h2>Display flex</h2>
+            <p>
+                Activa Flexbox <br>
+                Controla la distribución en 1 dimension (fila o columna) <br>
+                Ideal para layouts y alineaciones.
+            </p>
+            <div class="flex borde">
+                <div class="borde">1</div>
+                <div class="borde">2</div>
+                <div class="borde">3</div>
+            </div>
+        </div>
+
+        <div>
+            <h2>Display grid</h2>
+            <p>
+                Activa CSS Grid <br>
+                Controla layouts en 2 dimensiones (filas y columnas) <br>
+                Perfecto para estructuras grandes.
+            </p>
+        </div>
+
+        <div>
+            <h2>Display inline-flex</h2>
+            <p>
+                Igual que flex, pero el contenedor se comporta como inline.
+            </p>
+        </div>
+
+        <div>
+            <h2>Display inline-grid</h2>
+            <p>
+                Igual que grid, pero en linea.
+            </p>
+        </div>
+
+        <div>
+            <h2>Display table</h2>
+            <p>
+                Simula tablas HTML <br>
+                · table <br> · table-row <br> 
+                · table-cell<br>· table-column
+            </p>
+        </div>
+
+        <div>
+            <h2>Resumen</h2>
+            <p>
+                <strong>Block:</strong> ocupa todo<br>
+                <strong>Inline:</strong> como texto<br>
+                <strong>Inline-block:</strong> texto + tamaño<br>
+                <strong>Flex/Grid:</strong> layout moderno<br>
+                <strong>None:</strong> desaparece<br>
+            </p>
+        </div>
+    </main>
+</body>
+</html>

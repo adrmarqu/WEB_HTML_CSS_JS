@@ -1,0 +1,98 @@
+<!-- 
+
+flex:
+
+    -display: flex;
+
+Alinear elementos horizontalmente:
+
+    - justify-content:
+        flex-start: Lado izquierdo
+        flex-end: Lado derecho
+        center: En el centro
+        space-between: Misma distancia entre elementos
+        space-around: Misma separacion alrededor de los elementos
+
+Alinear elementos verticalmente:
+
+    - align-items: Para todos los elementos del contenedor
+    - align-self: Para un elemento del contenedor en especifico
+        flex-start: Arriba
+        flex-end: Abajo
+        center: En el centro
+        baseline: En la base del contenedor
+        stretch: Los elementos se estiran para ajustarse al contenedor
+
+Definir dirección de los elementos en el contenedor
+
+    - flex-direction:
+        row: Los elementos se colocan en fila
+        row-reverse: Los elementos se colocan en fila al reves
+        column: Los elementos se colocan en columna
+        column-revers: Los elementos se colocan en columna al reves
+
+Orden de los elementos
+
+    - order: 4;
+
+Distribuir los elementos
+
+    - flex-wrap:
+        nowrap: Cada elemento se ajusta en una sola linea
+        wrap: Cada elemnto se mete en una linea nueva si no cabe
+        wrap-reverse: Lo mismo que wrap pero invertido
+
+Definir direccion y distribución de los elementod
+
+    - flex-flow: flex-direction flex-wrap;
+
+Alinear los elementos en conjunto
+
+    - align-content:
+        flex-start: A la parte superior del contenedor
+        flex-end: A la parte inferior del contenedor
+        center: En el centro (horizontal y vertical)
+        space-between: Misma separacion entre lineas
+        space-around: Misma separacion a su alrededor
+        stretch: Las lineas se estiran para ajustarse al contenedor
+
+
+grid:
+
+    - display: grid;
+
+Crear columnas/filas (5 columnas/filas):
+
+    - grid-template-columns: 20% 20% 20% 20% 20%;
+    - grid-template-rows: 20% 20% 20% 20% 20%;
+
+    - grid-template-columns: 2fr 8r; (= 20% 80%)
+    - grid-template-columns: 1fr 5r; (= 1/6 5/6)
+
+    - grid-template-columns: repeat(8, 12.5%); (8 columnas de 12.5% cada una)
+
+    grid-template: grid-template-rows / grid-template-columns;
+
+
+Seleccionar casillas del grid: Selecciona de start a end
+
+    - grid-column-start: 3;
+    - grid-column-end: 5;
+    - grid-column: 3(start) / 5(end);
+    - grid-column-start: span 3; (span indica cuantas casillas rellenar)
+
+    - grid-row-start: 3;
+    - grid-row-end: span 3;
+    - grid-row: 3 / 5;
+
+    - grid-area: row_start column_start row_end column_end
+    - grid-area: 1 / 2 / span 3 / span 4;
+
+Orden de las casillas seleccionadas
+
+    - order: 4;
+
+
+
+
+-->

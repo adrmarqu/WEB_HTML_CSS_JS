@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial: Instal·lar Homebrew a macOS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .info-box {
+            background: #f0f4ff;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        h2 {
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+        
+        h3 {
+            color: #764ba2;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            color: #d63384;
+            font-size: 0.9em;
+        }
+        
+        .command-block {
+            background: #1e1e1e;
+            color: #00ff00;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.95em;
+            border: 2px solid #667eea;
+        }
+        
+        .command-block code {
+            background: none;
+            color: #00ff00;
+            padding: 0;
+        }
+        
+        .step {
+            margin: 25px 0;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .step-number {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .step h3 {
+            display: inline-block;
+            margin: 0;
+            margin-top: 0;
+        }
+        
+        .step p {
+            margin-left: 45px;
+            margin-top: 10px;
+        }
+        
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        .supported-versions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .version-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        footer {
+            background: #f5f5f5;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+            border-top: 1px solid #ddd;
+        }
+        
+        .check-mark {
+            color: #28a745;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍺 Homebrew</h1>
+            <p>Gestor de paquets per a macOS</p>
+        </header>
+        
+        <div class="content">
+            <h2>Què és Homebrew?</h2>
+            <p>Homebrew és un gestor de paquets lliure i de codi obert per a macOS que simplifica la instal·lació de programari. Permet instal·lar, actualitzar i gestionar aplicacions directament des de la línia de comandos sense necessitat de descarregar manuals.</p>
+            
+            <div class="info-box">
+                <strong>ℹ️ Versió compatible:</strong> Aquest tutorial és vàlid per a macOS 10 i superiors, fins a macOS 15.5.
+            </div>
+            
+            <div class="supported-versions">
+                <div class="version-badge">macOS 10</div>
+                <div class="version-badge">macOS 11 Big Sur</div>
+                <div class="version-badge">macOS 12 Monterey</div>
+                <div class="version-badge">macOS 13 Ventura</div>
+                <div class="version-badge">macOS 14 Sonoma</div>
+                <div class="version-badge">macOS 15 Sequoia</div>
+            </div>
+            
+            <h2>Requisits previs</h2>
+            <ul>
+                <li>Accés a Internet</li>
+                <li>Compte d'usuari amb permisos d'administrador</li>
+                <li>Terminal o línia de comandos</li>
+                <li>macOS 10 o superior</li>
+            </ul>
+            
+            <div class="warning-box">
+                <strong>⚠️ Atenció:</strong> Necessitaràs introducir la teva contrasenya durant la instal·lació. Homebrews necessita permisos d'administrador per instal·lar paquets al sistema.
+            </div>
+            
+            <h2>Passos per instal·lar Homebrew</h2>
+            
+            <div class="step">
+                <span class="step-number">1</span>
+                <h3>Obrir la Terminal</h3>
+                <p>Busca "Terminal" a Spotlight (⌘ + espai) o navega a Aplicacions → Utilitats → Terminal.app</p>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">2</span>
+                <h3>Instal·lar les eines de desenvolupament de Xcode</h3>
+                <p>Homebrew necessita les eines de desenvolupament de Xcode. Executa el següent comandament a la Terminal:</p>
+                <div class="command-block">
+                    <code>xcode-select --install</code>
+                </div>
+                <p>Se t'obrirà una finestra per a la instal·lació. Fes clic a "Instal·la" i espera que es completi la instal·lació.</p>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">3</span>
+                <h3>Descarregar i executar l'instal·lador de Homebrew</h3>
+                <p>Copia i enganxa el següent comandament a la Terminal:</p>
+                <div class="command-block">
+                    <code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code>
+                </div>
+                <p>Prem Enter i espera que es descarregui i executin els fitxers necessaris.</p>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">4</span>
+                <h3>Introduir la contrasenya</h3>
+                <p>Quan se t'ho demani, introdueix la teva contrasenya de macOS. No es mostrarà mentre escribes, però és normal. Prem Enter quan acabis.</p>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">5</span>
+                <h3>Configurar la ruta (PATH) - Si és necessari</h3>
+                <p>Depenent de la teva versió de macOS i si tens un processador Apple Silicon o Intel, pot que necessitis configurar la ruta.</p>
+                <p><strong>Per a Mac amb Apple Silicon (M1, M2, etc.):</strong></p>
+                <div class="command-block">
+                    <code>echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile<br>eval "$(/opt/homebrew/bin/brew shellenv)"</code>
+                </div>
+                <p><strong>Per a Mac amb processador Intel:</strong></p>
+                <div class="command-block">
+                    <code>echo 'eval "$(/usr/local/bin/brew shellenv)"' >> ~/.zprofile<br>eval "$(/usr/local/bin/brew shellenv)"</code>
+                </div>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">6</span>
+                <h3>Verificar la instal·lació</h3>
+                <p>Per comprovar que Homebrew s'ha instal·lat correctament, executa:</p>
+                <div class="command-block">
+                    <code>brew --version</code>
+                </div>
+                <p>Hauries de veure quelcom com: <code>Homebrew 4.x.x</code> (el número de versió pot variar).</p>
+            </div>
+            
+            <h2>Primeres comandes útils</h2>
+            <p>Un cop instal·lat Homebrew, aquí hi ha algunes comandes bàsiques que pots utilitzar:</p>
+            
+            <h3>Buscar un paquet</h3>
+            <div class="command-block">
+                <code>brew search nom_del_paquet</code>
+            </div>
+            
+            <h3>Instal·lar un paquet</h3>
+            <div class="command-block">
+                <code>brew install nom_del_paquet</code>
+            </div>
+            
+            <h3>Actualitzar Homebrew</h3>
+            <div class="command-block">
+                <code>brew update</code>
+            </div>
+            
+            <h3>Actualitzar tots els paquets</h3>
+            <div class="command-block">
+                <code>brew upgrade</code>
+            </div>
+            
+            <h3>Llistar els paquets instal·lats</h3>
+            <div class="command-block">
+                <code>brew list</code>
+            </div>
+            
+            <h3>Desinstal·lar un paquet</h3>
+            <div class="command-block">
+                <code>brew uninstall nom_del_paquet</code>
+            </div>
+            
+            <h2>Resolució de problemes</h2>
+            
+            <h3>Homebrew no es reconeix a la Terminal</h3>
+            <p>Si després d'instal·lar, la Terminal no reconeix el comandament <code>brew</code>, intenta tancar i tornar a obrir la Terminal, o executa:</p>
+            <div class="command-block">
+                <code>source ~/.zprofile</code>
+            </div>
+            
+            <h3>Error de permisos</h3>
+            <p>Si obtens un error sobre permisos, assegura't que teniu els permisos correctes. Normalment, els problemes de permisos es resolen amb la instal·lació inicial.</p>
+            
+            <h3>Estàs a Internet però l'instal·lació falla</h3>
+            <p>Intenta executar de nou el comandament d'instal·lació. Si el problema persisteix, pots consultar la documentació oficial a <code>https://brew.sh</code></p>
+            
+            <div class="info-box">
+                <strong><span class="check-mark">✓</span> Enhorabona!</strong> Ja hauries de tenir Homebrew instal·lat i funcionant. Ara pots utilitzar-lo per instal·lar i gestionar paquets fàcilment al teu macOS.
+            </div>
+        </div>
+        
+        <footer>
+            <p>Tutorial d'instal·lació de Homebrew per a macOS 10 a 15.5 • Creat el 2026</p>
+            <p>Per a més informació, visita <a href="https://brew.sh" style="color: #667eea;">https://brew.sh</a></p>
+        </footer>
+    </div>
+</body>
+</html>

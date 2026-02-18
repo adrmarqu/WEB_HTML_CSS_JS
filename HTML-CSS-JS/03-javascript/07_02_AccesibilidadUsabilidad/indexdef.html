@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Accesibilidad Web | Conceptos y buenas prácticas</title>
+      <meta name="description" content="Guía práctica de accesibilidad web en HTML, ARIA y WCAG con ejemplos reales">
+      <link rel="stylesheet" href="bootstrap.min.css"> 
+    <link rel="stylesheet" href="prism.css" />
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body class="container-fluid">
+    <!-- Skip link: fundamental para teclado -->
+    <a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+
+    <header class="hero" role="banner">
+        <h1 class="title padding">Accesibilidad en la Web</h1>
+        <p class="subtitle">Diseñar para todas las personas</p>
+    </header>
+        <nav class="navbar" aria-label="Navegación principal">
+        <ul class="nav">
+            <li> <a href="#conceptos"> Conceptos</a> || </li>
+            <li> <a href="#use-semantic-html"> HTML semántico</a> || </li> 
+            <li> <a href="#aria"> ARIA</a> || </li>
+            <li> <a href="#formularios"> Formularios</a> || </li>
+            <li> <a href="#multimedia"> Multimedia</a></li>
+        </ul>
+    </nav>
+    
+    <main id="contenido" class="content-container">
+        <div class="content">
+            <div class="padding">
+                <div class=" markdown-body line-numbers">
+                     <section id="conceptos"></section>
+                    <h2>Conceptos básicos de accesibilidad en HTML</h2>
+                    <div class="custom-slant">
+                        <p>Es importante que diseñemos nuestro HTML teniendo en cuenta la accesibilidad.</p>
+                        <p>Tener HTML accesible significa que las personas con discapacidad pueden utilizar la Web. Hay
+                            usuarios totalmente ciegos o con discapacidad visual, personas con problemas de pérdida auditiva y
+                            una multitud de otras discapacidades diferentes.</p>
+                        <p>Desafortunadamente, a este tema no se le da la importancia que necesita y no parece tan
+                            interesante como
+                            otros a no ser que hablemos de accesibilidad en términos de posicionamiento en buscadores. En estos términos, tener un dominio con gran antiguedad, tener keywords, o tener diferentes Landing pages para diferentes conceptos i/o productos supone un gran plus.</p>
+                        <p>¿Qué pasa si una persona no puede <em>ver</em> su página, pero todavía quiere consumir su
+                            contenido?
+                            Primero,
+                            ¿cómo lo hacen? No pueden usar el mouse, usan algo llamado<strong> lector de
+                                pantalla</strong>. No tienes
+                            que
+                            imaginarte eso. Puedes probar uno ahora: <a
+                                href="https://addons.mozilla.org/en-US/firefox/addon/simple-tts-texttospeech-reader/"
+                                target="new">Text to Speech Reader</a>. La accesibilidad también debe cuidar de permitir que las
+                            herramientas seleccionen
+                            elementos fácilmente o naveguen por las páginas.</p>
+                        <p>Las páginas web y las aplicaciones web no siempre se construyen con la accesibilidad como uno
+                            de sus
+                            primeros objetivos, y tal vez la versión 1.0 no sea accesible, pero es posible hacer que una
+                            página web sea
+                            accesible después de ser construida. Cuanto antes, mejor, pero nunca es demasiado tarde.</p>
+                 <p>
+                    La accesibilidad web garantiza que <strong>todas las personas</strong> puedan usar la Web,
+                    independientemente de sus capacidades físicas, sensoriales o cognitivas.
+                </p>
+
+                <p>
+                    Esto incluye personas con discapacidad visual, auditiva, motora, cognitiva,
+                    personas mayores o usuarios en contextos limitados (móvil, mala conexión, luz solar).
+                </p>
+
+                <blockquote class="alert alert-warning">
+                    <p>
+                        Accesibilidad no es solo discapacidad: mejora la experiencia para todo el mundo.
+                    </p>
+                </blockquote>
+
+                <p>
+                    Los lectores de pantalla, la navegación por teclado y los dispositivos de apoyo
+                    dependen directamente de un HTML bien estructurado.
+                </p>
+            </section>
+                        <p>Actualmente los sitios web creados por el gobierno u otras organizaciones públicas deben
+                            ser accesibles.</p>
+                        <p>Las empresas que facturan más de 1.000.000 € tienen que disponer de sitios web accesibles.
+                        </p>
+                        <p>¿Qué significa esto para hacer que un HTML sea accesible? Veamos algunos de los principales
+                            conceptos en
+                            los que se debe pensar.</p>
+                        <blockquote class="alert alert-warning">
+                            <p style="color:black">Nota: Es imprescindible atender a otros ámbitos: En CSS, los colores,
+                                el contraste
+                                y las fuentes y
+                                tamaños. O <a href="https://css-tricks.com/accessible-svgs/" target="new">
+                                    cómo hacer que
+                                    las imágenes SVG sean accesibles</a>. </p>
+                        </blockquote>
+                </section>
+                        <h2 class="vspace" id="use-html-attributes">Utiliza correctamente Html y sus atributos</h2>
+                        <p>Desarrollar HTML con doctypes correctos y HTML 5, y ¡es una de las principales ayudas que
+                            puedes ofrecer a los periféricos de soporte a
+                            personas con discapacidades y a buscadores.
+                        </p>
+                        <p>El contenido bien estructurado con html actualizado, atributos de idioma para agilizar su
+                            acceso, meta-etiquetas de normativa iso correctas, de identificación de dispositivos
+                            móviles.
+                            Crea un title adecuado para cada html de tú web.</p>
+
+                        <pre class="language-js"><code class="language-js"> 
+ &lt;!DOCTYPE html>//Definición doctype
+ &lt;html lang="es">//atributo lang imprescindible
+                            
+    &lt;head>
+    &lt;meta charset="UTF-8">//meta juego carácteres válido
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    // meta contenido para diferentes dispositivos
+                            
+   &lt;title>Tabla básica de conceptos&lt;/title>
+   //title descriptivo , no más de 65 caràcteres, keywords a la izquierda, no usar "-,:" como separadores. Sí usar "|"
+   &lt;link rel="stylesheet" href="css/style.css">//crear directorios para los diferentes recursos
+    &lt;script src="js/javascript.js">&lt;/script>
+    &lt;/head>
+                            
+     &lt;body>-------&lt;/body>
+    </code></pre>
+                        <h2 class="vspace" id="use-semantic-html">Utiliza HTML semántico</h2>
+                        <p>Desarrollar con HTML semántico es muy importante y es una de las principales ayudas que
+                            puedes ofrecer a
+                            personas con discapacidades y a buscadores.
+                            Veamos algunos escenarios comunes.</p>
+                        <p>El contenido bien estructurado permite una navegación y un procesamiento más eficientes.
+                            Utiliza HTML y
+                            WAI-ARIA para mejorar la navegación y la orientación en páginas web y aplicaciones.</p>
+
+                        <p><strong>Regiones de página:</strong> identifica y marca regiones en páginas web utilizando
+                            roles HTML5 y
+                            WAI-ARIA.</p>
+                        <p><strong>Etiquetado de regiones:</strong>etiquetea regiones para permitir que los usuarios las
+                            distingan y
+                            accedan a ellas.</p>
+
+                        <p><strong>Encabezados:</strong> agrega encabezados y rellénalos lógicamente para etiquetar
+                            secciones de
+                            páginas web de
+                            acuerdo con sus relaciones e importancia.</p>
+
+                        <p><strong>Estructura del contenido:</strong> marca el contenido de una página de una manera que
+                            utilice
+                            elementos apropiados y significativos. <strong> <code
+                                    class="code">&lt;header>, &lt;nav>, &lt;main>, &lt;footer>, &lt;aside>, &lt;section>, &lt;article></code></strong>,
+                        </p>
+                        <pre class="language-js"><code class="language-js">    
+            &lt;header>
+              &lt;h1&gt;Título principal&lt;/h1&gt;
+                    &lt;img src="/images/logo.png" alt="SpaceBear Inc.">
+             &lt;/header>
+            &lt;nav aria-label="Navegación principal">&lt;/nav>
+            &lt;nav aria-labelledby="quicknav-heading">
+                &lt;h5 id="quicknav-heading">Quick Navigation&lt;/h5>
+            &lt;/nav>
+            &lt;main>
+            &lt;article&gt;
+                &lt;h2&gt;Artículo&lt;/h2&gt;
+                &lt;h1>Stellar launch weekend &lt;/h1>
+                &lt;p&gt;Contenido principal&lt;/p&gt;
+            &lt;/article&gt;
+                   
+            &lt;/main>
+            &lt;aside>
+                  &lt;h3>Related Articles&lt;/h3>
+            &lt;/aside>
+            &lt;footer>
+                   &lt;p>&copy; 2026 SpaceBears Inc.&lt;/p>
+            &lt;/footer>
+        </code></pre>
+            <p>
+                    ❌ Evita usar <code>&lt;div&gt;</code> y <code>&lt;span&gt;</code> sin significado
+                    cuando existe una etiqueta semántica adecuada.
+                </p>
+                        <blockquote class="alert alert-warning">
+                            <p style="color:black">Nota: Orientación sobre cómo crear sitios web que cumplan con las
+                                WCAG
+                                <a href="https://www.w3.org/WAI/tutorials/page-structure/" target="new">Maquetar Layout
+                                    con estructuras
+                                    semánticas </a>
+                            </p>
+                        </blockquote>
+
+                        <p>Es importante utilizar la estructura correcta para las etiquetas de encabezado. La más
+                            importante y
+                            única
+                            en cada html
+                            es <strong> <code class="code">&lt;h1></code></strong>, usa números más altos para los menos
+                            importantes, pero todos los
+                            encabezados del
+                            mismo
+                            nivel deben tener el mismo significado (piénsalo como una estructura de árbol)</p>
+                        <pre class="language-js"><code class="language-js">
+        &lt;h1>........&lt;/h1>
+            &lt;h2>.......&lt;/h2>
+                &lt;h3>.......&lt;/h3>
+            &lt;h2>.......&lt;/h2>
+            &lt;h2>.......&lt;/h2>
+                &lt;h3>.......&lt;/h3>
+                  &lt;h4>.......&lt;/h4> </code></pre>
+                        <p>Usar <strong> <code class="code">&lt;strong></code></strong> y <strong> <code
+                                    class="code">&lt;em></code></strong> en vez de <strong><code
+                                    class="code">&lt;b></code></strong> y
+                            <strong> <code class="code">&lt;i></code></strong>. Visualmente tienen el mismo aspecto,
+                            pero los dos
+                            primeros tienen más significado asociado a ellos. <strong><code
+                                    class="code">&lt;b></code></strong> y
+                            <strong> <code class="code">&lt;i></code></strong> son solamente
+                            visuales y están deprecados.
+                        </p>
+                        <p>Las listas son importantes. Un lector de pantalla puede detectar una lista y proporcionar una
+                            descripción
+                            general, luego dejar que el usuario elija entrar en la lista o no.</p>
+                        <p>Una tabla debe tener un<strong> <code class="code">&lt;caption></code></strong>: etiqueta que
+                            describe su
+                            contenido</p>
+                        <pre><code class="language-html" data-lang="html">  
+&lt;table>
+    &lt;caption>Tabla de calificaciones de estudiantes&lt;/caption>
+    &lt;thead>// Cabecera accesible
+        &lt;tr>
+            &lt;th scope="col">Nombre&lt;/th> //Cabeceras de columna
+            &lt;th scope="col">Asignatura&lt;/th>
+            &lt;th scope="col">Calificación&lt;/th>
+        &lt;/tr>
+    &lt;/thead>
+    &lt;tbody>//body accesible de la tabla
+        &lt;tr>
+            &lt;th scope="row">Juan Pérez&lt;/th>// Cabecera de fila
+            &lt;td>Lengua y Literatura&lt;/td>
+            &lt;td>8.5&lt;/td>
+        &lt;/tr>
+        &lt;tr>
+            &lt;th scope="row">María Gómez&lt;/th>
+            &lt;td>Matemáticas&lt;/td>
+            &lt;td>9.2&lt;/td>
+        &lt;/tr>
+        &lt;tr>
+            &lt;th scope="row">Carlos López&lt;/th>
+            &lt;td>Ciencias Sociales&lt;/td>
+            &lt;td>7.8&lt;/td>
+        &lt;/tr>
+    &lt;/tbody>
+    &lt;tfoot>//footer accesible de la tabla
+        &lt;tr>
+            &lt;td colspan="3">Calificaciones en escala de 0 a 10.&lt;/td>
+        &lt;/tr>
+    &lt;/tfoot>
+&lt;/table>
+</code></pre>
+                        <blockquote class="alert alert-warning">
+                            <p style="color:black">Nota: Especificaciones para el uso de las tablas con
+                                las WCAG
+                                <a href="https://www.w3.org/WAI/tutorials/tables/" target="new">Maquetar Layout con
+                                    tablas accesibles</a>.
+                            </p>
+                        </blockquote>
+                <h2>Imágenes accesibles</h2>
+                <p>Las imágenes son un componente esencial de la web moderna, pero a menudo se pasan por alto en
+                    términos de
+                    accesibilidad. Asegurarse de que las imágenes sean accesibles es crucial para garantizar que
+                    todos los
+                    usuarios, incluidos aquellos con discapacidades visuales, puedan comprender y disfrutar del
+                    contenido visual.
+                <pre class="language-html"><code>
+                &lt;img src="perro.jpg" alt="Perro jugando en el parque"&gt;
+                </code></pre>
+                        <h2 class="vspace" id="use-alt-attributes-for-images">Usa atributos <strong> <code
+                                    class="code2"> alt </code></strong>
+                            para imágenes</h2>
+                        <p>Todas las imágenes deben tener un atributo<strong> <code
+                                    class="code"> alt </code></strong>que describe
+                            el contenido de la imagen. No es solo una buena práctica, es requerido por el estándar HTML
+                            y su HTML sin
+                            él no está validado. El problema lo tenemos cuando una imagen es puramente decorativa. Si no
+                            deseamos que sea leida una imagen por el validador, por no tener
+                            definido el atributo alt, añadir "tabindex=-1" a la misma y no afectará a la accesibilidad pero es recomendable usar alt="" aria-hidden="true" para que los lectores de pantalla la ignoren.</p>
+                        </p>
+                        <h3>Imágenes decorativas</h3>
+
+                <pre class="language-html"><code>
+                &lt;img src="decoracion.svg" alt="" aria-hidden="true"&gt;
+                </code></pre>
+
+                <p>
+                    Si la imagen no aporta información, debe ser ignorada por lectores de pantalla.
+                </p>
+                        <pre><code class="language-html" data-lang="html">&lt;<span>img</span> <span>src</span><span>=</span><span>"dog.png"</span> <span>alt</span><span>=</span><span>"My dog"</span><span> title</span><span>=</span><span>"Another dog"</span>&gt;</code></pre>
+
+                        <p>El uso del atributo title="" no se hace por accesibilidad sino por usabilidad pero también ayuda a los motores de búsqueda a posicionar, puede ser un incentivo para que lo agregues.</p>
+
+                          <section id="formularios">
+                <h2>Formularios accesibles</h2>
+
+                <p>
+                    Los formularios son uno de los puntos más críticos en accesibilidad.
+                </p>
+
+                <pre class="language-html"><code>
+&lt;form&gt;
+    &lt;label for="email"&gt;Correo electrónico&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;
+
+    &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;
+                </code></pre>
+
+                <p>
+                    ✅ Nunca uses <code>placeholder</code> como sustituto de <code>label</code>.
+                </p>
+            </section>
+
+            <!-- ================= TECLADO ================= -->
+            <section id="teclado">
+                <h2>Navegación por teclado</h2>
+
+                <p>
+                    Todo contenido interactivo debe ser usable únicamente con teclado.
+                </p>
+
+                <ul>
+                    <li>Tab: avanzar</li>
+                    <li>Shift + Tab: retroceder</li>
+                    <li>Enter / Space: activar</li>
+                </ul>
+
+                <pre class="language-html"><code>
+&lt;div tabindex="0"&gt;
+    Elemento accesible por teclado
+&lt;/div&gt;
+                </code></pre>
+
+                <blockquote class="alert alert-warning">
+                    <p>No abuses de <code>tabindex</code>. Úsalo solo cuando sea necesario.</p>
+                </blockquote>
+            </section>
+                        <blockquote class="alert alert-warning">
+                            <p style="color:black">Nota: Orientación sobre diferentes especificaciones para el uso de
+                                las imágenes con
+                                las WCAG
+                                <a href="https://www.w3.org/WAI/tutorials/images/" target="new">Maquetar Layout con
+                                    imágenes accesibles
+                                </a>, <strong> <code
+                                        class="code">&lt;figure>, &lt;figcaption>, longdesc, aria-describedby, &lt;picture> </code></strong>
+                            </p>
+                        </blockquote>
+                        <h2 class="vspace" id="use-the-role-attribute">Utiliza el atributo<strong> <code
+                                    class="code2"> role</code></strong></h2>
+                        <p> Los atributos <code class="code"> role </code></strong>Permiten asignar roles específicos a
+                            los
+                            diversos elementos de su página.
+                        </p>
+                        <p>Puedes asignar muchos roles diferentes: complementario, lista, elemento de lista, principal,
+                            navegación,
+                            región, pestaña, alerta, aplicación, artículo, banner, botón, celda, casilla de
+                            verificación,
+                            información de contenido, diálogo, documento, fuente, figura, formulario, cuadrícula,
+                            cuadrícula,
+                            encabezado, img,
+                            cuadro de lista, fila, grupo de filas, búsqueda, cambiar, tabla, panel de pestañas, cuadro
+                            de texto,
+                            temporizador.
+                        </p>
+                        <p>Son muchos los atributos role y para que investigues, adjunto un vínculo a la referencia
+                            completa de cada
+                            uno de ellos <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles"
+                                target="new">
+                                este enlace MDN</a>. Pero no es necesario asignar un rol a cada elemento de la página.
+                            Los lectores de
+                            pantalla pueden inferir de l etiqueta HTML en la mayoría de los casos. Por ejemplo, no es
+                            necesario
+                            agregar una etiqueta de función o rol a etiquetas semánticas como<strong> <code
+                                    class="code">&lt;nav>, &lt;header>, &lt;figure>, &lt;picture>, &lt;footer>, &lt;main>, &lt;aside>, &lt;section>, &lt;article>, &lt;label></code></strong>.El
+                            siguiente ejemplo de etiqueta semántica muestra un uso mas eficaz con etiquetas semánticas y
+                            no es
+                            necesario usar el atributo <code class="code"> role </code></strong>, ni es recomendable.
+                        </p>
+                        <pre><code class="language-html" data-lang="html">&lt;<span>nav</span>&gt; &lt;<span>ul</span>&gt; &lt;<span>li</span>&gt;&lt;<span>a</span> <span>href</span><span>=</span><span >"/"</span>&gt;Home&lt;/<span>a</span>&gt;&lt;/<span>li</span>&gt;
+              &lt;<span>li</span>&gt;&lt;<span>a</span> <span>href</span><span>=</span><span >"/blog"</span>&gt;Blog&lt;/<span>a</span>&gt;&lt;/<span>li</span>&gt; &lt;/<span>ul</span>&gt; &lt;/<span>nav</span>&gt;</code></pre>
+
+                        <p>Si te ves <em>forzado</em> a usar una etiqueta <strong><code
+                                    class="code">&lt;div></code></strong>en
+                            lugar de<strong><code class="code"> &lt;nav></code></strong>, puedes usar el atributo
+                            <strong><code class="code"> role="navigation" </code></strong>.
+                        </p>
+                        <pre><code class="language-html" data-lang="html">&lt;<span>div</span> <span>role</span><span>=</span><span >"navigation"</span>&gt; &lt;<span>ul</span>&gt;&lt;<span>li</span>&gt;&lt;<span>a</span> <span>href</span><span>=</span><span >"/"</span>&gt;Home&lt;/<span>a</span>&gt;&lt;/<span>li</span>&gt;
+            &lt;<span>li</span>&gt;&lt;<span>a</span> <span>href</span><span>=</span><span>"/blog"</span>&gt;Blog&lt;/<span>a</span>&gt;&lt;/<span>li</span>&gt; &lt;/<span>ul</span>&gt; &lt;/<span>div</span>&gt;</code></pre>
+                        <p>Así que aquí tienes un ejemplo práctico:<strong><code class="code"> role</code></strong> se
+                            utiliza para
+                            asignar un valor significativo cuando la etiqueta no transmite ya el significado.</p>
+                        <h2 class="vspace" id="use-the-tabindex-attribute">Utiliza el atributo <strong><code
+                                    class="code2"> tabindex </code></strong></h2>
+                        <p>Los atributos <strong><code class="code"> tabindex </code></strong> permiten cambiar el orden
+                            en que al
+                            presionar la tecla Tab se seleccionan los elementos &quot;seleccionables&quot;. De forma
+                            predeterminada,
+                            solo los enlaces y
+                            elementos de formulario se pueden &quot;seleccionar&quot; mediante la navegación con la
+                            tecla Tab (y no es
+                            necesariobconfigurar <code class="code"> tabindex </code></strong> en ellos).</p>
+                        <p>Añadiendo <code class="code"> tabindex="0" </code></strong> convertimos un elemento HTML,
+                            seleccionable:
+                        </p>
+                        <pre><code class="language-html" data-lang="html">&lt;<span>div</span> <span>tabindex</span><span>=</span><span >"0"</span>&gt;
+              ...
+            &lt;/<span>div</span>&gt;</code></pre>
+                        <p>Usando <strong><code class="code"> tabindex="-1" </code></strong>en su lugar, eliminas el
+                            elemento de
+                            esta
+                            navegación basada en pestañas, puede ser bastante útil.</p>
+                                        <section id="aria">
+                <h2>Uso responsable de ARIA</h2>
+
+                <p>
+                    ARIA debe utilizarse solo cuando HTML no es suficiente.
+                </p>
+
+                <pre class="language-html"><code>
+&lt;button aria-label="Cerrar ventana"&gt;✖&lt;/button&gt;
+                </code></pre>
+
+                <p>
+                    Regla de oro:
+                </p>
+
+                <blockquote class="alert alert-info">
+                    <p>
+                        ❌ No ARIA si HTML ya hace el trabajo.
+                    </p>
+                </blockquote>
+            </section>
+                        <h3 class="vspace" id="use-the-aria-attributes">Si Utilizas atributos <strong><code
+                                    class="code2"> aria </code></strong>
+                        </h3>
+                        <p>ARIA es un acrónimo que significa Accessible Rich Internet Applications y define la semántica
+                            que se
+                            puede aplicar a los elementos.</p>
+                        <h3 id="aria-label"><code>aria-label</code></h3>
+                        <p>Este atributo se usa para agregar una cadena para describir un elemento, cuando la etiqueta
+                            no sea la
+                            correcta o no sea descriptiva.</p>
+                        <p>Ejemplo:</p>
+                        
+                            <pre><code class="language-html" data-lang="html">&lt;<span>p</span> <span>aria-label</span><span>=</span><span >"The description of the product"</span>&gt;...&lt;/<span>p</span>&gt;</code></pre>
+                            <p>Utiliza este atributo en un elemento o etiqueta etiqueta no explícita, si es necesario.
+                            </p>
+                            <h3 id="aria-labelledby"><code>aria-labelledby</code></h3>
+                            <p>Este atributo establece una correlación entre el elemento actual y el que lo etiqueta.
+                            </p>
+                            <p>Si sabes como un <strong><code class="code"> input </code></strong>se puede asociar a
+                                un <strong><code class="code"> label</code></strong>, estye atributo funciona de igual
+                                manera cuando sea
+                                necesario</p>
+                            <p>Pasamos la identificación del elemento que describe el elemento actual.</p>
+                            <p>Ejemplo:</p>
+                            <pre><code class="language-html" data-lang="html">&lt;<span>h3</span> <span>id</span><span>=</span><span >"description"</span>&gt;The description of the product&lt;/<span>h3</span>&gt;
+  <p>&lt;<span>p</span> <span>aria-labelledby</span><span>=</span><span >“description”</span>&gt;
+  …
+  &lt;/<span>p</span>&gt;</p></code></pre>
+                            <p></p>
+                            <h3 id="aria-describedby"><code>aria-describedby</code></h3>
+                            <p>Este atributo nos permite asociar un elemento con otro elemento que sirve como
+                                descripción.</p>
+                            <p>Ejemplo:</p>
+                            <pre><code class="language-html" data-lang="html">&lt;<span>button</span> <span>aria-describedby</span><span>=</span><span >"payNowDescription"</span> &gt;Pay now&lt;/<span>button</span>&gt;
+  <p>&lt;<span>div</span> <span>id</span><span>=</span><span >“payNowDescription”</span>&gt;Clicking 
+    the button will send you to our Stripe form!&lt;/<span>div</span>&gt;</p></code></pre>
+
+                            <h3 id="aria-hidden"><code>aria-hidden</code></h3>
+                            <p>Usa aria-hidden para ocultar contenido a los lectores de pantalla</p>
+                            <p>Me gustan los diseños minimalistas. Si el documento es principalmente contenido, con
+                                algunos enlaces, pero algunos de los contenidos son solo elementos visuales
+                                que no suman a la experiencia de una persona que no puede ver la página. Como logotipos,
+                                imágenes:
+                                Añadiendo el atributo <strong><code class="code">aria-hidden </code></strong> le dirá a
+                                los lectores de
+                                pantalla que ignoren
+                                ese elemento.</p>
+                             <section id="multimedia">
+                <h2>Contenido multimedia accesible</h2>
+
+                <pre class="language-html"><code>
+&lt;video controls&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;track kind="subtitles" src="subtitulos.vtt" srclang="es" label="Español"&gt;
+&lt;/video&gt;
+                </code></pre>
+
+                <p>
+                    ✔ Subtítulos para personas sordas  
+                    ✔ Transcripciones para lectores de pantalla
+                </p>
+            </section>    
+                   <section id="recursos">
+                <h2>Recursos recomendados</h2>
+
+                <ul>
+                    <li><a href="https://www.w3.org/TR/WCAG22/">WCAG 2.2</a></li>
+                    <li><a href="https://webaim.org/">WebAIM</a></li>
+                    <li><a href="https://developer.mozilla.org/es/docs/Web/Accessibility">MDN Accesibilidad</a></li>
+                </ul>
+            </section>
+            <section id="herramientas-accesibilidad">
+    <h2>Extensiones de navegador para evaluar accesibilidad</h2>
+
+    <p>
+        Existen extensiones para navegadores que permiten analizar rápidamente
+        el nivel de accesibilidad de una página web según las pautas WCAG.
+        Estas herramientas no sustituyen una auditoría manual, pero son
+        fundamentales como primer paso.
+    </p>
+
+    <h3>WAVE – Web Accessibility Evaluation Tool</h3>
+    <p>
+        WAVE es una de las herramientas más utilizadas para detectar problemas
+        de accesibilidad directamente sobre la página.
+    </p>
+    <ul>
+        <li>Detecta errores WCAG automáticamente</li>
+        <li>Marca visualmente los problemas en el HTML</li>
+        <li>Analiza contrastes, formularios, encabezados y ARIA</li>
+    </ul>
+    <p>
+        🔗 <a href="https://wave.webaim.org/extension/" target="_blank" rel="noopener">
+            Descargar extensión WAVE
+        </a>
+    </p>
+
+    <h3>Lighthouse (Chrome DevTools)</h3>
+    <p>
+        Lighthouse es una herramienta integrada en Chrome que evalúa
+        accesibilidad, rendimiento y buenas prácticas.
+    </p>
+    <ul>
+        <li>Genera una puntuación de accesibilidad (0–100)</li>
+        <li>Basado en WCAG 2.x</li>
+        <li>Ideal para auditorías rápidas</li>
+    </ul>
+    <p>
+        📌 Acceso: DevTools → Lighthouse → Accessibility
+    </p>
+
+    <h3>axe DevTools</h3>
+    <p>
+        axe es una de las herramientas profesionales más avanzadas
+        para accesibilidad web.
+    </p>
+    <ul>
+        <li>Alta precisión en errores WCAG</li>
+        <li>Detecta problemas que otras herramientas no encuentran</li>
+        <li>Muy utilizada en entornos profesionales</li>
+    </ul>
+    <p>
+        🔗 <a href="https://www.deque.com/axe/devtools/" target="_blank" rel="noopener">
+            Descargar axe DevTools
+        </a>
+    </p>
+
+    <h3>Accessibility Insights</h3>
+    <p>
+        Herramienta desarrollada por Microsoft que combina análisis automático
+        y pruebas manuales guiadas.
+    </p>
+    <ul>
+        <li>Evaluación paso a paso</li>
+        <li>Pruebas de navegación por teclado</li>
+        <li>Enfoque educativo</li>
+    </ul>
+    <p>
+        🔗 <a href="https://accessibilityinsights.io/" target="_blank" rel="noopener">
+            Accessibility Insights
+        </a>
+    </p>
+
+    <h3>HeadingsMap</h3>
+    <p>
+        Permite visualizar la jerarquía de encabezados de una página.
+    </p>
+    <ul>
+        <li>Detecta saltos incorrectos de &lt;h1&gt; a &lt;h6&gt;</li>
+        <li>Ideal para evaluar estructura semántica</li>
+    </ul>
+    <p>
+        🔗 <a href="https://chrome.google.com/webstore/detail/headingsmap" target="_blank" rel="noopener">
+            HeadingsMap
+        </a>
+    </p>
+
+    <blockquote class="alert alert-warning">
+        <p style="color:black">
+            ⚠️ Importante: ninguna extensión puede garantizar accesibilidad total.
+            La revisión manual, el uso del teclado y las pruebas con lectores
+            de pantalla siguen siendo imprescindibles.
+        </p>
+    </blockquote>
+</section>
+
+
+        </article>
+
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2026 — Accesibilidad Web - Òscar Eroles</p>
+    </footer>
+ <script src="prism.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form layout</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <nav><p>Nav</p></nav>
+
+    <main>
+        <header><p>Header</p></header>
+
+        <section id="outside">
+            <form action="" method="get">
+                <fieldset>
+                    <section id="inside-left">
+                        <div>
+                            <label for="nombre">Nombre:</label>
+                            <input name="nombre" id="nombre" type="text" autofocus required/>
+                        </div>
+                        <div>
+                            <label for="nacimiento">Lugar de Nacimiento:</label>
+                            <input name="nacimiento" type="text" autofocus required pattern="^[A-ZÀ]{1}[a-zA-ZÀ-ÿ\u00f1\u00d1\s]{1,40}$"/>
+                        </div>
+                        <div>
+                            <label for="correo">Correo electrónico</label>
+                            <input type="email" name="correo" id="correo" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,9}" required/>
+                        </div>
+                        <div>
+                            <label for="telefono">Telefono</label>
+                            <input type="text" name="telefono" id="telefono" pattern="\d{9,11}" required/>
+                        </div>
+                    </section>
+                    <section id="inside-right">
+                        <div>
+                            <label for="mensaje">Mensaje:</label>
+                            <textarea name="mensaje" id="mensaje"></textarea>
+                        </div>
+                        <div id="botons">
+                            <input id="b1" type="reset" value="Limipiar formulario"/>
+                            <input id="b2" type="submit" value="Enviar formulario">
+                        </div>
+                    </section>
+                </fieldset>
+
+
+            </form>
+            
+            <aside><p>Aside</p></aside>
+        </section>
+
+        <footer><p>Footer</p></footer>
+    </main>
+</body>
+</html>

@@ -1,0 +1,60 @@
+*, *::before, *::after, html, body
+{
+    padding: 0px;
+    margin: 0px;
+}
+
+body
+{
+    background-color: rgb(212, 228, 212);
+}
+
+main
+{
+    width: 80%;
+    margin: auto;
+    padding: 10px 30px;
+}
+
+h1
+{
+    background-color: transparent;
+    border: 1px solid black;
+    color: blue;
+    text-align: right;
+    padding: 0 10px 0 10px;
+    letter-spacing: 20px;
+    text-transform: uppercase;
+}
+
+h2
+{
+    background-color: darkolivegreen;
+    color: white;
+    border: 10px solid darkolivegreen;
+    clear: both; /* Para que no se monten */
+    margin-bottom: 10px;
+}
+
+p 
+{
+    text-align: justify;
+    padding-bottom: 10px;
+}
+
+.centrado
+{
+    text-align: center;
+}
+
+.wrapper img[alt="iglesia Fiore"]
+{
+    float: left;
+    margin: 0 10px 10px 0;
+}
+
+.wrapper img[alt="basilica croce"]
+{
+    float: right;
+    margin: 0 0 10px 10px; /* top right bottom left */
+}

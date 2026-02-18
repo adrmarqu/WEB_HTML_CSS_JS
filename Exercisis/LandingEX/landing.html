@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bienvenido a NovaWeb</title>
+    <link rel="stylesheet" href="landing.css" />
+    <!--     <link rel="stylesheet" href="css/stylefirstmobile.css" /> -->
+  </head>
+  <body><!-- Ruta img https://images.pexels.com/photos/3183170/pexels-photo-3183170.jpeg -->
+    <main>
+      <header>
+        <div class="logo">
+          <img src="https://img.icons8.com/color/240/000000/galaxy.png" alt="logo">
+        </div>
+        <h1>Bienvenido a NovaWeb</h1>
+        <p>Explora una experiencia digital innovadora y moderna.</p>
+
+        <button
+          class="btn btn-ingresar"
+          onclick="location.href='../index.html'"
+        >
+          Ingresar
+        </button>
+      </header>
+
+      <section class="card">
+        <!-- Ruta img https://images.pexels.com/photos/6483616/pexels-photo-6483616.jpeg -->
+        <article class="card-content">
+          <h2>Objetivos de NovaWeb</h2>
+          <p>
+            En NovaWeb buscamos ofrecer soluciones digitales innovadoras,
+            centradas en la experiencia del usuario y el diseño moderno. Nuestro
+            objetivo es transformar ideas en sitios web funcionales, estéticos y
+            optimizados para el futuro.
+          </p>
+        </article>
+      </section>
+
+      <form method="post">
+        <p>Contacta con NovaWeb para más información.</p>
+        <input
+          type="text"
+          name="nombre"
+          placeholder="Tu nombre"
+          required
+          minlength="2"
+          pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+"
+          title="Ingresa solo letras, mínimo 2 caracteres"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Tu correo electrónico"
+          required
+          pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,9}"
+          title="Ingresa un correo válido (xxx@xxx.xx)"
+        />
+        <textarea
+          name="mensaje"
+          placeholder="Tu mensaje"
+          required
+          minlength="10"
+          title="El mensaje debe tener al menos 10 caracteres"
+        ></textarea>
+        <button type="submit" class="btn btn-enviar">Enviar</button>
+      </form>
+    </main>
+  </body>
+</html>

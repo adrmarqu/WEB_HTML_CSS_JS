@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio y video con Html 5</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- h1{Audio y Video con HTML 5}+h3{Audio}+h3{Video} -->
+
+    <h1>Audio y Video con HTML 5</h1>
+    <h3>Audio</h3>
+    <audio controls autoplay muted>
+        <source src="../media/HakunaMatataItMeansNoWorries.ogg" type="audio/ogg"/>
+        <source src="../media/HakunaMatataItMeansNoWorries.mp3" type="audio/mpeg"/>
+    </audio>
+    <h3>Video</h3>
+    <video controls id="musicos" poster="../img/musicos.jpg" width="420">
+        <source src="../media/musics.mp4" type="video/mp4">
+        <source src="../media/musics.ogv" type="video/ogg">
+    </video>
+    
+    <p>
+        <button onclick="reproducePara();">Play/Pause</button>
+        <button onclick="big();">Grande</button>
+        <button onclick="small();">Pequeño</button>
+        <button onclick="normal();">Mediano</button>
+    </p>
+
+    <p><a href="../index.html">Volver a 01-html</a></p>
+    <script src="../js/scripts.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos y formularios</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/formulari.css">
+    <script src="../js/formulari.js" defer></script>
+</head> 
+<body>
+    <main>
+        <h1>
+            Eventos y formularios con Javascript y Cookies
+        </h1>
+                
+        <div>
+            <h2>Ejercicio 1</h2>
+            <p>
+                Crea un formulario con HTML y css con los siguientes campos: usuario, telefono, nacimiento(dia, mes, año), email, dni, checkbox de acepto condiciones, registrate, limpia formulario, guardar datos, recuperar datos, textarea de información del formulario.
+                Este formulario tendrá estas características: <br/>
+                1- No se ha de enviar si el usuario no acepta las condiciones. <br/>
+                2- Cuando el usuario escriba una letra en el input, se muestre un mensaje en el textArea o debajo del input, que tenga el valor del input y si su valor es válido. <br/>
+                3- Si alguno de los inputs es incorrecto, el formulario no se ha de enviar.<br/>
+                4- El inputNombre no puede comenzar por un número y ha de tener una longitud de 3 a 20 carácteres.<br/>
+                5- El inputTelef ha de tener un formato de teléfono móvil válido.<br/>
+                6- El inputDiaMesAño ha de tener una fecha válida y ser una persona mayor de edad.<br/>
+                7- El inputEmail ha de tener un formato de correo electróncio con una @ y un punto.<br/>
+                8- el inputDNI ha de tener un formato DNI con 8 números y una letra mayúscula o minúscula, o un NIE con letra inicial y final. La validación del pattern ha de ser auténtica.<br/>
+                9- El textArea ha de tener al menos 10 carácteres.<br/>
+                10- Cuando le des a "Guardar Gatos", se guardaran todos los inputs en una cookie (cada dato en una cookie)<br/>
+                11- Cuando le des a "Recuperar Datos", los valores de los inputs se sustituiran por los datos guardados en las cookies.<br/>
+                12- Todos los inputs del formulario han de estar llenos.<br/>
+                13- Si no hay una cookie para un valor, se muestre en el input correspondiente con un valor en blanco.<br/><br/>
+            </p>
+            <form
+                method="post"
+                name="ejFormulario"
+                action="https://dominio.com/envio.php">
+                <fieldset>
+
+                    <!-- usuario -->
+                    <div>
+                        <label for="usuario">Usuario:</label>
+                        <input type="text" id="usuario" name="usuario" placeholder="inputNombre" autofocus>
+                        <small id="msg-user"></small>
+                    </div>
+
+                    <!-- telefono -->
+                    <div>
+                        <label for="telefono">Telefono:</label>
+                        <input type="tel" placeholder="inputTelef" id="telefono" name="telefono">
+                        <small id="msg-tel"></small>
+                    </div>
+
+                    <!-- nacimiento -->
+                    <div>
+                        <label for="nacimiento">
+                            Nacimiento (dia, mes, año): 
+                        </label>
+                        <input type="text" id="nacimiento" name="nacimiento" placeholder="inputAno">
+                        <small id="msg-born"></small>
+                    </div>
+
+                    <!-- email -->
+                    <div>
+                        <label for="correo">Email:</label>
+                        <input type="email" id="correo" name="correo" placeholder="inputEmail">
+                        <small id="msg-email"></small>
+                    </div>
+
+                    <!-- dni -->
+                    <div>
+                        <label for="dni">DNI:</label>
+                        <input type="text" id="dni" name="dni" placeholder="inputDNI">
+                        <small id="msg-dni"></small>
+                    </div>
+ 
+                    <!-- condiciones -->
+                    <div id="cond">
+                        <label for="condiciones">Acepto las condiciones</label>
+                        <input type="checkbox" id="condiciones" name="condiciones">
+                        <small id="msg-cond"></small>
+                    </div>
+
+                    <!-- Botones -->
+                    <div id="btns">
+                        <button type="submit" name="enviar">Registrate</button>
+                        <button type="reset" name="borrar">Limpia el formulario</button>
+                        <button type="button" id="guardar" name="guardar">Guardar Datos</button>
+                        <button type="button" name="recuperar">Recuperar Datos</button>
+                    </div>
+
+                    <!-- textarea -->
+                    <div>
+                        <textarea name="info" id="info" placeholder="TextArea con la información del formulario"></textarea>
+                        <small id="msg-area"></small>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <output></output>
+
+        <hr/>
+    </main>
+    
+    <footer>
+            <a href="#" class="desactivado"></a>
+            <a href="./index.html" class="back">
+                Volver al menú
+            </a>
+            <a href="#" class="desactivado"></a>
+    </footer>
+</body>
+</html>

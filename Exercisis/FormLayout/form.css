@@ -1,0 +1,160 @@
+*, *::after, *::before, html, body
+{
+    padding: 0;
+    margin: 0;
+}
+
+p, label
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+}
+
+p
+{
+    padding: 10px;
+}
+
+nav, aside, header, footer
+{
+    width: 100%;
+}
+
+header, footer
+{
+    height: 180px;
+}
+
+form
+{
+    height: 750px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: tomato;
+}
+
+fieldset
+{
+    width: 95%;
+    height: 700px;
+    margin: auto;
+    border-color: gray;
+    border-radius: 10px;
+}
+
+label
+{
+    font-size: 1.5rem;
+}
+
+input, textarea
+{
+    border: 2px solid red;
+    border-radius: 5px;
+}
+
+input
+{
+    height: 50px;
+}
+
+textarea
+{
+    height: 180px;
+}
+
+#botons
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+div
+{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+}
+
+#b1, #b2
+{
+    height: 2.5rem;
+    font-size: 1.2rem;
+    padding: 0 10px;
+    color: rgb(232, 230, 230);
+    cursor: pointer;
+}
+
+#b1
+{
+    border: 1px solid rgb(200, 0, 0);
+    background-color: rgb(227, 0, 0);
+}
+
+#b2
+{
+    border: 1px solid rgb(0, 155, 0);
+    background-color: green;
+}
+
+nav
+{
+    background-color: aqua;
+}
+
+header, footer
+{
+    background-color: darkseagreen;
+}
+
+aside
+{
+    background-color: greenyellow;
+}
+
+@media screen and (min-width: 1024px)
+{
+    p, label
+    {
+        font-size: 1.3rem;
+    }
+
+    body
+    {
+        display: flex;
+    }
+
+    nav, aside
+    {
+        width: 10%;
+    }
+
+    main, form
+    {
+        width: 90%;
+    }
+
+    form
+    {
+        height: 500px;
+    }
+
+    #outside
+    {
+        display: flex;
+    }
+
+    fieldset
+    {
+        height: 450px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    section
+    {
+        width: 100%;
+    }
+}

@@ -1,0 +1,118 @@
+*, *::before, *::after, html, body
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#titulo
+{
+    text-align: center;
+    padding: 20px;
+}
+
+body
+{
+    width: 90%;
+    margin: auto;
+}
+
+main
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+div
+{
+    margin: 2px;
+    border: 1px solid gray;
+}
+
+p
+{
+    margin: 0.9rem;
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+}
+/* 
+
+Normal    <!-- 1 2 3 4 - 5 6 7 8 -->
+1280    <!-- 1 3 - 5 7 - 2 4 - 6 8 -->
+768    <!-- 1 5 2 6 3 7 4 8 --> 
+    
+*/
+
+@media screen and (max-width: 1280px)
+{
+    main
+    {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #p2
+    {
+        order: 2;
+    }
+    #p3
+    {
+        order: 0;
+    }
+    #p4
+    {
+        order: 2;
+    }
+    #p5
+    {
+        order: 1;
+    }
+    #p6
+    {
+        order: 3;
+    }
+    #p7
+    {
+        order: 1;
+    }
+    #p8
+    {
+        order: 3;
+    }
+}
+
+@media screen and (max-width: 768px)
+{
+    main
+    {
+        grid-template-columns: 1fr;
+    }
+
+    #p2
+    {
+        order: 2;
+    }
+    #p3
+    {
+        order: 4;
+    }
+    #p4
+    {
+        order: 6;
+    }
+    #p5
+    {
+        order: 1;
+    }
+    #p6
+    {
+        order: 3;
+    }
+    #p7
+    {
+        order: 5;
+    }
+    #p8
+    {
+        order: 7;
+    }
+}

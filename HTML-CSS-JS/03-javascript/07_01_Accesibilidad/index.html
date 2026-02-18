@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vailadar Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous" defer></script>
+</head>
+<body>
+    <main class="container mt-5">
+        <div class="row">
+            <div class="col">
+                <h2>Ejercicio de validación con el API de JAVASCRIPT</h2>
+                <p>
+                    Escribe un programa que pida un número, nos permita escoger un select: sumar, restar, multiplicar, dividir o módilo, después nos pedirá un segundo número y nos dará el resultado de la operación seleccionada. Todo esto con campos de texto o números y select.
+                </p>
+            </div>
+        </div>
+        <section class="needs-validation" novalidation id="validacion_ejer">
+            <div class="row">
+                <div class="col-lg-4 col-sm-12">
+                    <div class="mb-3">
+                        <label for="input_numero1" class="form-label">
+                            Introduce el primer número
+                        </label>
+                        <input type="number" step="0.5" class="form-control" id="input_numero1" name="input_numero1" min="1" max="99999999" pattern="^\d+(,\d{1,2})?$" required>
+                    </div>
+                    <div class="valid-feedback">
+                        Pseudoestilo :valid Número correcto!
+                    </div>
+                    <div class="invalid-feedback">
+                        Pseudoestilo :invalid Debes de introducir un número correcto entre 1 y 99999999!
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-12">
+                    <div class="mb-3">
+                        <label for="input_numero2" class="form-label">
+                            Introduce el segundo número
+                        </label>
+                        <input type="number" step="0.5" class="form-control" id="input_numero2" name="input_numero2" min="1" max="99999999" pattern="^\d+(,\d{1,2})?$" required>
+                    </div>
+                    <div class="valid-feedback">
+                        Pseudoestilo :valid Número correcto!
+                    </div>
+                    <div class="invalid-feedback">
+                        Pseudoestilo :invalid Debes de introducir un número correcto entre 1 y 99999999!
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-12">
+                    <div class="mb-3">
+                        <label for="operacionarealizar" class="form-label">
+                            Operación a realizar
+                        </label>
+                        <select class="form-select" name="operacionarealizar" id="operacionarealizar" required>
+                            <option selected disabled value="">Elige una operación</option>
+                            <option value="sumar">Sumar</option>
+                            <option value="restar">Restar</option>
+                            <option value="multiplicar">Multiplicar</option>
+                            <option value="dividir">Dividir</option>
+                            <option value="modulo">Hacer el módulo</option>
+                        </select>
+                    </div>
+                    <div class="valid-feedback">
+                        Operación seleccionada correcta.
+                    </div>
+                    <div class="invalid-feedback">
+                        Seleccione el tipo de operación a realizar.
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <output></output>
+                    <div class="mb-3">
+                        <button class="btn btn-primary" id="btn_ejer">
+                            Ejecutar ejercicio
+                        </button>
+                        <button class="btn btn-warning" id="borrar" type="reset">
+                            Borrar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        const btn_ejer = document.querySelector("#btn_ejer");
+        const btn_borrar = document.querySelector("#borrar");
+        const input_numer1 = document.querySelector("#input_numero1");
+        const input_numer2 = document.querySelector("#input_numero2");
+        const operacionarealizar = document.querySelector("#operacionarealizar");
+        const mostra = document.querySelector("output");
+        const validacion_ejer = document.querySelector("#validacion_ejer");
+        btn_ejer.addEventListener("click", () =>
+        {
+            validacion_ejer.classList.add("was-validated");
+            mostra.innerHTML = "";
+
+            if (input_numer1.checkValidity() && 
+                input_numer2.checkValidity() && 
+                operacionarealizar.checkValidity())
+            {
+                console.log("Todo bien");
+                let numero1 = Number(input_numer1.value);
+                let numero2 = Number(input_numer2.value);
+                let operacion = operacionarealizar.value;
+                let resultado;
+
+                switch (operacion)
+                {
+                    case "sumar":
+                        resultado = numero1 + numero2;
+                        break ;
+                    case "restar":
+                        resultado = numero1 - numero2;
+                        break ;
+                    case "multiplicar":
+                        resultado = numero1 * numero2;
+                        break ;
+                    case "dividir":
+                        resultado = numero1 / numero2;
+                        break ;
+                    case "modulo":
+                        resultado = numero1 % numero2;
+                        break ;
+                    default:
+                        resultado = 0;
+                }
+
+                let salida_html = `<div class="alert alert-info text-center" role="alert">El primer número introducido es: <span class="fw-bold">${numero1}</span>, el segundo número introducido es: <span class="fw-bold">${numero2}</span> y la operación que quieres realizar es: <span class="fw-bold">${operacion}</span><br/>El resultado es: <span class="fw-bold">${resultado} : ${resultado.toFixed(2)}</span></div>`;
+
+                mostra.innerHTML = salida_html;
+
+                validacion_ejer.classList.remove("was-vadilated");
+            }
+        });
+
+        btn_borrar.addEventListener("click", () =>
+        {
+            mostra.innerHTML = "";
+            validacion_ejer.classList.remove("was-validated");
+            input_numer1.value = "";
+            input_numer2.value = "";
+            operacionarealizar.selectedIndex = 0;
+
+        });
+    </script>
+</body>
+</html>

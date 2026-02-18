@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones y estructuras</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/estructuras.js" defer></script>
+</head>
+<body>
+    <main>
+        <div>
+            <h2>Ejercicio 1</h2>
+            <p>
+                Haz una función que te pida un número através de un campo de texto y te diga si es un número par o impar. También crea un botón para borrar los datos escritos.
+            </p>
+            <input id="input1" class="input-texto" type="text" placeholder="Escribe un número">
+            <div>
+                <input type="text" id="error" class="answer-input" readonly value="Error">
+                <input type="text" id="par" class="answer-input" readonly value="Par">
+                <input type="text" id="impar" class="answer-input input-selected" readonly value="Impar">
+                <input class="input-borrar" id="borrar1" type="button" value="Borrar">
+            </div>
+        </div>
+
+        <hr/>
+        
+        <div>
+            <h2>Ejercicio 2</h2>
+            <p>
+                Haz una función A que te pida através de un campo de texto el resultado de dividir 144/12. Este resultado se calculará en una función B, y se recogerá en la función A. Luego la función A te dirá si has acertado o no. Además crea un botón para borrar los datos 
+            </p>
+            <h3>Cuál es el resultado de: 144 / 12?</h3>
+            <input id="input2" class="input-texto" type="text" placeholder="Escribe el resultado">
+            <output id="ej2"></output>
+            <input class="input-borrar" id="borrar2" type="button" value="Borrar">
+        </div>
+
+        <hr/>
+
+        <div>
+            <h2>Ejercicio 3</h2>
+            <p>
+                Con campos de texto, pide un precio sin iva y el iva, luego devuelve el precio del producto con el iva incluido. Crea un botón para borrar los datos. 
+            </p>
+            <input id="precio" class="input-texto" type="text" placeholder="Escribe el precio sin el IVA">
+            <input id="iva" class="input-texto" type="text" placeholder="Escribe el IVA">
+            <output id="ej3"></output>
+            <input class="input-borrar" id="borrar3" type="button" value="Borrar">
+        </div>
+
+        <hr/>
+
+        <div>
+            <h2>Ejercicio 4</h2>
+            <p>
+                Escribe un programa que pida un número, nos permita elegir un select con sumar, restar, multiplicar, dividir o módulo, y después nos pida un segundo número y nos de el resultado de la operación seleccionada. Utiliza campos de texto para conseguir los números.
+            </p>
+            <input id="num1" class="input-texto" type="text" placeholder="Escribe un número">
+            <select id="selector" class="selector">
+                <option selected disabled value="">
+                    Elige una operación
+                </option>
+                <option value="sumar">Sumar</option>
+                <option value="restar">Restar</option>
+                <option value="multiplicar">Multiplicar</option>
+                <option value="dividir">Dividir</option>
+                <option value="modulo">Hacer módulo</option>
+            </select>
+            <input id="num2" class="input-texto" type="text" placeholder="Escribe otro número">
+            <output id="ej4"></output>
+            <input class="input-borrar" id="borrar4" type="button" value="Borrar">
+        </div>
+
+        <hr/>
+
+        <div>
+            <h2>Ejercicio 5</h2>
+            <p>
+                Crea un programa que pida un número de etiquetas a imprimir, y hay que imprimir en la página una lista de los códigos de un producto inventado. Ej: Ref:042 - 0, Ref:042 - 1... codi_producte 0, codi_producte 1, codi_producte n
+            </p>
+            <input type="text" id="input5" class="input-texto" placeholder="Escribe la cantidad de etiquetas">
+            <input class="input-borrar" id="borrar5" type="button" value="Borrar">
+            <output id="ej5"></output>
+        </div>
+
+        <hr/>
+
+        <div>
+            <h2>Ejercicio 6</h2>
+            <p>
+                Escribe un programa que pida un input con el número de filas y después un input con el número de columnas. Luego construye apartir de los datos introduidos, una tabla con un texto editable dependiendo los valores.
+            </p>
+            <input type="text" id="filas" class="input-texto" placeholder="Número de filas">
+            <input type="text" id="columnas" class="input-texto" placeholder="Número de columnas">
+            <input class="input-borrar" id="borrar6" type="button" value="Borrar">
+            <output id="ej6"></output>
+        </div>
+
+        <hr/>
+
+        <div>
+            <h2>Ejercicio 7</h2>
+            <p>
+                Crea un programa que nos permita recoger un array con los meses del año ya hechos y lo mostremos con: <br> 1- El orden real <br> 2- En orden alfabético <br> 3- Separado por guiones <br> 4- En orden invertido <br> 5- Separado por un carácter que tu decidas <br> 6- El array original
+            </p>
+            <button class="red" id="meses">Ejecutar</button>
+            <input class="input-borrar" id="borrar7" type="button" value="Borrar">
+            <output id="ej7"></output>
+        </div>
+
+        <hr/>
+
+        <div>
+            <h2>Ejercicio 8</h2>
+            <p>
+                En un programa pide al usuario que introduzca en una área de texto una frase, mediante una función abriras una ventana controlada informando de: <br> 1- La primera palabra <br> 2- La última palabra <br> 3- El número total de palabras <br> 4- Las palabras ordenadas alfabéticamente separadas por un guion
+            </p>
+            <textarea id="input8" placeholder="Escribe texto"></textarea>
+            <output id="ej8"></output>
+            <input class="input-borrar" id="borrar8" type="button" value="Borrar">
+        </div>
+
+        <hr/>
+
+        <div>
+            <h2>Ejercicio 9</h2>
+            <p>
+                Escribe un html que nos permita mediante una función mostrar los datos de un array asociativo de una persona con los datos siguientes: <br> 1- Nombre <br> 2- Apellido<br>3- Edad<br>4- DNI<br>5- Género<br>6- Teléfono <br>7- Ubicación
+            </p>
+            <button id="mostrar" class="red">Ejecutar</button>
+            <input class="input-borrar" id="borrar9" type="button" value="Borrar">
+            <output id="ej9"></output>
+        </div>
+
+        <hr/>
+
+        <div>
+            <h2>Ejercicio 10</h2>
+            <p>
+                Escribe un programa que nos permita introducir en inputs de texto: Nombre, apellidos, edad, DNI, género, teléfono, Ubicación. Se han de validar los inputs y se han de guardar en una array. Queremos que nos muestre en un div y nos permita añadir tantas personas como haga falta, que permita eliminar la última persona y que pueda borrar todas las personas.
+            </p>
+
+            <form class="form-persona" id="form-persona1">
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" class="form-input">
+                <small></small>
+                
+                <label for="apellido">Apellido</label>
+                <input type="text" name="apellido" class="form-input">
+                <small></small>
+                
+                <label for="edad">Edad</label>
+                <input type="number" min="0" max="120" name="edad" class="form-input">
+                <small></small>
+                
+                <label for="dni">DNI</label>
+                <input type="text" name="dni" class="form-input">
+                <small></small>
+                
+                <label for="genero">Género</label>
+                <select name="genero">
+                    <option value="0" disabled selected>Seleccionar género</option>
+                    <option value="M">Masculino</option>
+                    <option value="F">Femenino</option>
+                    <option value="O">Otro</option>
+                </select>
+                <small></small>
+                
+                <label for="telefono">Teléfono</label>
+                <input type="tel" name="telefono" class="form-input">
+                <small></small>
+                
+                <label for="location">Ubicación</label>
+                <input type="text" name="location" class="form-input">
+                <small></small>
+
+                <div>
+                    <input class="input-borrar" id="borrar10" type="reset" value="Borrar">
+                    <button class="gray" id="eliminar" type="button">Eliminar último dato</button>
+                    <button class="gray" id="mostrar2" type="button">Mostrar datos</button>
+                    <button class="red" id="guardar" type="button">Enviar</button>
+                </div>
+            </form>
+        </div>
+
+        <hr/>
+
+        <div>
+            <h2>Ejercicio 11</h2>
+            <p>
+                Escribe un html que nos permita entrar todos los platos de un menú semanal de lunes a viernes de un restaurante. Con 5 primeros, 5 segundos y 5 postres, uno para cada día. Después los muestras en una tabla. Formatea el aspecto del menú con estilos desde javascript.
+            </p>
+
+            <form class="form-persona" id="form-persona2">
+                <label for="dia">Menú</label>
+                <select name="dia" id="dia">
+                    <option value="X" disabled selected>Escoge el dia</option>
+                    <option value="0">Lunes</option>
+                    <option value="1">Martes</option>
+                    <option value="2">Miercoles</option>
+                    <option value="3">Jueves</option>
+                    <option value="4">Viernes</option>
+                </select>
+                <small></small>
+
+                <label for="primero"></label>
+                <input type="text" name="primero" class="form-input">
+                <small></small>
+                
+                <label for="segundo"></label>
+                <input type="text" name="segundo" class="form-input">
+                <small></small>
+
+                <label for="postre"></label>
+                <input type="text" name="postre" class="form-input">
+                <small></small>
+
+                <div>
+                    <input class="input-borrar" id="borrar11" type="reset" value="Borrar formulario actual">
+                    <button class="red" id="guardar2" type="button">Guardar datos</button>
+                </div>
+            </form>
+            <button class="gray" id="mostrar3" type="button">Mostrar datos</button>
+            <input class="input-borrar" id="borrar12" type="button" value="Borrar texto">
+            <input class="input-borrar" id="borrar13" type="button" value="Borrar todos los datos">
+            <output id="ej11"></output>
+        </div>
+
+        <hr/>
+
+    </main>
+
+    <footer>
+        <a href="#" class="desactivado"></a>
+        <a href="./index.html" class="back">
+            Volver al menú
+        </a>
+        <a href="#" class="desactivado"></a>
+    </footer>
+</body>
+</html>
