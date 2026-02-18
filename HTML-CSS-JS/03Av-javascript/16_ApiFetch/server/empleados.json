@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "nombre": "Perico",
+        "empresa": "Los Palotes",
+        "puesto": "Co-Feo"
+    },
+    {
+        "id": 2,
+        "nombre": "Antonio",
+        "empresa": "Los Buenotes",
+        "puesto": "Co-Guapo"
+    },
+    {
+        "id": 3,
+        "nombre": "Raul",
+        "empresa": "Los Normales",
+        "puesto": "Co-Normal"
+    },
+    {
+        "id": 4,
+        "nombre": "Frederico",
+        "empresa": "Los Malotes",
+        "puesto": "Co-Travesti"
+    }
+]
