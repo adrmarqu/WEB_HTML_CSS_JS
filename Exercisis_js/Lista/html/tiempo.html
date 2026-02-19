@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>El Tiempo de Hoy</title>
+    <!-- <link
+      rel="stylesheet"
+      href="../02_uso_frameworks/w3css/source/css/w3css.css"
+    /> -->
+    <link rel="stylesheet" href="../css/style.css">
+    <title>¿Qué tiempo hace?</title>
+    <style type="text/css">
+      html {
+        background: url(https://picsum.photos/1366/768.jpg) no-repeat center
+          center fixed;
+        background-size: cover;
+      }
+      body {
+        background: none;
+        min-height: 100vh;
+          background-color: rgba(240, 248, 255, 0.312);
+      }
+      .w3-container {
+        text-align: center;
+      /*   background-color: rgba(240, 248, 255, 0.312); */
+      }
+
+      select {
+        margin-top: 20px;
+      }
+
+      input, select {
+        width: 200px;
+      }
+
+      input {
+        margin: 20px 0;
+      }
+
+      .red
+      {
+        color: red;
+      }
+
+      #previsionTiempo {
+        margin-top: 30px;
+      }
+      h1,
+      label {
+        color: white;
+        font-weight: 800;
+        /* text-shadow: 1px 1px 1px black, -1px -1px 1px black; */
+        -webkit-text-stroke: 1px black;
+      }
+      label {
+        font-size: 20px;
+      }
+
+      #result p
+      {
+        width: 40%;
+        margin: auto;
+        text-align: start;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="w3-container w3-display-middle w3-padding-24">
+      <h1>¿Qué tiempo hace hoy?</h1>
+
+      <div class="">
+        <div class="">
+          <div id="muestra">
+            <p class="w3-text-white">Introduce País y Ciudad, para ver el Tiempo de Hoy</p>
+          </div>
+        </div>
+
+        <form
+          id="formu"
+          name="formu"
+          class="w3-margin"
+          action="#"
+          method="POST"
+        >
+          <div class="mt-5">
+            <select name="pais" class="" id="pais">
+              <option disabled selected value="">
+                -- Selecciona un país --
+              </option>
+              <option value="ES">España</option>
+              <option value="US">Estados Unidos</option>
+              <option value="PT">Portugal</option>
+            </select>
+          </div>
+          
+          <div class="">
+            <input
+              type="text"
+              name="ciudad"
+              id="ciudad"
+              placeholder="Escribe tu Ciudad"
+              class=""
+            />
+          </div>
+          <small id="error" class="red"></small>
+          <button name="btn" type="submit" class="w3-button w3-black w3-margin">
+            Obtener el tiempo de Hoy
+          </button>
+        </form>
+      </div>
+
+      <div id="result" style="background-color: white;"></div>
+
+    </main>
+
+    <footer>
+      <a href="#" class="desactivado">
+      </a>
+      <a href="./index.html" class="back">
+          Volver al menú
+      </a>
+      <a href="#" class="desactivado">
+      </a>
+    </footer>
+
+    <script src="../js/tiempo.js"></script>
+  </body>
+</html>
